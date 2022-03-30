@@ -1,11 +1,11 @@
 <template>
   <section
-    :class="`flex ${justifyContent} ${itemsContent} h-screen w-full px-${smPx} md:px-${px} is-dark relative`"
+    :class="`flex ${justifyContent} ${itemsContent} relative`"
     @mousemove="updateSpotlight" @mousedown="updateSpotlight"
     @mouseenter="enter"
     @mouseleave="leave">
     <slot></slot>
-    <div :id="`pointer-${id}`" class="follower" v-if="showPointer"></div>
+<!--    <div :id="`pointer-${id}`" class="follower" v-if="showPointer"></div>-->
   </section>
 </template>
 

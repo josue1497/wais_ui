@@ -1,11 +1,9 @@
 <template>
   <section
-    :class="`flex ${justifyContent} ${itemsContent} sm:h-56 md:h-screen w-full px-${smPx} md:px-${px} is-dark relative`"
-    @mousemove="updateSpotlight" @mousedown="updateSpotlight"
-    @mouseenter="enter"
-    @mouseleave="leave">
+    :class="`flex ${justifyContent} ${itemsContent} w-full px-${smPx} md:px-${px} is-dark relative`"
+  >
     <slot></slot>
-    <div :id="`pointer-${id}`" class="follower" v-if="showPointer"></div>
+    <!--    <div :id="`pointer-${id}`" class="follower" v-if="showPointer"></div>-->
   </section>
 </template>
 
@@ -20,6 +18,7 @@
             color: {type: String, default: '#ADF1D6'},
             px: {type: [String, Number], default: 16},
             smPx: {type: [String, Number], default: 8},
+            smSize: {type: [String, Number], default: 56},
         },
         data: () => ({
             showPointer: true
