@@ -1,6 +1,12 @@
 <template>
   <div class="bg-[#E5E5E5]">
-    <section class="w-full flex main-banner relative">
+    <section class="w-full flex main-banner relative" @mousemove="updateSpotlight" @mouseleave="leave" @mouseenter="enter">
+      <div class="circle-out" v-if="showPointer">
+        <div class="circle circle-in-1"></div>
+        <div class="circle circle-in-2"></div>
+        <div class="circle circle-in-3"></div>
+        <!--        <div class="circle-in-2"></div>-->
+      </div>
       <div class="flex flex-col justify-start items-start my-44 md:my-20 w-full relative">
         <div class="flex flex-col justify-center items-center w-full pr-4 pl-4 md:pr-24 md:pl-0">
           <h1 class="text-[13vh] md:text-[12rem] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] flex flex-col w-full md:w-4/6">
@@ -9,7 +15,10 @@
         </div>
       </div>
       <div class="w-full md:w-3/4 absolute inset-x-0 bottom-0 py-10 md:py-3">
-        <img src="../assets/img/marketing-agency.svg" alt="" class="w-full">
+<!--        <img src="../assets/img/marketing-agency.svg" alt="" class="w-full">-->
+        <h1 class="text-[10vh] md:text-[10rem] leading-[5rem] md:leading-[10rem] flex flex-col w-3/4 md:w-full GFG uppercase">
+          <span class="block">Marketing</span><span class="block">Agency</span>
+        </h1>
       </div>
       <div class="icon-bar hidden  md:block">
         <a href="https://www.instagram.com/waisdigital/" target="_blank"
@@ -25,6 +34,7 @@
            class="youtube text-black bg-transparent dark:text-white"><i
           class="fa-brands fa-behance"></i></a>
       </div>
+<!--      <div :id="`pointer-main`" class="follower" v-if="showPointer"></div>-->
     </section>
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
@@ -76,7 +86,7 @@
     import CoreSection from "../components/core/CoreSection";
     import {mapState} from 'vuex'
     import aosMixin from '../mixins/aos.mixin'
-
+    const SPOTLIGHT_SIZE = '100px, rgba(0, 0, 0, 0) 150px)';
     export default {
         components: {
             CoreSection
@@ -94,13 +104,92 @@
                 {l: require(`../assets/img/clients/hebe-l.svg`), n: require(`../assets/img/clients/hebe-n.svg`)},
                 {l: require(`../assets/img/clients/nikk-l.svg`), n: require(`../assets/img/clients/nikk-n.svg`)},
                 {l: require(`../assets/img/clients/resinca-l.svg`), n: require(`../assets/img/clients/resinca-n.svg`)},
-            ]
+            ],
+            showPointer: false,
         }),
+        methods: {
+            enter(e) {
+                this.showPointer = true;
+            },
+            leave(e) {
+                this.showPointer = false;
+            },
+            updateSpotlight(e) {
+                const spotlight = document.querySelector(`.circle-out`)
+                if (spotlight) {
+                    console.log(e)
+                    // spotlight.style.backgroundImage = `radial-gradient(circle at ${e.layerX}px ${e.layerY}px, #ADF1D6 ${SPOTLIGHT_SIZE}`;
+                    spotlight.style.top = `${e.y - 30}px`;
+                    spotlight.style.left = `${e.x - 30}px`;
+                }
+            }
+        },
         mixins: [aosMixin]
     }
 </script>
 
 <style>
+  .follower {
+    position: absolute;
+    /*filter: blur(100px);*/
+    /*background-image: url(../assets/img/ellipses.svg);*/
+    transition: all .2s ease-in-out;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid #45597e;
+    height: 100px;
+    width: 200px;
+    border-radius: 50%;
+    transform: rotate(-65deg);
+  }
+
+  .circle-out {
+    border-radius: 50%;
+    height: 100px;
+    width: 200px;
+    /*border: 1px solid #45597e;*/
+    background: transparent;
+    position: absolute;
+    padding: 5px;
+    transition: all .1s ease-in-out;
+    transform: rotate(-25deg);
+  }
+  .circle {
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #000000;
+    height: 150px;
+    width: 300px;
+    position:absolute;
+  }
+  .circle-in-1 {
+    margin: 15px auto;
+  }
+  .circle-in-2 {
+    margin: 45px auto;
+  }
+  .circle-in-3 {
+    margin: 75px auto;
+  }
+
+  .GFG {
+    color: transparent;
+    /*font-size: 50px;*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+
+
+  /*.follower::after {*/
+  /*  content: "";*/
+  /*  position: absolute;*/
+  /*  background: url(../assets/img/ellipses.svg);*/
+  /*  background-size: contain;*/
+  /*  background-repeat: no-repeat;*/
+  /*  @apply w-44 h-44;*/
+  /*  margin-top: 10px;*/
+  /*}*/
+
   .container {
     margin: 0 auto;
     min-height: 100vh;
