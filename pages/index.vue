@@ -1,12 +1,12 @@
 <template>
   <div class="bg-[#E5E5E5]">
     <section class="w-full flex main-banner relative" @mousemove="updateSpotlight" @mouseleave="leave" @mouseenter="enter">
-      <div class="circle-out" v-if="showPointer">
+<!--      <div class="circle-out" v-if="showPointer">-->
         <div class="circle circle-in-1"></div>
         <div class="circle circle-in-2"></div>
         <div class="circle circle-in-3"></div>
         <!--        <div class="circle-in-2"></div>-->
-      </div>
+<!--      </div>-->
       <div class="flex flex-col justify-start items-start my-44 md:my-20 w-full relative">
         <div class="flex flex-col justify-center items-center w-full pr-4 pl-4 md:pr-24 md:pl-0">
           <h1 class="text-[13vh] md:text-[12rem] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] flex flex-col w-full md:w-4/6">
@@ -115,12 +115,15 @@
                 this.showPointer = false;
             },
             updateSpotlight(e) {
-                const spotlight = document.querySelector(`.circle-out`)
+                const spotlight = document.querySelectorAll(`.circle`)
                 if (spotlight) {
                     console.log(e)
                     // spotlight.style.backgroundImage = `radial-gradient(circle at ${e.layerX}px ${e.layerY}px, #ADF1D6 ${SPOTLIGHT_SIZE}`;
-                    spotlight.style.top = `${e.y - 30}px`;
-                    spotlight.style.left = `${e.x - 30}px`;
+                    spotlight.forEach(el => {
+                        el.style.top = `${e.y - 30}px`;
+                        el.style.left = `${e.x - 30}px`;
+                    })
+
                 }
             }
         },
@@ -129,32 +132,8 @@
 </script>
 
 <style>
-  .follower {
-    position: absolute;
-    /*filter: blur(100px);*/
-    /*background-image: url(../assets/img/ellipses.svg);*/
-    transition: all .2s ease-in-out;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: 1px solid #45597e;
-    height: 100px;
-    width: 200px;
-    border-radius: 50%;
-    transform: rotate(-65deg);
-  }
-
-  .circle-out {
-    border-radius: 50%;
-    height: 100px;
-    width: 200px;
-    /*border: 1px solid #45597e;*/
-    background: transparent;
-    position: absolute;
-    padding: 5px;
-    transition: all .1s ease-in-out;
-    transform: rotate(-25deg);
-  }
   .circle {
+    transform: rotate(-25deg);
     border-radius: 50%;
     background: transparent;
     border: 1px solid #000000;
@@ -164,12 +143,15 @@
   }
   .circle-in-1 {
     margin: 15px auto;
+    transition: all .1s ease-in-out;
   }
   .circle-in-2 {
     margin: 45px auto;
+    transition: all .15s ease-in-out;
   }
   .circle-in-3 {
     margin: 75px auto;
+    transition: all .2s ease-in-out;
   }
 
   .GFG {
@@ -178,17 +160,6 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
   }
-
-
-  /*.follower::after {*/
-  /*  content: "";*/
-  /*  position: absolute;*/
-  /*  background: url(../assets/img/ellipses.svg);*/
-  /*  background-size: contain;*/
-  /*  background-repeat: no-repeat;*/
-  /*  @apply w-44 h-44;*/
-  /*  margin-top: 10px;*/
-  /*}*/
 
   .container {
     margin: 0 auto;
@@ -231,6 +202,26 @@
     background: transparent;
   }
 
+  .circle {
+    transform: rotate(-25deg);
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #000000;
+    position:absolute;
+  }
+  .circle-in-1 {
+    margin: 15px auto;
+    transition: all .1s ease-in-out;
+  }
+  .circle-in-2 {
+    margin: 45px auto;
+    transition: all .15s ease-in-out;
+  }
+  .circle-in-3 {
+    margin: 75px auto;
+    transition: all .2s ease-in-out;
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .point.one {
@@ -249,6 +240,24 @@
       height: 30vh;
       background: #2A00FF;
       filter: blur(20vh);
+    }
+    .circle {
+      height: 80px;
+      width: 150px;
+      position:static;
+      display: none;
+    }
+    .circle-in-1 {
+      margin: 15px auto;
+      transition: all .1s ease-in-out;
+    }
+    .circle-in-2 {
+      margin: 45px auto;
+      transition: all .15s ease-in-out;
+    }
+    .circle-in-3 {
+      margin: 75px auto;
+      transition: all .2s ease-in-out;
     }
   }
 
@@ -270,6 +279,43 @@
       height: 30vh;
       background: #2A00FF;
       filter: blur(20vh);
+    }
+
+    .circle {
+      height: 80px;
+      width: 150px;
+      position:static;
+    }
+    .circle-in-1 {
+      margin: 15px auto;
+      transition: all .1s ease-in-out;
+    }
+    .circle-in-2 {
+      margin: 45px auto;
+      transition: all .15s ease-in-out;
+    }
+    .circle-in-3 {
+      margin: 75px auto;
+      transition: all .2s ease-in-out;
+    }
+
+    .circle {
+      height: 130px;
+      width: 300px;
+      position:absolute;
+      display: block;
+    }
+    .circle-in-1 {
+      margin: 15px auto;
+      transition: all .1s ease-in-out;
+    }
+    .circle-in-2 {
+      margin: 45px auto;
+      transition: all .15s ease-in-out;
+    }
+    .circle-in-3 {
+      margin: 75px auto;
+      transition: all .2s ease-in-out;
     }
   }
 

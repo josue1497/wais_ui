@@ -80,11 +80,57 @@
 
   .point.six {
     background: #01C97B;
-    left: 20vh;
-    top: 35vh;
     filter: blur(20vh);
-    width: 60vh;
-    height: 60vh;
   }
 
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .point.six {
+      left: 20vh;
+      top: 70vh;
+      width: 30vh;
+      height: 30vh;
+    }
+
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .point.six {
+      left: 20vh;
+      top: 70vh;
+      width: 30vh;
+      height: 30vh;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .point.six {
+      left: 20vh;
+      top: 35vh;
+      width: 60vh;
+      height: 60vh;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .point.six {
+      left: 20vh;
+      top: 35vh;
+      width: 60vh;
+      height: 60vh;
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .point.six {
+      left: 20vh;
+      top: 35vh;
+      width: 60vh;
+      height: 60vh;
+    }
+  }
 </style>
