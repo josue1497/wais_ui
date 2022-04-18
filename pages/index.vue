@@ -328,7 +328,7 @@
     }
 
     .point.two {
-      right: -10vh;
+      right: 0;
       top: 20vh;
       width: 60vh;
       height: 60vh;
@@ -346,7 +346,7 @@
     }
 
     .point.two {
-      right: -10vh;
+      right: 0;
       top: 20vh;
       width: 60vh;
       height: 60vh;
@@ -365,7 +365,7 @@
     }
 
     .point.two {
-      right: -10vh;
+      right: 0;
       top: 20vh;
       width: 60vh;
       height: 60vh;
