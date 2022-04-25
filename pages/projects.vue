@@ -32,7 +32,7 @@
                 },
                 {
                     id: 2,
-                    name: 'PanuPam',
+                    name: 'PamyPam',
                     tags: ['Gym', 'Home Office']
                 },
                 {

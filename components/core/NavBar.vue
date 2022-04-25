@@ -52,6 +52,13 @@
                 Services
               </a>
             </li>
+            <img class="red" :class="{ blue: true, green: false, yellow: 1 > 0 }" />
+            <li class="menu-item">
+              <a href="/about"
+                 class="menu-item-link"
+                 aria-current="page">About us
+              </a>
+            </li>
             <li class="menu-item">
               <a href="/contact"
                  class="menu-item-link">
@@ -102,6 +109,7 @@
           <div class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start  flex-col">
             <a href="/about"><p class="mobile-links">About us</p></a>
             <a href="/services"><p class="mobile-links">Services</p></a>
+            <a href="/about"><p class="mobile-links">About us</p></a>
             <a href="/projects"><p class="mobile-links">Projects</p></a>
             <a href="/careers"><p class="mobile-links">Careers</p></a>
             <a href="/contact"><p class="mobile-links">Contact</p></a>
