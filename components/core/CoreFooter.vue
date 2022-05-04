@@ -9,7 +9,7 @@
         </div>
         <div class="col-span-12 md:col-span-3 flex items-center md:items-start flex-col">
           <p>Start a project</p>
-          <a href="mailto:hello@waisdigital.com"><p class="font-bold txt anim-text-flow text-2xl">hello@waisdigital.com</p></a>
+          <a href="mailto:hello@waisdigital.com"><p class="font-bold gradient-text text-2xl">hello@waisdigital.com</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start  flex-col">
           <a href="/about"><p class="footer-links">About us</p></a>
@@ -84,5 +84,12 @@
     font-size: 18px;
     line-height: 35px;
     text-transform: uppercase;
+  }
+
+  .gradient-text {
+    /*font-size: 72px;*/
+    background: -webkit-linear-gradient(45deg,#b6462b, #66d0a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>

@@ -20,14 +20,30 @@ html, body {
   /*font-family: "Pangram Sans", serif;*/
   width: 100%;
   height: 100%;
+  /*overflow-x: hidden;*/
 }
 
 
 .main-banner {
-  background: linear-gradient(-45deg, #F7633F, #99FCCE, #B749E6, #B55DE7);
-  background-size: 250% 250%;
-  animation: gradient 20s ease infinite;
+  /*background: linear-gradient(90deg, #F7633F, #99FCCE, #B749E6, #B55DE7);*/
+  /*background-size: 150% 150%;*/
+  /*animation: gradient 20s ease infinite;*/
   height: 45rem;
+  /*animation:  hue-animation 20s alternate infinite;*/
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /*transform: scale(1);*/
+}
+
+
+@keyframes hue-animation {
+  100% {
+    filter: hue-rotate(10deg);
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -133,7 +149,8 @@ input:checked ~ .dot {
 
 .is-dark {
   background: url('../img/background.png'), #E5E5E5;
-  background-size: 100px 100px;
+  filter: opacity(90%);
+  background-size: 150px 150px;
   position: relative;
   @apply text-black dark:text-white
 }

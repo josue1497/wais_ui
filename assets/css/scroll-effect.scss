@@ -12,12 +12,11 @@
   box-sizing: border-box;
   position: relative;
   opacity: .4;
-  transition: all ease-in-out .55s;
+  transition: all ease-in-out .5s;
   transform: scale(.7);
 
   &.isVisible {
     opacity: 1;
-    transform: none;
   }
 
 }

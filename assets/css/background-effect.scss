@@ -1,0 +1,84 @@
+//@mixin dots($count) {
+//  $text-shadow: ();
+//  @for $i from 0 through $count {
+//    $text-shadow: $text-shadow,
+//    (-.5+(random()) * 100) + em
+//    (-.5+(random()) * 100) + em
+//    7px
+//    hsla(random() * 360, 100%, 50%,.9);
+//  }
+//  text-shadow: $text-shadow;
+//}
+//
+//
+//.main-banner {
+//  background: transparent;
+//}
+//
+//.main-banner::before, .main-banner::after {
+//  position: fixed;
+//  top: 50%;
+//  left: 50%;
+//  width: 3em;
+//  height: 3em;
+//  content: '.';
+//  mix-blend-mode: screen;
+//  animation: 44s -27s move infinite ease-in-out alternate;
+//}
+//
+//
+////.main-banner::before {
+////
+////}
+////
+////.main-banner::after {
+////  @include dots(40);
+////  animation-duration: 43s;
+////  animation-delay: -32s;
+////}
+//
+////head::before {
+////  @include dots(40);
+////  animation-duration: 42s;
+////  animation-delay: -23s;
+////}
+////
+////head::after {
+////  @include dots(40);
+////  animation-duration: 41s;
+////  animation-delay: -19s;
+////}
+//
+//.main-banner::before, .main-banner::after {
+//  content: '';
+//  @include dots(40);
+//  letter-spacing: .5em;
+//  //text-shadow: 0 0 5px #000;
+//  white-space: pre;
+//  color: transparent;
+//  position: fixed;
+//  //top: 50%;
+//  //left: 50%;
+//  z-index: 1;
+//  transform: translate(-50%,-50%);
+//  text-align: center;
+//  //color: #999;
+//  animation-duration: 44s;
+//  animation-delay: -27s;
+//}
+//
+////html:first-line {
+////  font-size: 300%;
+////  font-style: italic;
+////  letter-spacing: 0;
+////  color: #fff;
+////}
+//
+//@keyframes move {
+//  from {
+//    transform: rotate(0deg) scale(12) translateX(-20px);
+//  }
+//  to {
+//    transform: rotate(360deg) scale(18) translateX(20px);
+//  }
+//}

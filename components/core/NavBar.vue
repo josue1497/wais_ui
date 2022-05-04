@@ -163,19 +163,6 @@
             },
             isElementInViewport(el) {
                 const rect = el.getBoundingClientRect();
-                console.log('rect', rect)
-                console.log('values', rect.top ,
-                    rect.left ,
-                    rect.bottom ,
-                    window.innerHeight , document.documentElement.clientHeight ,
-                    rect.right, window.innerWidth , document.documentElement.clientWidth)
-                console.log('validation', (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <=
-                    (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                ))
                 return (
                     rect.top >= 0 &&
                     rect.left >= 0 &&
