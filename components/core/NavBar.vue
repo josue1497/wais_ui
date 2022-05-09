@@ -52,7 +52,6 @@
                 Services
               </a>
             </li>
-            <img class="red" :class="{ blue: true, green: false, yellow: 1 > 0 }" />
             <li class="menu-item">
               <a href="/about"
                  class="menu-item-link"

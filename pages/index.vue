@@ -1,8 +1,8 @@
 <template>
   <div class="">
-    <section class="w-full flex main-banner relative" @mousemove="updateSpotlight" @mouseleave="leave"
+    <section class="w-full flex main-banner relative overflow-hidden" @mousemove="updateSpotlight" @mouseleave="leave"
              @mouseenter="enter">
-      <canvas width="32" height="32" class="absolute"></canvas>
+      <canvas width="32" height="32" class="absolute" style="transform: scale(2)"></canvas>
       <div class="circle-out" v-if="showPointer">
         <div class="circle circle-in-1" id="circle"></div>
         <div class="circle circle-in-2"></div>
