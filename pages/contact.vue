@@ -2,12 +2,12 @@
   <div class="is-dark px-3 md:px-14 py-16">
     <section class="w-full flex" id="careers-1">
       <div class="flex flex-col justify-center items-start m-auto w-full">
-        <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full md:w-3/4 ">
-          <h1 class="text-title  mx-auto md:mr-auto text-center flat-2">
+        <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 ">
+          <h1 class="text-[50px] md:text-[180px] lg:text-[288px] font-normal mx-auto md:mr-auto text-center flat-2">
             Let's talk
           </h1>
-          <div class="flex justify-center flex-col items-end ml-auto w-10/12 md:w-1/2 py-5 md:py-10 px-5 flat-2">
-            <p class="text-subtitle ml-auto leading-title ">
+          <div class="flex justify-center flex-col items-end ml-auto w-10/12 md:w-1/2 lg:w-3/4 py-3 md:py-6 lg:py-8 px-5 flat-2">
+            <p class="text-[18px] md:text-[32px] lg:text-[48px]  ml-auto ">
               Complete this info and we'll get back to you in 48 hours or less.
             </p>
           </div>
@@ -33,14 +33,14 @@
           <button class="send-button">Send</button>
         </div>
         <div class="flex w-full p-5 flex-col">
-          <div class="flex flex-col w-3/4 md:w-1/3 ml-auto">
-            <p class="mr-auto text-sm md:text-lg">If you want to communicate directly</p>
+          <div class="flex flex-col w-3/4 md:w-1/2 lg:w-1/3 ml-auto">
+            <p class="mr-auto text-[13px] md:text-[24px] lg:text-[36px]">If you want to communicate directly</p>
             <div class="flex flex-col mr-auto justify-evenly text-2xl py-2">
-              <p class="ml-auto text-xl md:text-3xl">
+              <p class="ml-auto text-[27px] md:text-[54px] lg:text-[72px] leading-[2rem] md:leading-[3rem] lg:leading-[5rem]">
                 <a href="tel:+58414-3417791"><span class="block">+58 414-3417791</span></a>
                 <a href="tel:+58412-9507154"><span class="block">+58 412-9507154</span></a>
               </p>
-              <div class="flex mr-auto flex-row justify-evenly text-xl md:text-2xl my-4">
+              <div class="flex mr-auto flex-row justify-evenly text-xl md:text-2xl my-4 text-[18px] md:text-[28px] lg:text-[36px]">
                 <a href="tel:+58414-3417791"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://t.me/waisdigital" target="_blank"><i class="fa-solid fa-paper-plane mx-5"></i></a>
                 <a href="https://wa.me/584143417791" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>

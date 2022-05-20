@@ -3,7 +3,6 @@
     :class="`flex ${justifyContent} ${itemsContent} w-full px-${smPx} md:px-${px} is-dark relative`"
   >
     <slot></slot>
-    <!--    <div :id="`pointer-${id}`" class="follower" v-if="showPointer"></div>-->
   </section>
 </template>
 

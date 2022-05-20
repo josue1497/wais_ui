@@ -8,7 +8,7 @@
           </a>
         </div>
         <div class="col-span-12 md:col-span-3 flex items-center md:items-start flex-col">
-          <p>Start a project</p>
+          <p class="text-[14px] md:text-[20px] lg:text-[24px]">Start a project</p>
           <a href="mailto:hello@waisdigital.com"><p class="font-bold gradient-text text-2xl">hello@waisdigital.com</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start  flex-col">
@@ -69,25 +69,21 @@
         components: {
             Logo
         },
-        mounted() {
-            const text = document.querySelector('.txt');
-            if (text) {
-                const chars = text.textContent.split('');
-                if (chars.length) text.innerHTML = `<span>${chars.join('</span><span>')}</span>`;
-            }
-        },
     }
 </script>
 
+
 <style scoped>
+
   .footer-links {
-    font-size: 18px;
-    line-height: 35px;
-    text-transform: uppercase;
+    @apply text-[14px] md:text-[18px] lg:text-[22px] uppercase
+    /*font-size: 18px;*/
+    /*line-height: 35px;*/
+    /*text-transform: uppercase;*/
   }
 
   .gradient-text {
-    /*font-size: 72px;*/
+    @apply text-[14px] md:text-[20px] lg:text-[24px];
     background: -webkit-linear-gradient(45deg,#b6462b, #66d0a3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

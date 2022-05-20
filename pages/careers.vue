@@ -1,21 +1,22 @@
 <template>
-  <div class="is-dark pb-14">
-    <HeadSection class="w-full h-screen flex" id="careers-1" color="#2A00FF">
+  <div class="is-dark pb-14 overflow-x-hidden">
+    <HeadSection class="w-full h-[30rem] md:h-screen flex" id="careers-1" color="#2A00FF">
       <div class="flex flex-col justify-center items-center m-auto w-full">
         <div class="flex flex-col justify-end items-end title-content h-full w-full py-10">
-          <h1 class="text-7xl md:text-[20vh]  mx-auto leading-title text-center">
+          <h1 class="text-[72px] md:text-[180px] lg:text-[288px] font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
             Careers
           </h1>
-          <hr class="border border-t-black dark:border-t-white w-full mt-5">
+          <hr class="border border-t-black dark:border-t-white w-full mt-1 md:mt-2 lg:mt-5">
           <div class="mx-auto w-3/4 flex flex-col justify-center items-center">
-            <div class="flex justify-center flex-col items-start mr-auto xs:w-3/4 md:w-5/12 py-10 px-5">
-              <p class="text-lg md:text-2xl mr-auto leading-title ">
+            <div class="flex justify-center flex-col items-start mr-auto w-full md:w-3/4 lg:w-5/12 py-10 px-5">
+              <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto ">
                 We believe that providing better results, creates a positive impact on companies and people.
               </p>
-              <p class="text-lg md:text-2xl mr-auto leading-title bg-[#666BE4] text-white">#PositiveChange</p>
+              <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto bg-[#666BE4] text-white">#PositiveChange</p>
             </div>
-            <div class="flex justify-center flex-col items-start xs:w-3/4 md:w-5/12 md:py-10 ml-auto px-4">
-              <p class="xs:text-lg md:text-2xl mr-auto leading-title">
+            <div class="point seven flat-1"></div>
+            <div class="flex justify-center flex-col items-start xs:w-3/4 md:w-5/12 md:py-10 ml-auto px-4 flat-1">
+              <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem]  mr-auto leading-title">
                 We are a team of <span class="text-white dark:text-slate-400">observant and creative people</span>,
                 passionate
                 about the detail.
@@ -30,13 +31,13 @@
         <div class="flex flex-col justify-end items-end title-content w-full relative">
           <div class="hero-image w-full mx-auto flat-2"></div>
           <div class="flex justify-center flex-col items-start mr-auto w-3/4 md:w-1/2 px-5 md:px-32 py-8 font-medium flat-2">
-            <p class="text-2xl md:text-[32px] mr-auto leading-title">
+            <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem]  mr-auto ">
               We like to <span class="text-white dark:text-slate-400">keep up with the trends</span> and market changes.
             </p>
           </div>
           <div class="point six flat-1"></div>
           <div class="flex justify-center flex-col items-start w-1/2 ml-auto relative">
-            <p class="text-xl md:text-5xl mr-auto leading-title w-full flat-2">
+            <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto w-full flat-2">
               Would you like to <span class="join-ellipse relative">join us?</span>
             </p>
           </div>
@@ -83,6 +84,15 @@
     filter: blur(20vh);
   }
 
+  .point.seven {
+    right: 35vh;
+    top: 50vh;
+    width: 55vh;
+    height: 55vh;
+    background: #2A00FF;
+    filter: blur(15vh);
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .point.six {
@@ -90,6 +100,14 @@
       top: 70vh;
       width: 30vh;
       height: 30vh;
+      filter: blur(20vh);
+    }
+
+    .point.seven {
+      right: 15vh;
+      top: 60vh;
+      width: 20vh;
+      height: 20vh;
     }
 
   }
@@ -102,6 +120,13 @@
       width: 30vh;
       height: 30vh;
     }
+
+    .point.seven {
+      right: 15vh;
+      top: 60vh;
+      width: 20vh;
+      height: 20vh;
+    }
   }
 
   /* Medium devices (landscape tablets, 768px and up) */
@@ -109,8 +134,14 @@
     .point.six {
       left: 20vh;
       top: 35vh;
-      width: 60vh;
-      height: 60vh;
+      width: 40vh;
+      height: 40vh;
+    }
+    .point.seven {
+      right: 15vh;
+      top: 60vh;
+      width: 20vh;
+      height: 20vh;
     }
   }
 
@@ -119,8 +150,14 @@
     .point.six {
       left: 20vh;
       top: 35vh;
-      width: 60vh;
-      height: 60vh;
+      width: 50vh;
+      height: 50vh;
+    }
+    .point.seven {
+      right: 15vh;
+      top: 60vh;
+      width: 30vh;
+      height: 30vh;
     }
   }
 
@@ -131,6 +168,12 @@
       top: 35vh;
       width: 60vh;
       height: 60vh;
+    }
+    .point.seven {
+      right: 30vh;
+      top: 60vh;
+      width: 40vh;
+      height: 40vh;
     }
   }
 </style>

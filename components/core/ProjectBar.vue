@@ -1,15 +1,14 @@
 <template>
-  <div class="px-5 border-t border-black m-3 md:m-6 cursor-default">
+  <div class="p-5 border-t border-black m-3 md:m-6 cursor-default">
     <div class="w-full">
-      <ul class="w-48 divide-y-2 divide-gray-200">
-        <li class="flex flex-col md:flex-row justify-between items-start md:items-center space-x-6  px-4 h-auto md:h-28 text-justify">
-          <div class="text-[2rem] md:text-[6rem] leading-[10vh] text-justify whitespace-nowrap" @click="show">
+      <ul class="group w-full divide-y-2 divide-gray-200 hover:cursor-pointer	">
+        <li class="flex flex-col md:flex-row items-start md:items-center space-x-6 w-auto px-4 h-auto md:h-28 text-justify">
+          <div class="text-[72px] md:text-[105px] lg:text-[144px] leading-[10vh] text-justify whitespace-nowrap" @click="show">
             {{name}}
           </div>
-          <div v-if="visible" class="hidden md:block">
-            <div :class=" ` w-[200px]  ${marginElement(index)}`" v-for="(tag, index) in tags" :key="index"
-                 :style="{transform:`rotate(${rotateElement(index)}deg)`}">
-              <a href="#" class="text-[1.5rem] bg-[#232531] text-[#FBFBFB] mr-2 px-2.5 rounded-xl">{{tag}}</a>
+          <div class="hidden md:grid opacity-0 group-hover:opacity-100 transition-all relative grid-cols-12 gap-4 w-1/2 mr-auto">
+            <div :class=" `w-auto col-span-${index === 2 ? '12': '6'} badge-${index+1} flex justify-center items-center`" v-for="(tag, index) in tags" :key="index">
+              <a href="#" class="text-[36px] lg:text-[50px] bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
             </div>
           </div>
           <div v-if="visible" class="block md:hidden">
@@ -41,6 +40,10 @@
                 this.showElement = !this.showElement;
                 this.$emit('selection', this.name)
             },
+            validateIndex(arr = [], index) {
+                console.log(arr.at(index));
+                return arr.at(index)
+            },
             rotateElement(index) {
                 if (this.tags.length > 0) {
                     return ((index * 20) - 20)
@@ -67,5 +70,21 @@
     height: 30vh;
     background: #2A00FF;
     filter: blur(20vh);
+  }
+
+  .badge-1 {
+    transform: rotate(345deg);
+  }
+  .badge-2 {
+    transform: rotate(15deg);
+  }
+  .badge-3 {
+    transform: rotate(-3deg);
+  }
+  .badge-4 {
+    transform: rotate(5deg);
+  }
+  .badge-5 {
+    transform: rotate(345deg);
   }
 </style>
