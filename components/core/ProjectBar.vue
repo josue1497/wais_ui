@@ -4,7 +4,7 @@
       <ul class="group w-full divide-y-2 divide-gray-200 hover:cursor-pointer	">
         <li class="flex flex-col md:flex-row items-start md:items-center space-x-6 w-auto px-4 h-auto md:h-28 text-justify">
           <div class="text-[72px] md:text-[105px] lg:text-[144px] leading-[10vh] text-justify whitespace-nowrap" @click="show">
-            {{name}}
+            <NuxtLink :to="link">{{name}}</NuxtLink>
           </div>
           <div class="hidden md:grid opacity-0 group-hover:opacity-100 transition-all relative grid-cols-12 gap-4 w-1/2 mr-auto">
             <div :class=" `w-auto col-span-${index === 2 ? '12': '6'} badge-${index+1} flex justify-center items-center`" v-for="(tag, index) in tags" :key="index">
@@ -29,6 +29,7 @@
         name: "ProjectBar",
         props: {
             name: {type: String, default: 'Unnamed'},
+            link: {type: String, default: '404'},
             tags: {type: Array, default: () => ([])},
             visible: false
         },
@@ -38,7 +39,7 @@
         methods: {
             show() {
                 this.showElement = !this.showElement;
-                this.$emit('selection', this.name)
+                // this.$emit('selection', this.name)
             },
             validateIndex(arr = [], index) {
                 console.log(arr.at(index));

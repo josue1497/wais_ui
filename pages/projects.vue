@@ -4,7 +4,7 @@
       <h1 class="text-[72px] md:text-[104px] lg:text-[144px] text-center m-14">Projects</h1>
       <div class="point one flat-1"></div>
       <ProjectBar v-for="(proj, index) of projects" :name="proj.name" :tags="proj.tags" :visible="project === proj.name"
-                  :key="index" @selection="setProject"></ProjectBar>
+                  :key="index" @selection="setProject" :link="proj.link"></ProjectBar>
       <div class="point two flat-1"></div>
     </div>
   </div>
@@ -22,37 +22,44 @@
                 {
                     id: 1,
                     name: 'Farmacia',
-                    tags: ['Health', 'SuperMarket', 'Branding']
+                    tags: ['Health', 'SuperMarket', 'Branding'],
+                    link: './gym'
                 },
                 {
                     id: 2,
                     name: 'PamyPam',
-                    tags: ['Gastronomy', 'Social Marketing','Strategy', 'Branding']
+                    tags: ['Gastronomy', 'Social Marketing','Strategy', 'Branding'],
+                    link: './gym'
                 },
                 {
                     id: 3,
                     name: 'Clinica Hebe',
-                    tags: ['Health', 'Web design', 'Social marketing', 'Branding', 'Content creation']
+                    tags: ['Health', 'Web design', 'Social marketing', 'Branding', 'Content creation'],
+                    link: './gym'
                 },
                 {
                     id: 4,
                     name: 'Hamsa',
-                    tags: ['Beauty', 'SuperMarket', 'Branding']
+                    tags: ['Beauty', 'SuperMarket', 'Branding'],
+                    link: './gym'
                 },
                 {
                     id: 5,
                     name: 'Premium Gym',
-                    tags: ['Health', 'SuperMarket', 'Branding']
+                    tags: ['Health', 'SuperMarket', 'Branding'],
+                    link: './gym'
                 },
                 {
                     id: 6,
                     name: 'Bubble Wafle',
-                    tags: ['Gastronomy', 'SuperMarket', 'Branding']
+                    tags: ['Gastronomy', 'SuperMarket', 'Branding'],
+                    link: './gym'
                 },
                 {
                     id: 7,
                     name: 'Resinca',
-                    tags: ['Health', 'SuperMarket', 'Branding']
+                    tags: ['Health', 'SuperMarket', 'Branding'],
+                    link: './gym'
                 },
             ],
 

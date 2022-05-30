@@ -2,7 +2,8 @@
   <div class="">
     <section class="w-full flex main-banner relative overflow-hidden" @mousemove="updateSpotlight" @mouseleave="leave"
              @mouseenter="enter">
-      <canvas width="32" height="32" class="absolute" style="transform: scale(2)"></canvas>
+      <canvas width="32" height="32" class="absolute" id="granim-canvas"></canvas>
+      <!--      style="transform: scale(2)"-->
       <div class="hidden md:block circle-out ">
         <div class="circle circle-in-1" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
         <div class="circle circle-in-2" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
@@ -41,15 +42,17 @@
     </section>
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
-        <h3 class="text-[36px] md:text-[55px] lg:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-left text-black dark:text-white w-full lg:w-3/4 px-8">
+        <h3
+          class="text-[36px] md:text-[55px] lg:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-left text-black dark:text-white w-full lg:w-3/4 px-8">
           Attract <span class="customer"></span> who connect with the essence of your brand
         </h3>
       </div>
     </CoreSection>
     <CoreSection id="2" sm-px="12" px="16" sm-size="72" class="h-72 md:h-screen relative">
-      <h3 class="text-[24px] md:text-[44px] lg:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-center w-11/12 md:w-full flat-3"
-          data-aos="slide-up"
-          :data-aos-delay="100">
+      <h3
+        class="text-[24px] md:text-[44px] lg:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-center w-11/12 md:w-full flat-3"
+        data-aos="slide-up"
+        :data-aos-delay="100">
         <span data-aos="fade-up"
               :data-aos-delay="100">Marketing
         <span class="text-[#666be4]">+</span>

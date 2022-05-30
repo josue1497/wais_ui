@@ -41,34 +41,34 @@
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li class="menu-item">
-              <a href="/projects"
+              <NuxtLink to="projects"
                  class="menu-item-link"
                  aria-current="page">Projects
-              </a>
+              </NuxtLink>
             </li>
             <li class="menu-item">
-              <a href="/services"
+              <NuxtLink to="/services"
                  class="menu-item-link">
                 Services
-              </a>
+              </NuxtLink>
             </li>
             <li class="menu-item">
-              <a href="/about"
+              <NuxtLink to="/about"
                  class="menu-item-link"
                  aria-current="page">About us
-              </a>
+              </NuxtLink>
             </li>
             <li class="menu-item">
-              <a href="/contact"
+              <NuxtLink to="/contact"
                  class="menu-item-link">
                 Contact
-              </a>
+              </NuxtLink>
             </li>
             <li class="menu-item">
-              <a href="/careers"
+              <NuxtLink to="/careers"
                  class="menu-item-link">
                 Careers
-              </a>
+              </NuxtLink>
             </li>
             <li class="flex justify-center items-center">
               <label for="toggleB" class="flex items-center cursor-pointer">
@@ -106,12 +106,12 @@
       <transition name="slide-fade">
         <div class="w-full h-screen is-dark px-14" v-if="visible">
           <div class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start  flex-col">
-            <a href="/about"><p class="mobile-links">About us</p></a>
-            <a href="/services"><p class="mobile-links">Services</p></a>
-            <a href="/about"><p class="mobile-links">About us</p></a>
-            <a href="/projects"><p class="mobile-links">Projects</p></a>
-            <a href="/careers"><p class="mobile-links">Careers</p></a>
-            <a href="/contact"><p class="mobile-links">Contact</p></a>
+            <NuxtLink to="/about"><p class="mobile-links">About us</p></NuxtLink>
+            <NuxtLink to="/services"><p class="mobile-links">Services</p></NuxtLink>
+            <NuxtLink to="/about"><p class="mobile-links">About us</p></NuxtLink>
+              <NuxtLink to="/projects"><p class="mobile-links">Projects</p></NuxtLink>
+              <NuxtLink to="/careers"><p class="mobile-links">Careers</p></NuxtLink>
+              <NuxtLink to="/contact"><p class="mobile-links">Contact</p></NuxtLink>
           </div>
         </div>
       </transition>
