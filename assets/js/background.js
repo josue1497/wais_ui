@@ -34,13 +34,13 @@ let t = 0;
 
 const run = async function () {
   await timeout(100)
-  for (x = 0; x <= 35; x++) {
-    for (y = 0; y <= 35; y++) {
+  for (let x = 0; x <= 35; x++) {
+    for (let y = 0; y <= 35; y++) {
       col(x, y, R(x, y, t), G(x, y, t), B(x, y, t));
     }
   }
   t = t + 0.120;
   window.requestAnimationFrame(run);
-}
+};
 
 run();

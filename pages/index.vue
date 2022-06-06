@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <section class="w-full flex main-banner relative overflow-hidden" @mousemove="updateSpotlight" @mouseleave="leave"
              @mouseenter="enter">
       <canvas width="32" height="32" class="absolute" id="granim-canvas"></canvas>
@@ -14,14 +14,14 @@
       <div class="flex flex-col justify-start items-start my-44 md:my-20 w-full relative">
         <div class="flex flex-col justify-center items-center w-full ">
           <h1
-            class="text-[77px] md:text-[200px] lg:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[12rem] lg:leading-[15rem] flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
+            class="text-[77px] md:text-[180px] lg:text-[200px] xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[15rem] flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
             <span class="mr-auto">Think</span><span class="ml-auto">Wisely</span>
           </h1>
         </div>
       </div>
       <div class="w-full md:w-3/4 absolute inset-x-0 bottom-0  px-0 py-10 md:px-14">
         <h1
-          class="text-[90px] md:text-[180px] lg:text-[329px] font-normal leading-[5rem] md:leading-[10rem] lg:leading-[20rem] flex flex-col w-3/4 md:w-full GFG uppercase">
+          class="text-[90px] md:text-[180px] lg:text-[210px] xl:text-[359px] font-normal leading-[5rem] md:leading-[8rem] lg:leading-[12rem] xl:leading-[20rem] flex flex-col w-3/4 md:w-full GFG uppercase">
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
@@ -43,33 +43,30 @@
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
         <h3
-          class="text-[36px] md:text-[55px] lg:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-left text-black dark:text-white w-full lg:w-3/4 px-8">
-          Attract <span class="customer"></span> who connect with the essence of your brand
+          class="text-[36px] md:text-[55px] lg:text-[70px] xl:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[8rem] text-left text-black dark:text-white w-full lg:w-3/4 px-8 relative">
+          Attract <span class="customer relative"></span> who connect with the essence of your brand
         </h3>
       </div>
     </CoreSection>
     <CoreSection id="2" sm-px="12" px="16" sm-size="72" class="h-72 md:h-screen relative">
       <h3
-        class="text-[24px] md:text-[44px] lg:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[8rem] text-center w-11/12 md:w-full flat-3"
+        class="text-[24px] md:text-[44px] lg:text-[60px] xl:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[8rem] text-center w-11/12 md:w-full flat-3"
         data-aos="slide-up"
         :data-aos-delay="100">
-        <span data-aos="fade-up"
-              :data-aos-delay="100">Marketing
+        <span>Marketing
         <span class="text-[#666be4]">+</span>
         Communication <span
             class="text-[#df6469]">+</span>
-        <span data-aos="fade-up" class="block"
-              :data-aos-delay="300">Customer Experience</span> <span class="block">Graphic Design
+        <span class="block">Customer Experience</span> <span class="block">Graphic Design
         <span class="text-[#5fd19c]">+</span>
-        <span data-aos="fade-up"
-              :data-aos-delay="400">Web / Apps <span class="block">Development</span></span>
+        <span>Web / Apps <span class="block">Development</span></span>
           </span>
         </span>
       </h3>
       <div class="point one flat-1"></div>
     </CoreSection>
     <CoreSection items="start" justify="center" id="3" color="#2A00FF" sm-px="0" sm-size="64"
-                 class="h-auto md:h-[30rem] lg:h-[50rem] relative">
+                 class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative">
       <div class="w-full px-0 md:px-0 text-center flat-2">
         <h3 class="text-[22px] md:text-[44px] lg:text-[74px] text-center">
           Our clients
@@ -161,10 +158,29 @@
     height: 150px;
     width: 300px;
     position: absolute;
-    transition: all 1ms ease-in-out;
+    transition: all .3ms ease-in-out;
     will-change: transform;
     transform-style: preserve-3d;
+  }
 
+  .circle-in-2 {
+    margin-top: 3vh;
+    margin-left: 2vh;
+  }
+
+  .circle-in-3 {
+    margin-top: 6vh;
+    margin-left: 4vh;
+  }
+
+  .circle-in-4 {
+    margin-top: 9vh;
+    margin-left: 6vh;
+  }
+
+  .circle-in-5 {
+    margin-top: 12vh;
+    margin-left: 8vh;
   }
 
   .marquee-content {
@@ -198,55 +214,111 @@
     -webkit-text-stroke-color: black;
   }
 
+  .customer {
+    background: #666BE4;
+    padding: 0 10px 0 10px;
+    color: #fff;
+    line-height: 1px;
+    position: relative;
+    box-sizing: content-box;
+  }
+
+  .customer::after {
+    content: "";
+    background: #fff;
+    height: 10px;
+    border-bottom: 0;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    animation: line infinite 4s;
+  }
+
   .customer::before {
     content: "customers";
-    animation: fans infinite 5s;
+    animation: fans infinite 4s;
     padding-left: 10px;
   }
 
-  .strikethrough {
-    display: inline-block;
-    position: relative;
-    transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
-  }
-
-  .strikethrough:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    box-shadow: 0 1px rgb(255, 255, 255);
-    margin-top: -0.7em;
-    background: black;
-    transform-origin: center left;
-    -webkit-animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
-    animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
-    transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+  @keyframes line {
+    0% {
+      width: 0;
+    }
+    10% {
+      width: 0;
+    }
+    20% {
+      width: 100%;
+    }
+    30% {
+      width: 100%;
+      transform: scaleX(1);
+      transform-origin: center right;
+    }
+    40% {
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+    50% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+    60% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+    70% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+    80% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
+    90% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(0);
+      transform-origin: center right;
+    }
   }
 
   @keyframes fans {
-
     0% {
       content: "customers";
-      text-decoration: none;
     }
-
-    50% {
+    10% {
       content: "customers";
-      text-decoration: line-through;
     }
-
-    75% {
+    20% {
+      content: "customers";
+    }
+    30% {
       content: "fans";
-      text-decoration: none;
     }
-  }
-
-  .customer {
-    background: #666BE4;
-    color: #fff;
-    line-height: 1px;
+    40% {
+      content: "fans";
+    }
+    50% {
+      content: "fans";
+    }
+    60% {
+      content: "fans";
+    }
+    70% {
+      content: "fans";
+    }
+    80% {
+      content: "fans";
+    }
+    90% {
+      content: "fans";
+    }
+    100% {
+      content: "fans";
+    }
   }
 
   .dark .customer {
