@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "yarn generate && git add . && git commit -m \"Deploy\" && git push origin main"
+    "deploy": "yarn generate && firebase deploy",
+    "render": "git add . && git commit -m \"Deploy\" && git push origin main"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
