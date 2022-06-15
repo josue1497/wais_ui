@@ -8,7 +8,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "deploy": "yarn generate && firebase deploy",
-    "render": "git add . && git commit -m \"Deploy\" && git push full-origin --all"
+    "render": "git add . && git commit -m \"Deploy\" && git push full-origin main"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
