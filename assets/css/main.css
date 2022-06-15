@@ -79,6 +79,12 @@ canvas {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .main-banner {
+    height: 55rem;
+  }
+}
+
+@media only screen and (min-width: 1536px) {
+  .main-banner {
     height: 65rem;
   }
 }
@@ -381,4 +387,20 @@ input[type="text"]::placeholder, textarea::placeholder {
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+}
+
+.home-title {
+  @apply text-[77px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem]
+}
+
+.home-subtitle {
+  @apply text-[90px] md:text-[180px] lg:text-[210px] xl:text-[300px] 2xl:text-[359px] font-normal leading-[5rem] md:leading-[8rem] lg:leading-[12rem] xl:leading-[16rem] 2xl:leading-[20rem]
+}
+
+.wais-text {
+  @apply text-[36px] md:text-[55px] lg:text-[70px] xl:text-[95px] 2xl:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[6rem] 2xl:leading-[8rem];
+}
+
+.wais-text-1 {
+  @apply text-[24px] md:text-[44px] lg:text-[60px] xl:text-[70px] 2xl:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[6rem] 2xl:leading-[8rem];
 }

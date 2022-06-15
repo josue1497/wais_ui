@@ -18,14 +18,14 @@
       <div class="flex flex-col justify-start items-start my-44 md:my-20 w-full relative" style="z-index: 10">
         <div class="flex flex-col justify-center items-center w-full ">
           <h1
-            class="text-[77px] md:text-[180px] lg:text-[200px] xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[15rem] flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
+            class="home-title flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
             <span class="mr-auto">Think</span><span class="ml-auto">Wisely</span>
           </h1>
         </div>
       </div>
       <div class="w-full md:w-3/4 absolute inset-x-0 bottom-0  px-0 py-10 md:px-14">
         <h1
-          class="text-[90px] md:text-[180px] lg:text-[210px] xl:text-[359px] font-normal leading-[5rem] md:leading-[8rem] lg:leading-[12rem] xl:leading-[20rem] flex flex-col w-3/4 md:w-full GFG uppercase">
+          class="home-subtitle flex flex-col w-3/4 md:w-full GFG uppercase">
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
@@ -47,14 +47,14 @@
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
         <h3
-          class="text-[36px] md:text-[55px] lg:text-[70px] xl:text-[114px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[8rem] text-left text-black dark:text-white w-full lg:w-3/4 px-8 relative">
+          class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative">
           Attract <span class="customer relative"></span> who connect with the essence of your brand
         </h3>
       </div>
     </CoreSection>
     <CoreSection id="2" sm-px="12" px="16" sm-size="72" class="h-72 md:h-screen relative">
       <h3
-        class="text-[24px] md:text-[44px] lg:text-[60px] xl:text-[82px] leading-[2rem] md:leading-[4rem] lg:leading-[5rem] xl:leading-[8rem] text-center w-11/12 md:w-full flat-3"
+        class="wais-text-1 text-center w-11/12 md:w-full flat-3"
         data-aos="slide-up"
         :data-aos-delay="100">
         <span>Marketing
@@ -72,7 +72,7 @@
     <CoreSection items="start" justify="center" id="3" color="#2A00FF" sm-px="0" sm-size="64"
                  class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative">
       <div class="w-full px-0 md:px-0 text-center flat-2">
-        <h3 class="text-[36px] md:text-[44px] lg:text-[74px] text-center font-normal">
+        <h3 class="wais-text text-center font-normal">
           Our clients
         </h3>
         <div class="w-full overflow-x-hidden hidden md:flex">
