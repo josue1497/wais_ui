@@ -8,11 +8,11 @@
         </div>
       </div>
       <div class="px-4 md:px-12 lg:px-24 py-14 flex flex-col w-full md:w-11/12 mx-auto">
-        <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] lg:leading-[4rem] w-full md:w-1/2 h-56 md:h-80">
+        <p class="wais-text-2 w-full md:w-1/2 h-56 md:h-80">
           We’re a team of creative professionals, we’re dynamic, always in a quest for
           continuous growth.</p>
-        <div class="point one flat-1"></div>
-        <p class="text-2xl md:text-[24px] lg:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[3rem]  ml-auto w-4/6 mt-8 md:mt-6 flat-1">
+        <div class="point about-one flat-1"></div>
+        <p class="wais-text-3 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
           <span class="block">We <span class="text-white dark:text-gray-400 ">are passionate</span> about <span
             class="text-white dark:text-gray-400 ">creativity and details,</span></span>
           <span class="block my-4"> we trust that each human being has a unique talent, that is why our team is made up of professionals from different disciplines,</span>
@@ -26,7 +26,7 @@
         <div class="flex flex-col justify-end items-end title-content w-full h-full">
           <div class="flex justify-center flex-col items-start w-full md:w-1/2 mr-auto ml-auto md:mr-0  p-5 md:p-10">
             <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] lg:leading-[4rem] ">
-              <span class="block"><span class="customer">Together</span>, we create better experiences for brands, for people.</span>
+              <span class="block"><span class="about-customer">Together</span>, we create better experiences for brands, for people.</span>
               <span class="block my-4">We seek to generate a positive impact.
               #PositiveChange</span>
             </p>
@@ -68,7 +68,7 @@
     width: 100%;
   }
 
-  .customer {
+  .about-customer {
     background: #666BE4;
     color: #fff;
     padding: 4px 10px;
@@ -89,7 +89,7 @@
     filter: blur(20vh);
   }
 
-  .point.one {
+  .point.about-one {
     right: 50vh;
     top: 47vh;
     width: 55vh;

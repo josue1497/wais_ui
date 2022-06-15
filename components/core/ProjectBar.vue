@@ -3,12 +3,12 @@
     <div class="w-full">
       <ul class="group w-full divide-y-2 divide-gray-200 hover:cursor-pointer	">
         <li class="flex flex-col md:flex-row items-start md:items-center space-x-6 w-auto px-4 h-auto md:h-28 text-justify">
-          <div class="text-[72px] md:text-[105px] lg:text-[144px] leading-[10vh] text-justify whitespace-nowrap" @click="show">
+          <div class="wais-text text-justify whitespace-nowrap" @click="show">
             <NuxtLink :to="link">{{name}}</NuxtLink>
           </div>
           <div class="hidden md:grid opacity-0 group-hover:opacity-100 transition-all relative grid-cols-12 gap-4 w-1/2 mr-auto">
             <div :class=" `w-auto col-span-${index === 2 ? '12': '6'} badge-${index+1} flex justify-center items-center`" v-for="(tag, index) in tags" :key="index">
-              <a href="#" class="text-[36px] lg:text-[50px] bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
+              <a href="#" class="wais-text-2 bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
             </div>
           </div>
           <div v-if="visible" class="block md:hidden">
