@@ -8,7 +8,7 @@
           </div>
           <div class="hidden md:grid opacity-0 group-hover:opacity-100 transition-all relative grid-cols-12 gap-4 w-1/2 mr-auto">
             <div :class=" `w-auto col-span-${index === 2 ? '12': '6'} badge-${index+1} flex justify-center items-center`" v-for="(tag, index) in tags" :key="index">
-              <a href="#" class="wais-text-2 bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
+              <a href="#" class="wais-text-3 bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
             </div>
           </div>
           <div v-if="visible" class="block md:hidden">
