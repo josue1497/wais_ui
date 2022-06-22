@@ -416,3 +416,7 @@ input[type="text"]::placeholder, textarea::placeholder {
 .wais-text-3 {
   @apply text-[14px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem]
 }
+
+.z-index-1 {
+  z-index: -1;
+}

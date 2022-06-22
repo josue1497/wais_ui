@@ -1,13 +1,10 @@
 <template>
   <div>
     <section class="w-full flex main-banner relative overflow-hidden" @mousemove="updateSpotlight" @mouseleave="leave"
-             @mouseenter="enter">
-      <!--      <canvas width="32" height="32" class="absolute" id="granim-canvas"></canvas>-->
-      <!--      style="transform: scale(2)"-->
+      @mouseenter="enter">
       <div class="super-circle s-circle-1" id="cs-1" style="top: -50%; right: -30%;"></div>
       <div class="super-circle s-circle-3" id="cs-3" style="bottom: -129%; right: -20%;"></div>
       <div class="super-circle s-circle-2" id="cs-2" style="left: -70%; top: -20%;"></div>
-<!--      <div class="super-circle s-circle-2" id="cs-6"></div>-->
       <div class="hidden md:block circle-out ">
         <div class="circle circle-in-1" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
         <div class="circle circle-in-2" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
@@ -15,62 +12,60 @@
         <div class="circle circle-in-4" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
         <div class="circle circle-in-5" :style="{transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)'}"></div>
       </div>
-      <div class="flex flex-col justify-start items-start my-44 md:my-20 w-full relative" style="z-index: 10">
+      <div class="flex flex-col justify-start items-start my-44 md:my-28 w-full relative" style="z-index: 10">
         <div class="flex flex-col justify-center items-center w-full ">
-          <h1
-            class="home-title flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
+          <h1 class="home-title flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
             <span class="mr-auto">Think</span><span class="ml-auto">Wisely</span>
           </h1>
         </div>
       </div>
       <div class="w-full md:w-3/4 absolute inset-x-0 bottom-0  px-0 py-10 md:px-14">
-        <h1
-          class="home-subtitle flex flex-col w-3/4 md:w-full GFG uppercase">
+        <h1 class="home-subtitle flex flex-col w-3/4 md:w-full GFG uppercase">
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
-      <div class="icon-bar hidden  md:block">
+      <div class="icon-bar hidden text-[16px] md:text-[20px] lg:text-[24px] xl:text-[26px] 2xl:text-[28px] md:block">
         <a href="https://www.instagram.com/waisdigital/" target="_blank"
-           class="facebook text-black bg-transparent dark:text-white"><i
-          class="fa-brands fa-instagram"></i></a>
+          class="facebook text-black bg-transparent dark:text-white"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.linkedin.com/company/wais-digital/?viewAsMember=true" target="_blank"
-           class="twitter text-black bg-transparent dark:text-white"><i
-          class="fa-brands fa-linkedin-in"></i></a>
+          class="twitter text-black bg-transparent dark:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://www.facebook.com/waisdigital" target="_blank"
-           class="google text-black bg-transparent dark:text-white"><i
-          class="fa-brands fa-facebook-f"></i></a>
+          class="google text-black bg-transparent dark:text-white"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.behance.net/waisdigita46b7/projects" target="_blank"
-           class="youtube text-black bg-transparent dark:text-white"><i
-          class="fa-brands fa-behance"></i></a>
+          class="youtube text-black bg-transparent dark:text-white"><i class="fa-brands fa-behance"></i></a>
       </div>
     </section>
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
-        <h3
-          class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative">
-          Attract <span class="customer relative"></span> who connect with the essence of your brand
+        <h3 class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative">
+          <span class="block">Attract <span class="customer relative"></span> who</span>
+          <span class="block">connect with the essence of your brand</span>
         </h3>
       </div>
     </CoreSection>
     <CoreSection id="2" sm-px="12" px="16" sm-size="72" class="h-72 md:h-screen relative">
-      <h3
-        class="wais-text-1 text-center w-11/12 md:w-full flat-3"
-        data-aos="slide-up"
-        :data-aos-delay="100">
-        <span>Marketing
-        <span class="text-[#666be4]">+</span>
-        Communication <span
-            class="text-[#df6469]">+</span>
-        <span class="block">Customer Experience</span> <span class="block">Graphic Design
-        <span class="text-[#5fd19c]">+</span>
-        <span>Web / Apps <span class="block">Development</span></span>
+      <h3 class="wais-text-1 text-center w-11/12 md:w-full flat-3">
+        <span>
+          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="200"
+            data-aos-easing="ease-in-out">Marketing</span>
+          <span class="text-[#666be4]">+</span>
+          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="450"
+            data-aos-easing="ease-in-out">Communication</span>
+          <span class="text-[#df6469]">+</span>
+          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
+            data-aos-easing="ease-in-out">Customer Experience</span>
+          <span class="block">
+            <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="950"
+              data-aos-easing="ease-in-out">Graphic Design</span> <span class="text-[#5fd19c]">+</span>
+            <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1200"
+              data-aos-easing="ease-in-out">Web / Apps <span class="block">Development</span></span>
           </span>
         </span>
       </h3>
       <div class="point one flat-1"></div>
     </CoreSection>
     <CoreSection items="start" justify="center" id="3" color="#2A00FF" sm-px="0" sm-size="64"
-                 class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative">
+      class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative">
       <div class="w-full px-0 md:px-0 text-center flat-2">
         <h3 class="wais-text text-center font-normal">
           Our clients
@@ -78,7 +73,7 @@
         <div class="w-full overflow-x-hidden hidden md:flex">
           <div class=" p-0 md:px-5 flex marquee-content w-full">
             <div class="p-2 md:p-4 flex justify-center align-center flat-2 marquee-item"
-                 v-for="({l, n}, index) of clients" :key="index">
+              v-for="({l, n}, index) of clients" :key="index">
               <img :src="!darkMode? n : l" :alt="!darkMode? n : l" class="mx-auto">
             </div>
           </div>
@@ -86,9 +81,8 @@
         <div class="w-full overflow-x-hidden inline md:hidden">
           <div class=" p-0 md:px-5 block w-full grid grid-cols-2 gap-4">
             <div :class="`py-4 px-8 md:p-4 justify-center align-center flat-2 w-full flex`"
-                 v-for="({l, n, span}, index) of smClients" :key="index">
-              <!--                 ${span ? 'col-span-2':''}-->
-              <img :src="!darkMode? n : l" :alt="!darkMode? n : l" class="">
+              v-for="({l, n, span}, index) of smClients" :key="index">
+              <img :src="!darkMode? n : l" :alt="!darkMode? n : l">
             </div>
           </div>
         </div>
@@ -200,11 +194,12 @@
                 return Math.floor(Math.round(Math.random()* maxLimit));
             },
             async updateSpotlight(e) {
+              console.log(e.pageX, e.pageY);
                 const spotlight = document.querySelectorAll(`.circle`)
                 if (spotlight) {
                     for (const el of spotlight) {
-                        await this.timeout(150);
-                        el.style.transform = `translate3d(${e.x}px, ${e.y}px, 0px) rotate(-25deg)`;
+                        await this.timeout(250);
+                        el.style.transform = `translate3d(${e.x-100}px, ${e.y}px, 0px) rotate(-25deg)`;
                     }
 
                 }
@@ -224,12 +219,11 @@
     border-radius: 50%;
     background: transparent;
     border: 1px solid #000000;
-    height: 150px;
-    width: 300px;
     position: absolute;
-    transition: all .3ms ease-in-out;
+    transition: all .8ms ease-in-out;
     will-change: transform;
     transform-style: preserve-3d;
+    @apply h-2 md:h-[50px] lg:h-[75px] xl:h-[120px] 2xl:h-[150px] w-4 md:w-[100px] lg:w-[150px] xl:w-[240px] 2xl:w-[300px];
   }
 
   .circle-in-2 {
@@ -287,7 +281,6 @@
     background: #B749E6;
     width: 200vh;
     height: 200vh;
-    /*left: 78px;*/
     /*top: 58px;*/
     /*z-index: 1;*/
     /*animation: super-circle infinite 4s;*/
@@ -342,10 +335,10 @@
   }
 
   @keyframes scroll-marquee {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
+    to {
       transform: translatex(-144vw);
     }
   }
@@ -373,12 +366,12 @@
     position: absolute;
     top: 50%;
     left: 0;
-    animation: line infinite 4s;
+    animation: line infinite 5s;
   }
 
   .customer::before {
     content: "customers";
-    animation: fans infinite 4s;
+    animation: fans infinite 5s;
     padding-left: 10px;
   }
 
@@ -430,18 +423,23 @@
   @keyframes fans {
     0% {
       content: "customers";
+      /* opacity: 1; */
     }
     10% {
       content: "customers";
+       /* opacity: .5; */
     }
     20% {
       content: "customers";
+       /* opacity: 0; */
     }
     30% {
       content: "fans";
+       /* opacity: .5; */
     }
     40% {
       content: "fans";
+      /* opacity: 1; */
     }
     50% {
       content: "fans";
@@ -561,10 +559,10 @@
     .point.two {
       right: 0;
       top: 20vh;
-      width: 60vh;
-      height: 60vh;
+      width: 40vh;
+      height: 40vh;
       background: #2A00FF;
-      filter: blur(20vh);
+      filter: blur(18vh);
     }
   }
 
@@ -581,9 +579,9 @@
   .icon-bar {
     position: fixed;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-30vh);
+    -ms-transform: translateY(-30vh);
+    transform: translateY(-30vh);
     z-index: 11;
   }
 
@@ -592,7 +590,6 @@
     text-align: center;
     padding: 16px;
     transition: all 0.4s ease;
-    font-size: 20px;
   }
 
   .icon-bar a:hover {

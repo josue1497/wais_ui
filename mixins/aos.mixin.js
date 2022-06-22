@@ -4,7 +4,7 @@ import 'aos/dist/aos.css'
 export default {
   mounted() {
     AOS.init({
-      duration: 1200,
+      duration: 1200
     })
   }
 }

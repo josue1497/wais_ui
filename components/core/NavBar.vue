@@ -39,7 +39,7 @@
         </div>
 
         <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <ul class="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium">
             <li class="menu-item">
               <NuxtLink to="projects"
                  class="menu-item-link"

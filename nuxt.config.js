@@ -29,12 +29,12 @@ export default {
       }
     ],
     script: [
-      {
-        hid: "background",
-        src: `https://firebasestorage.googleapis.com/v0/b/jmartinezm-projects.appspot.com/o/background.js?alt=media&token=89845d11-4bfb-4634-87ad-60eea5b45d87`,
-        async: true,
-        body: true,
-      },
+      // {
+      //   hid: "background",
+      //   src: `https://firebasestorage.googleapis.com/v0/b/jmartinezm-projects.appspot.com/o/background.js?alt=media&token=89845d11-4bfb-4634-87ad-60eea5b45d87`,
+      //   async: true,
+      //   body: true,
+      // },
     ],
   },
 
