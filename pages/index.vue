@@ -38,27 +38,29 @@
     <CoreSection justify="start" items="center" id="1" sm-px="0" px="16" class="h-72 md:h-screen">
       <div class="w-full py-10 px-0 md:px-16  flat-3" data-aos="slide-up">
         <h3 class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative">
-          <span class="block">Attract <span class="customer relative"></span> who</span>
-          <span class="block">connect with the essence of your brand</span>
+          <span class="block">Attract <span class="customer relative"></span></span>
+          <span class="block">who connect with the essence of your brand</span>
         </h3>
       </div>
     </CoreSection>
     <CoreSection id="2" sm-px="12" px="16" sm-size="72" class="h-72 md:h-screen relative">
       <h3 class="wais-text-1 text-center w-11/12 md:w-full flat-3">
         <span>
-          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="200"
+          <span data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="50" data-aos-duration="200"
             data-aos-easing="ease-in-out">Marketing</span>
           <span class="text-[#666be4]">+</span>
-          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="450"
-            data-aos-easing="ease-in-out">Communication</span>
+          <span class="inline" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="50"
+            data-aos-duration="450" data-aos-easing="ease-in-out">Communication</span>
           <span class="text-[#df6469]">+</span>
-          <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700"
-            data-aos-easing="ease-in-out">Customer Experience</span>
+          <span class="block" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="50"
+            data-aos-duration="700" data-aos-easing="ease-in-out">Customer Experience</span>
           <span class="block">
-            <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="950"
-              data-aos-easing="ease-in-out">Graphic Design</span> <span class="text-[#5fd19c]">+</span>
-            <span data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1200"
-              data-aos-easing="ease-in-out">Web / Apps <span class="block">Development</span></span>
+            <span data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="50"
+              data-aos-duration="950" data-aos-easing="ease-in-out">Graphic Design</span> <span
+              class="text-[#5fd19c]">+</span>
+            <span data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="50"
+              data-aos-duration="1200" data-aos-easing="ease-in-out">Web / Apps <span
+                class="block">Development</span></span>
           </span>
         </span>
       </h3>

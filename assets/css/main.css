@@ -417,6 +417,10 @@ input[type="text"]::placeholder, textarea::placeholder {
   @apply text-[14px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem]
 }
 
+.wais-text-4 {
+  @apply text-[24px] md:text-[32px] lg:text-[48px] xl:text-[58px] 2xl:text-[65px] leading-[1rem] md:leading-[2rem] lg:leading-[3rem] xl:leading-[4rem] 2xl:leading-[4rem];
+}
+
 .z-index-1 {
   z-index: -1;
 }
