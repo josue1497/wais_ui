@@ -36,7 +36,7 @@
         </defs>
       </svg>
     </div>
-    <div v-else class="contents">
+    <div v-if="darkMode" class="contents">
       <svg width="215" height="44" viewBox="0 0 215 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_46_413)">
           <path

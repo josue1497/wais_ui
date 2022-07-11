@@ -586,14 +586,6 @@ export default {
     content: "customers";
     opacity: 1;
   }
-  10% {
-    content: "customers";
-    opacity: 1;
-  }
-  20% {
-    content: "customers";
-    opacity: .5;
-  }
   30% {
     content: "customers";
     opacity: 0;
