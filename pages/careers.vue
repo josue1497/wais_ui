@@ -1,7 +1,7 @@
 <template>
-  <div class="is-dark pb-14 overflow-x-hidden">
+  <div class="is-dark pb-14">
     <HeadSection class="w-full h-[30rem] md:h-screen flex" id="careers-1" color="#2A00FF">
-      <div class="flex flex-col justify-center items-center m-auto w-full">
+      <div class="flex flex-col justify-center items-center m-auto w-full mt-24">
         <div class="flex flex-col justify-end items-end title-content h-full w-full py-10">
           <h1 class="text-[72px] md:text-[180px] lg:text-[288px] font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
             Careers
@@ -26,8 +26,8 @@
         </div>
       </div>
     </HeadSection>
-    <CoreSection class="w-full h-screen flex" id="careers-2" color="#01C97B" px="0" sm-px="0">
-      <div class="flex flex-col justify-center items-center m-auto w-full h-24 pb-8">
+    <CoreSection class="w-full h-screen" id="careers-2" color="#01C97B" px="0" sm-px="0">
+      <div class="flex flex-col justify-center items-center m-auto w-full h-24 pb-8 flat-2">
         <div class="flex flex-col justify-end items-end title-content w-full relative">
           <div class="hero-image w-full mx-auto flat-2"></div>
           <div class="flex justify-center flex-col items-start mr-auto w-3/4 md:w-1/2 px-5 md:px-32 py-8 font-medium flat-2">
@@ -35,7 +35,6 @@
               We like to <span class="text-white dark:text-slate-400">keep up with the trends</span> and market changes.
             </p>
           </div>
-          <div class="point six flat-1"></div>
           <div class="flex justify-center flex-col items-start w-1/2 ml-auto relative">
             <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto w-full flat-2">
               Would you like to <span class="join-ellipse relative">join us?</span>
@@ -43,6 +42,7 @@
           </div>
         </div>
       </div>
+      <div class="point six flat-1"></div>
     </CoreSection>
   </div>
 </template>

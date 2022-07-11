@@ -1,6 +1,6 @@
 <template>
     <nav
-      :class="`${visible ? 'fixed is-dark': 'fixed'} bg-transparent dark:bg-[#232531] border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4`"
+      :class="`${visible ? 'fixed is-dark': 'fixed'} bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4`"
       id="navbar">
       <div class="flex flex-wrap justify-between items-center mx-auto w-full p-3">
         <a href="/" class="flex">
@@ -136,14 +136,6 @@
         },
         mounted() {
             this.disableOrEnable = this.darkMode;
-            const vm = this;
-            vm.prevScrollPosition = window.pageYOffset;
-            window.addEventListener('scroll', () => {
-                vm.isCardVisible();
-            });
-            window.addEventListener("resize", () => this.isCardVisible());
-
-            // this.isCardVisible()
         },
         data: () => ({
             disableOrEnable: false,
@@ -152,24 +144,6 @@
         }),
         methods: {
             ...mapActions(['setDarkMode']),
-            isCardVisible() {
-                const cards = document.querySelectorAll(".card");
-                for (const card of cards) {
-                    this.isElementInViewport(card)
-                        ? card.classList.add("isVisible")
-                        : card.classList.remove("isVisible");
-                }
-            },
-            isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <=
-                    (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
         },
         watch: {
             disableOrEnable(nValue) {
@@ -184,7 +158,7 @@
 
 <style scoped>
   .menu-item {
-    @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-transparent hover:bg-[#232531] dark:bg-[#232531] dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531]
+    @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-transparent hover:bg-[#232531] dark:bg-transparent dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531]
   }
 
   .menu-item-link {

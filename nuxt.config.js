@@ -11,7 +11,7 @@ export default {
     height: '5px'
   },
   head: {
-    title: 'landing-page',
+    title: 'Wais Digital',
     htmlAttrs: {
       lang: 'en'
     },
@@ -52,7 +52,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/fontawesome.js'
+    '~/plugins/fontawesome.js',
+    { src: '~/plugins/vuex-persist.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

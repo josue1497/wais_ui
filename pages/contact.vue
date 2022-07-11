@@ -1,9 +1,9 @@
 <template>
   <div class="is-dark px-3 md:px-14 py-16">
-    <section class="w-full flex" id="careers-1">
+    <section class="w-full flex mt-20" id="careers-1">
       <div class="flex flex-col justify-center items-start m-auto w-full">
         <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 ">
-          <h1 class="home-title font-normal mx-auto md:mr-auto text-center flat-2">
+          <h1 class="home-title font-normal mx-auto md:mr-auto md:ml-0 flat-2">
             Let's talk
           </h1>
           <div class="flex justify-center flex-col items-end ml-auto w-10/12 md:w-1/2 lg:w-3/4 py-3 md:py-6 lg:py-8 px-5 flat-2">
@@ -127,6 +127,6 @@
     top: 20vh;
     width: 75vh;
     height: 75vh;
-    filter: blur(20vh);
+    filter: blur(10vh);
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="px-2 md:px-5 py-0 md:py-5 flex flex-col md:flex-row">
-    <div class="w-full md:w-1/2 flex flex-col justify-center items-center px-0 md:px-14 py-0 md:py-8 my-auto">
+    <div class="w-full md:w-1/2 flex flex-col justify-center items-start px-0 md:px-14 py-0 md:py-8 my-auto">
       <img :src="serviceData.icon" loading="lazy" alt="icon" class="mx-auto w-24 md:w-56"/>
       <p class="text-[26px] md:text-[30px] lg:text-[38px] xl:text-[54px] 2xl:text-[72px] text-center py-3 md:py-5 px-3 md:px-10 font-normal leading-[2rem] md:leading-[3rem] lg:leading-[4rem]">
         {{serviceData.title}}</p>
@@ -9,7 +9,7 @@
       <p class="service-description" v-html="serviceData.description"></p>
       <ul class="mt-4 md:mt-12 grid grid-cols-12 gap-2">
         <li v-for="(item, index) of serviceData.items" :key="index"
-            class="font-light service-item col-span-6 md:col-span-12">{{item}}
+            class="font-light service-item col-span-6 md:col-span-12" data-aos="fade-up" :data-aos-delay="(index+1)*100">{{item}}
         </li>
       </ul>
     </div>
@@ -17,8 +17,11 @@
 </template>
 
 <script>
+import aosMixin from '../../mixins/aos.mixin';
+
     export default {
         name: "ServiceContent",
+        mixins: [aosMixin],
         props: {
             serviceData: {type: Object, default: () => ({})}
         },
@@ -28,6 +31,8 @@
             } else {
                 console.log("`lazy-loading` no soportado...");
             }
+
+
         }
     }
 </script>
