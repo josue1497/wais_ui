@@ -8,26 +8,26 @@
           </a>
         </div>
         <div class="col-span-12 md:col-span-3 flex items-center md:items-start flex-col">
-          <p class="text-[14px] md:text-[20px] lg:text-[24px]">Start a project</p>
+          <p class="text-[14px] md:text-[20px] lg:text-[24px]">{{ $t("start_project") }}</p>
           <a href="mailto:hello@waisdigital.com"><p class="font-bold gradient-text text-2xl">hello@waisdigital.com</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start  flex-col">
-          <a href="/about"><p class="footer-links">About us</p></a>
-          <a href="/services"><p class="footer-links">Services</p></a>
+          <a href="/about"><p class="footer-links">{{ $t("about") }}</p></a>
+          <a href="/services"><p class="footer-links">{{ $t("services") }}</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start  flex-col">
-          <a href="/projects"><p class="footer-links">Projects</p></a>
-          <a href="/careers"><p class="footer-links">Careers</p></a>
+          <a href="/projects"><p class="footer-links">{{ $t("projects") }}</p></a>
+          <a href="/careers"><p class="footer-links">{{ $t("careers") }}</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start flex-col">
-          <a href="/contact"><p class="footer-links">Contact</p></a>
+          <a href="/contact"><p class="footer-links">{{ $t("contact") }}</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start  flex-col">
-          <a href="/about"><p class="footer-links mb-4">About us</p></a>
-          <a href="/services"><p class="footer-links mb-4">Services</p></a>
-          <a href="/projects"><p class="footer-links mb-4">Projects</p></a>
-          <a href="/careers"><p class="footer-links mb-4">Careers</p></a>
-          <a href="/contact"><p class="footer-links mb-4">Contact</p></a>
+          <a href="/about"><p class="footer-links mb-4">{{ $t("about") }}</p></a>
+          <a href="/services"><p class="footer-links mb-4">{{ $t("services") }}</p></a>
+          <a href="/projects"><p class="footer-links mb-4">{{ $t("projects") }}</p></a>
+          <a href="/careers"><p class="footer-links mb-4">{{ $t("careers") }}</p></a>
+          <a href="/contact"><p class="footer-links mb-4">{{ $t("contact") }}</p></a>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
       </div>
       <div class="col-span-12 md:col-span-9 hidden md:flex">
         <p class="ml-auto text-xl	">
-          Copyright © 2021 by Wais . All rights reserved
+          {{ $t("copyright") }}
         </p>
       </div>
     </div>

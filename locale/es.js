@@ -1,0 +1,23 @@
+export const es = {
+  about: "Sobre nosotros",
+  projects: "Proyectos",
+  contact: "Contacto",
+  services: "Servicios",
+  careers: "Carreras",
+  home: "Inicio",
+  start_project: "Empezar un proyecto",
+  copyright: "Copyright © 2022 Wais. All rights reserved.",
+  _home: {
+    text_1: " ",
+    customer_text_1: "Atrae",
+    customers: "clientes",
+    customer_text_2: "que conecten con la esencia de tu marca.",
+    marketing: "Marketing",
+    communications: "Comunicaciones",
+    customer_experience: "Experiencia de Cliente",
+    graphic_design: "Diseño Gráfico",
+    web_apps: "Desarrollo",
+    development: "Web/Apps",
+    our_clients: "Nuestros Clientes",
+  },
+};

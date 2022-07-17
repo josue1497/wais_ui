@@ -1,6 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
+    <LangSwitcher></LangSwitcher>
     <Nuxt />
     <CoreFooter></CoreFooter>
   </div>
@@ -65,7 +66,8 @@
 <script>
     import NavBar from "../components/core/NavBar";
     import CoreFooter from "../components/core/CoreFooter";
+    import LangSwitcher from "../components/core/LangSwitcher";
     export default {
-        components: {CoreFooter, NavBar}
+        components: {CoreFooter, NavBar, LangSwitcher}
     }
 </script>

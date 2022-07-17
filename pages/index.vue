@@ -61,34 +61,7 @@
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
-      <div
-        class="icon-bar hidden text-[16px] md:text-[20px] lg:text-[24px] xl:text-[26px] 2xl:text-[28px] md:block"
-      >
-        <a
-          href="https://www.instagram.com/waisdigital/"
-          target="_blank"
-          class="facebook text-black bg-transparent dark:text-white"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/company/wais-digital/?viewAsMember=true"
-          target="_blank"
-          class="twitter text-black bg-transparent dark:text-white"
-          ><i class="fa-brands fa-linkedin-in"></i
-        ></a>
-        <a
-          href="https://www.facebook.com/waisdigital"
-          target="_blank"
-          class="google text-black bg-transparent dark:text-white"
-          ><i class="fa-brands fa-facebook-f"></i
-        ></a>
-        <a
-          href="https://www.behance.net/waisdigita46b7/projects"
-          target="_blank"
-          class="youtube text-black bg-transparent dark:text-white"
-          ><i class="fa-brands fa-behance"></i
-        ></a>
-      </div>
+      <SocialNetworkBar></SocialNetworkBar>
     </section>
     <CoreSection
       justify="start"
@@ -104,9 +77,11 @@
           class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative"
         >
           <span class="block"
-            >Attract <span class="customer customer-animation relative"></span
-          ></span>
-          <span class="block">who connect with the essence of your brand</span>
+            >{{$t('_home.customer_text_1')}} 
+            <span v-show="isEN" :class="`customer customers-animation relative`"></span>
+            <span v-show="!isEN" :class="`cliente cliente-animation relative`"></span>
+          </span>
+          <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
       </div>
     </CoreSection>
@@ -120,7 +95,7 @@
       <div
         class="wais-text-1 text-center w-11/12 md:w-full flat-3 overflow-hidden"
       >
-        <span data-aos="fade-up" class="inline-block">Marketing</span>
+        <span data-aos="fade-up" class="inline-block">{{ $t('_home.marketing') }}</span>
         <span
           data-aos="fade-up"
           data-aos-delay="300"
@@ -128,7 +103,7 @@
           >+</span
         >
         <span data-aos="fade-up" data-aos-delay="400" class="inline-block"
-          >Communication</span
+          >{{ $t('_home.communications') }}</span
         >
         <span
           data-aos="fade-up"
@@ -137,11 +112,11 @@
           >+</span
         >
         <span data-aos="fade-up" data-aos-delay="600" class="block"
-          >Customer Experience</span
+          >{{ $t('_home.customer_experience') }}</span
         >
         <span class="block">
           <span data-aos="fade-up" data-aos-delay="700" class="inline-block"
-            >Graphic Design</span
+            >{{ $t('_home.graphic_design') }}</span
           >
           <span
             data-aos="fade-up"
@@ -150,10 +125,10 @@
             >+</span
           >
           <span data-aos="fade-up" data-aos-delay="900" class="inline-block"
-            >Web / Apps
+            >{{ $t('_home.web_apps') }}
           </span>
           <span data-aos="fade-up" data-aos-delay="900" class="block"
-            >Development</span
+            >{{ $t('_home.development') }}</span
           >
         </span>
       </div>
@@ -169,7 +144,7 @@
       class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative"
     >
       <div class="w-full px-0 md:px-0 text-center flat-2">
-        <h3 class="wais-text text-center font-normal">Our clients</h3>
+        <h3 class="wais-text text-center font-normal">{{ $t('_home.our_clients') }}</h3>
         <div class="w-full overflow-x-hidden hidden md:flex">
           <div class="p-0 md:px-5 flex marquee-content w-full">
             <div
@@ -206,16 +181,21 @@
 import CoreSection from "../components/core/CoreSection";
 import { mapState } from "vuex";
 import aosMixin from "../mixins/aos.mixin";
+import SocialNetworkBar from "../components/core/SocialNetworkBar.vue";
 
 export default {
   mixins: [aosMixin],
   components: {
     CoreSection,
-  },
+    SocialNetworkBar
+},
   computed: {
     ...mapState({
       darkMode: (state) => state.darkMode,
     }),
+    isEN() {
+      return this.$i18n.locale === "en";
+    },
   },
   data: () => ({
     smClients: [
@@ -332,6 +312,18 @@ export default {
     });
 
     observer.observe(document.querySelector(".customer"));
+
+    const observer2 = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("cliente-animation");
+          return;
+        }
+        entry.target.classList.remove("cliente-animation");
+      });
+    });
+
+    observer2.observe(document.querySelector(".cliente"));
   },
   methods: {
     enter(e) {
@@ -496,7 +488,7 @@ export default {
   -webkit-text-stroke-color: black;
 }
 
-.customer {
+.customer, .cliente {
   background: #666be4;
   padding: 0 10px 0 10px;
   color: #fff;
@@ -504,14 +496,18 @@ export default {
   position: relative;
   box-sizing: content-box;
   transition: all .5s ease-in-out;
+  padding-left: 10px;
 }
 
 .customer::before {
   content: "customers";
-  padding-left: 10px;
 }
 
-.customer-animation::after {
+.cliente::before {
+  content: "clientes";
+}
+
+.customer-animation::after, .cliente-animation::after {
   content: "";
   background: #fff;
   height: 7%;
@@ -530,6 +526,11 @@ export default {
 .customer-animation::before {
   content: "fans";
   animation: fans 6s ease;
+}
+
+.cliente-animation::before {
+  content: "fans";
+  animation: fans2 6s ease;
 }
 
 @keyframes line {
@@ -588,6 +589,25 @@ export default {
   }
   30% {
     content: "customers";
+    opacity: 0;
+  }
+  40% {
+    content: "fans";
+    opacity: 0;
+  }
+  100% {
+    content: "fans";
+    opacity: 1;
+  }
+}
+
+@keyframes fans2 {
+  0% {
+    content: "clientes";
+    opacity: 1;
+  }
+  30% {
+    content: "clientes";
     opacity: 0;
   }
   40% {
@@ -711,23 +731,4 @@ export default {
   transform: rotate(15deg);
 }
 
-.icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-30vh);
-  -ms-transform: translateY(-30vh);
-  transform: translateY(-30vh);
-  z-index: 11;
-}
-
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.4s ease;
-}
-
-.icon-bar a:hover {
-  transform: translateY(-10px);
-}
 </style>
