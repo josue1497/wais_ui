@@ -188,7 +188,12 @@ export default {
   components: {
     CoreSection,
     SocialNetworkBar
-},
+  },
+  head() {
+    return {
+      title: this.$t('home'),
+    }
+  },
   computed: {
     ...mapState({
       darkMode: (state) => state.darkMode,

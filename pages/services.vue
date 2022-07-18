@@ -52,6 +52,11 @@ export default {
       observer.observe(el);
     });
   },
+  head() {
+    return {
+      title: this.$t('services'),
+    }
+  },
   computed: {
     ...mapState({
       darkMode: (state) => state.darkMode,

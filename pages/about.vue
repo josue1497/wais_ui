@@ -4,19 +4,20 @@
       <div
         class="marquee my-marquee mt-6 border-t py-5 border-b border-t-black border-b-black  dark:border-t-white dark:border-b-white w-full">
         <div class="marquee-inner" aria-hidden="true">
-          <p class="marquee-content text-6xl md:text-[75px] lg:text-[97px] mx-5">About us</p>
+          <p class="marquee-content text-6xl md:text-[75px] lg:text-[97px] mx-5">{{$t('about')}}</p>
         </div>
       </div>
       <div class="px-4 md:px-12 lg:px-24 py-14 flex flex-col w-full md:w-11/12 mx-auto">
-        <p class="wais-text-2 w-full md:w-1/2 h-56 md:h-80">
-          We’re a team of creative professionals, we’re dynamic, always in a quest for
-          continuous growth.</p>
+        <p class="wais-text-2 w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
         <div class="point about-one flat-1"></div>
         <p class="wais-text-3 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
-          <span class="block">We <span class="text-white dark:text-gray-400 ">are passionate</span> about <span
-            class="text-white dark:text-gray-400 ">creativity and details,</span></span>
-          <span class="block my-4"> we trust that each human being has a unique talent, that is why our team is made up of professionals from different disciplines,</span>
-          <span class="block">the uniqueness of each one adds value to our solutions.</span>
+          <span class="block">{{ $t('_about.text_2_1_1') }} 
+          <span class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_2') }}</span> 
+          {{ $t('_about.text_2_1_3') }} 
+          <span
+            class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_4') }}</span></span>
+          <span class="block my-4">{{ $t('_about.text_2_2_1') }}</span>
+          <span class="block">{{ $t('_about.text_2_3_1') }}</span>
         </p>
       </div>
     </HeadSection>
@@ -26,9 +27,9 @@
         <div class="flex flex-col justify-end items-end title-content w-full h-full">
           <div class="flex justify-center flex-col items-start w-full md:w-1/2 mr-auto ml-auto md:mr-0  p-5 md:p-10">
             <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] lg:leading-[4rem] ">
-              <span class="block"><span class="about-customer">Together</span>, we create better experiences for brands, for people.</span>
-              <span class="block my-4">We seek to generate a positive impact.
-              #PositiveChange</span>
+              <span class="block"><span class="about-customer">{{ $t('_about.text_3_1') }}</span>
+              {{ $t('_about.text_3_2') }}</span>
+              <span class="block my-4">{{ $t('_about.text_3_3') }}</span>
             </p>
           </div>
         </div>
@@ -53,6 +54,11 @@
                 duration: 80,
                 css: false
             })
+        },
+        head() {
+          return {
+            title: this.$t('about'),
+          }
         }
     }
 </script>

@@ -19,4 +19,44 @@ export const en = {
     development: "Development",
     our_clients: "Our Clients",
   },
+  _careers: {
+    title: "Careers",
+    text_1:
+      "We believe that providing better results, creates a positive impact on companies and people.",
+    positive_change: "#PositiveChange",
+    text_2_1: "We are a team of ",
+    text_2_2: "observant and creative people, ",
+    text_2_3: "passionate about the detail.",
+    text_3_1: "We like to ",
+    text_3_2: "keep up with the trends ",
+    text_3_3: "and market changes.",
+    text_4_1: "Would you like to ",
+    text_4_2: "join us?",
+  },
+  _contact: {
+    title: "Let's talk",
+    subtitle:
+      "Complete this info and we'll get back to you in 48 hours or less.",
+    name: "Name",
+    email: "Email",
+    message: "Message",
+    send: "Send",
+    text_1: "If you want to communicate directly.",
+  },
+  _about: {
+    title: "About us",
+    text_1:
+      "We’re a team of creative professionals, we’re dynamic, always in a quest for continuous growth.",
+    text_2_1_1: "We ",
+    text_2_1_2: "are passionate ",
+    text_2_1_3: "about ",
+    text_2_1_4: "creativity and details,",
+    text_2_2_1:
+      "we trust that each human being has a unique talent, that is why our team is made up of professionals from different disciplines, ",
+    text_2_3_1: "the uniqueness of each one adds value to our solutions.",
+    text_3_1: "Together, ",
+    text_3_2: "we create better experiences for brands, for people.",
+    text_3_3: "We seek to generate a positive impact. #PositiveChange",
+  },
+  _services: {},
 };

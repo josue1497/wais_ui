@@ -70,7 +70,7 @@
         >
           <li class="menu-item">
             <NuxtLink to="projects" class="menu-item-link" aria-current="page"
-              >Projects
+              > {{ $t("projects") }}
             </NuxtLink>
           </li>
           <li class="menu-item">

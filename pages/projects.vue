@@ -16,6 +16,11 @@
     export default {
         name: "projects",
         components: {ProjectBar},
+        head() {
+          return {
+            title: this.$t('projects'),
+          }
+        },
         data: () => ({
             project: '',
             projects: [

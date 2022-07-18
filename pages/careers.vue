@@ -4,22 +4,22 @@
       <div class="flex flex-col justify-center items-center m-auto w-full mt-24">
         <div class="flex flex-col justify-end items-end title-content h-full w-full py-10">
           <h1 class="text-[72px] md:text-[180px] lg:text-[288px] font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
-            Careers
+            {{$t("_careers.title")}}	
           </h1>
           <hr class="border border-t-black dark:border-t-white w-full mt-1 md:mt-2 lg:mt-5">
           <div class="mx-auto w-3/4 flex flex-col justify-center items-center">
             <div class="flex justify-center flex-col items-start mr-auto w-full md:w-3/4 lg:w-5/12 py-10 px-5">
               <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto ">
-                We believe that providing better results, creates a positive impact on companies and people.
+                {{$t("_careers.text_1")}} 
               </p>
-              <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto bg-[#666BE4] text-white">#PositiveChange</p>
+              <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto bg-[#666BE4] text-white">{{$t("_careers.positive_change")}}</p>
             </div>
             <div class="point seven flat-1"></div>
             <div class="flex justify-center flex-col items-start xs:w-3/4 md:w-5/12 md:py-10 ml-auto px-4 flat-1">
               <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem]  mr-auto leading-title">
-                We are a team of <span class="text-white dark:text-slate-400">observant and creative people</span>,
-                passionate
-                about the detail.
+                {{$t("_careers.text_2_1")}} 
+                <span class="text-white dark:text-slate-400">{{$t("_careers.text_2_2")}}</span>
+                {{$t("_careers.text_2_3")}}
               </p>
             </div>
           </div>
@@ -32,12 +32,14 @@
           <div class="hero-image w-full mx-auto flat-2"></div>
           <div class="flex justify-center flex-col items-start mr-auto w-3/4 md:w-1/2 px-5 md:px-32 py-8 font-medium flat-2">
             <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem]  mr-auto ">
-              We like to <span class="text-white dark:text-slate-400">keep up with the trends</span> and market changes.
+              {{$t("_careers.text_3_1")}}
+              <span class="text-white dark:text-slate-400">{{$t("_careers.text_3_2")}}</span>
+              {{$t("_careers.text_3_3")}}
             </p>
           </div>
           <div class="flex justify-center flex-col items-start w-1/2 ml-auto relative">
             <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto w-full flat-2">
-              Would you like to <span class="join-ellipse relative">join us?</span>
+              {{$t("_careers.text_4_1")}} <span class="join-ellipse relative">{{$t("_careers.text_4_2")}}</span>
             </p>
           </div>
         </div>
@@ -53,7 +55,12 @@
 
     export default {
         name: "careers",
-        components: {HeadSection, CoreSection}
+        components: {HeadSection, CoreSection},
+        head() {
+          return {
+            title: this.$t('careers'),
+          }
+        }
     }
 </script>
 
