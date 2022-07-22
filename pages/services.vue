@@ -12,8 +12,8 @@
         v-for="(service, index) of _services"
         :key="index"
         :service-data="service"
-        class="my-7 card"
-      />
+        :class="'my-7 card ' + (index === 0 ? 'isVisible':'')"
+      ></ServiceContent>  
     </div>
     <div class="w-3/4 p-5">
       <h1
@@ -36,21 +36,21 @@ export default {
   mixins: [aosMixin],
   components: { ServiceContent },
   mounted() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("isVisible");
-          return;
-        }
-        entry.target.classList.remove("isVisible");
-      });
-    });
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       entry.target.classList.add("isVisible");
+    //       return;
+    //     }
+    //     entry.target.classList.remove("isVisible");
+    //   });
+    // });
 
-    // Tell the observer which elements to track
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((el) => {
-      observer.observe(el);
-    });
+    // // Tell the observer which elements to track
+    // const cards = document.querySelectorAll(".card");
+    // cards.forEach((el) => {
+    //   observer.observe(el);
+    // });
   },
   head() {
     return {
@@ -65,88 +65,48 @@ export default {
       return [
         {
           icon: require(`../assets/img/services/gif1---${
-            this.darkMode ? "blanco" : "negro"
+            this.getTheme()
           }.gif`),
-          title: "Analysis and strategy",
-          description:
-            "We study and investigate the brands behavior, to create data based strategies, that efficiently manage to communicate their message and connect with their audience.",
-          items: [
-            "Marketing research",
-            "Competition research",
-            "Brand Strategy",
-            "Communication Strategy",
-            "Marketing Strategy",
-            "Content Strategy",
-          ],
+          ...this.$t('_services.analysis'),
         },
         {
           icon: require(`../assets/img/services/gif4---${
-            this.darkMode ? "blanco" : "negro"
+             this.getTheme()
           }.gif`),
-          title: "Content creation",
-          description:
-            "We develop creativity loaded content, in different formats,in order to connect through emotion, with the brand's target audience, with a clear and targeted message.",
-          items: [
-            "Photography",
-            "Videos",
-            "Copywriting",
-            "Graphic design",
-            "Illustration",
-          ],
+          ...this.$t('_services.content'),
         },
         {
           icon: require(`../assets/img/services/gif3---${
-            this.darkMode ? "blanco" : "negro"
+             this.getTheme()
           }.gif`),
-          title: "Web development",
-          description:
-            "We create web sites based on outstanding technologies and trends, helping brands to achieve a solid strategy.",
-          items: ["Websites", "Apps", "Landing page"],
+          ...this.$t('_services.web'),
         },
         {
           icon: require(`../assets/img/services/gif5---${
-            this.darkMode ? "blanco" : "negro"
+             this.getTheme()
           }.gif`),
-          title: "Search engine marketing",
-          description:
-            "We optimize web pages for search engines, thus we can increase the traffic of potential clients towards brands.",
-          items: ["SEO", "SEM"],
+          ...this.$t('_services.marketing')
         },
         {
           icon: require(`../assets/img/services/gif2---${
-            this.darkMode ? "blanco" : "negro"
+             this.getTheme()
           }.gif`),
-          title: "Social marketing",
-          description: `We build brand's presence in digital media.<br>
-                            We care about the customer’s needs,
-                            that's why we create a close
-                            relationship between the brand and
-                            its audience.`,
-          items: [
-            "Digital media strategy",
-            `Brand’s voice development`,
-            "Digital Advertising (Ads)",
-            "Influencer Marketing",
-            "Reports and metrics (statistics)",
-          ],
+          ...this.$t('_services.social')
         },
         {
           icon: require(`../assets/img/services/gif6---${
-            this.darkMode ? "blanco" : "negro"
+             this.getTheme()
           }.gif`),
-          title: "Branding and graphic design",
-          description: `An idea is born, and we make it come true. Branding is a brand\'s core, what makes them different and recognizable. We define all the elements, from the name to the advertisements, pointing your target audience.`,
-          items: [
-            "Naming",
-            "Logo",
-            "Brand’s identity manual",
-            "Printing design",
-            "Digital Media graphic design",
-          ],
+          ...this.$t('_services.branding')
         },
       ];
     },
   },
+  methods: {
+    getTheme(){
+      return this.darkMode ? "blanco" : "negro";
+    }
+  }
 };
 </script>
 

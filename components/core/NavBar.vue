@@ -1,8 +1,6 @@
 <template>
   <nav
-    :class="`${
-      visible ? 'fixed is-dark' : 'fixed'
-    } bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4`"
+    class="fixed bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4"
     id="navbar"
   >
     <div class="flex flex-wrap justify-between items-center mx-auto w-full p-3">
@@ -146,7 +144,7 @@
       </div>
     </div>
     <transition name="slide-fade">
-      <div class="w-full h-screen is-dark px-14" v-if="visible">
+      <div class="w-full h-screen is-dark px-14 bg-[#e5e5e5] dark:bg-[#232531]" v-if="visible">
         <div
           class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start flex-col"
         >
@@ -183,6 +181,13 @@ export default {
   },
   mounted() {
     this.disableOrEnable = this.darkMode;
+    const vm = this;
+    vm.prevScrollPosition = window.pageYOffset;
+    window.addEventListener('scroll', () => {
+        vm.isCardVisible();
+    });
+    window.addEventListener("resize", () => this.isCardVisible());
+
   },
   data: () => ({
     disableOrEnable: false,
@@ -191,6 +196,24 @@ export default {
   }),
   methods: {
     ...mapActions(["setDarkMode"]),
+    isCardVisible() {
+        const cards = document.querySelectorAll(".card");
+        for (const card of cards) {
+            this.isElementInViewport(card)
+                ? card.classList.add("isVisible")
+                : card.classList.remove("isVisible");
+        }
+    },
+    isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            // rect.top >= 100 &&
+            // rect.left >= 0 &&
+            rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
   },
   watch: {
     disableOrEnable(nValue) {

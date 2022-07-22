@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="px-4 md:px-12 lg:px-24 py-14 flex flex-col w-full md:w-11/12 mx-auto">
-        <p class="wais-text-2 w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
+        <p class="wais-text-2 leading-[2rem] md:leading-[3rem] w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
         <div class="point about-one flat-1"></div>
         <p class="wais-text-3 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
           <span class="block">{{ $t('_about.text_2_1_1') }} 
@@ -26,7 +26,7 @@
         <div class="hero-image w-full mx-auto"></div>
         <div class="flex flex-col justify-end items-end title-content w-full h-full">
           <div class="flex justify-center flex-col items-start w-full md:w-1/2 mr-auto ml-auto md:mr-0  p-5 md:p-10">
-            <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] lg:leading-[4rem] ">
+            <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] ">
               <span class="block"><span class="about-customer">{{ $t('_about.text_3_1') }}</span>
               {{ $t('_about.text_3_2') }}</span>
               <span class="block my-4">{{ $t('_about.text_3_3') }}</span>

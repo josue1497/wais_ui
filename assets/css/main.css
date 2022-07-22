@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*@font-face {*/
-/*  font-family: "Pangram Sans";*/
-/*  src:url("../fonts/PPPangramSans-Variable.ttf"),*/
-/*  url("../fonts/PPPangramSans-Variable.woff") format("woff"),*/
-/*  url("../fonts/PPPangramSans-Variable.otf") format("opentype");*/
-/*}*/
-
-/*@layer base {*/
-/*  html {*/
-/*    font-family: "Pangram Sans", sans-serif;*/
-/*  }*/
-/*}*/
-
 html,
 body {
   font-family: "Urbanist", sans-serif;
@@ -23,6 +10,22 @@ body {
   /*overflow-x: hidden;*/
   overscroll-behavior: none;
   transition: all 0.3s ease-in-out;
+}
+
+body:not(.dark){
+  background: url("../img/background.png"), #e5e5e5;
+}
+
+body.dark {
+  background: #232531 !important;
+}
+
+.is-dark {
+  filter: opacity(90%);
+  background-size: 150px 150px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  @apply text-black dark:text-white;
 }
 
 .main-banner {
@@ -103,19 +106,6 @@ canvas {
 input:checked ~ .dot {
   transform: translateX(100%);
   background-color: #232531;
-}
-
-.is-dark {
-  background: url("../img/background.png"), #e5e5e5;
-  filter: opacity(90%);
-  background-size: 150px 150px;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  @apply text-black dark:text-white;
-}
-
-.dark .is-dark {
-  background: url("../img/background.png"), #232531;
 }
 
 input[type="text"],
@@ -380,7 +370,7 @@ textarea::placeholder {
 }
 
 .wais-text-4 {
-  @apply text-[24px] md:text-[32px] lg:text-[48px] xl:text-[58px] 2xl:text-[65px] leading-[1rem] md:leading-[2rem] lg:leading-[3rem] xl:leading-[4rem] 2xl:leading-[4rem];
+  @apply text-[24px] md:text-[32px] lg:text-[48px] xl:text-[58px] 2xl:text-[65px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] xl:leading-[4rem] 2xl:leading-[4rem];
 }
 
 .z-index-1 {

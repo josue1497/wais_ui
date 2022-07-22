@@ -530,12 +530,12 @@ export default {
 
 .customer-animation::before {
   content: "fans";
-  animation: fans 6s ease;
+  animation: fans 5.5s ease;
 }
 
 .cliente-animation::before {
   content: "fans";
-  animation: fans2 6s ease;
+  animation: fans2 5.5s ease;
 }
 
 @keyframes line {

@@ -58,5 +58,70 @@ export const en = {
     text_3_2: "we create better experiences for brands, for people.",
     text_3_3: "We seek to generate a positive impact. #PositiveChange",
   },
-  _services: {},
+  _services: {
+    title: "Services",
+    analysis: {
+      title: "Analysis and strategy",
+      description:
+        "We study and investigate the brands behavior, to create data based strategies, that efficiently manage to communicate their message and connect with their audience.",
+      items: [
+        "Marketing research",
+        "Competition research",
+        "Brand Strategy",
+        "Communication Strategy",
+        "Marketing Strategy",
+        "Content Strategy",
+      ],
+    },
+    content: {
+      title: "Content creation",
+      description:
+        "We develop creativity loaded content, in different formats,in order to connect through emotion, with the brand's target audience, with a clear and targeted message.",
+      items: [
+        "Photography",
+        "Videos",
+        "Copywriting",
+        "Graphic design",
+        "Illustration",
+      ],
+    },
+    web: {
+      title: "Web development",
+      description:
+        "We create web sites based on outstanding technologies and trends, helping brands to achieve a solid strategy.",
+      items: ["Websites", "Apps", "Landing page"],
+    },
+    marketing: {
+      title: "Search engine marketing",
+      description:
+        "We optimize web pages for search engines, thus we can increase the traffic of potential clients towards brands.",
+      items: ["SEO", "SEM"],
+    },
+    social: {
+      title: "Social marketing",
+      description: `We build brand's presence in digital media.<br>
+                            We care about the customer’s needs,
+                            that's why we create a close
+                            relationship between the brand and
+                            its audience.`,
+      items: [
+        "Digital media strategy",
+        `Brand’s voice development`,
+        "Digital Advertising (Ads)",
+        "Influencer Marketing",
+        "Reports and metrics (statistics)",
+      ],
+    },
+    branding: {
+      title: "Branding and graphic design",
+      description: `An idea is born, and we make it come true. Branding is a brand\'s core, what makes them different and recognizable. We define all the elements, from the name to the advertisements, pointing your target audience.`,
+      items: [
+        "Naming",
+        "Logo",
+        "Brand’s identity manual",
+        "Printing design",
+        "Digital Media graphic design",
+      ],
+    },
+  },
 };

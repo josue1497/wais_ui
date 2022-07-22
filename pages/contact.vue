@@ -2,11 +2,11 @@
   <div class="is-dark px-3 md:px-14 py-16">
     <section class="w-full flex mt-20" id="careers-1">
       <div class="flex flex-col justify-center items-start m-auto w-full">
-        <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 ">
+        <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 xl:w-10/12">
           <h1 class="home-title font-normal mx-auto md:mr-auto md:ml-0 flat-2">
             {{$t('_contact.title')}}
           </h1>
-          <div class="flex justify-center flex-col items-end ml-auto w-10/12 md:w-1/2 lg:w-3/4 py-3 md:py-6 lg:py-8 px-5 flat-2">
+          <div class="flex justify-center flex-col items-end w-10/12 md:w-3/4 lg:w-1/2  ml-auto py-3 md:py-6 lg:py-8 px-5 flat-2">
             <p class="wais-text-2 ml-auto ">
               {{$t('_contact.subtitle')}}
             </p>

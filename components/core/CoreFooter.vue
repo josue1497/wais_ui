@@ -1,5 +1,5 @@
 <template>
-  <footer class="p-12 is-dark block z-index-1">
+  <footer class="p-12 block z-index-1 text-black dark:text-white">
     <div class="block">
       <div class="grid gap-y-8 grid-cols-12 py-8 px-2 text-2xl">
         <div class="col-span-12 md:col-span-2">

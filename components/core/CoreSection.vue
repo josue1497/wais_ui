@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="`flex ${justifyContent} ${itemsContent} w-full px-${smPx} md:px-${px} is-dark relative`"
+    :class="`flex ${justifyContent} ${itemsContent} is-dark w-full px-${smPx} md:px-${px} relative`"
   >
     <slot></slot>
   </section>
