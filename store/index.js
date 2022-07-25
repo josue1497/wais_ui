@@ -10,6 +10,5 @@ export const mutations = {
 export const actions = {
   setDarkMode({commit}, payload) {
     commit('SET_DARK_MODE', payload)
-
   }
 };

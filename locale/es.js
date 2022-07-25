@@ -62,66 +62,63 @@ export const es = {
   _services: {
     title: "Servicios",
     analysis: {
-      title: "Analysis and strategy",
+      title: "Análisis y estrategia",
       description:
-        "We study and investigate the brands behavior, to create data based strategies, that efficiently manage to communicate their message and connect with their audience.",
+        "Estudiamos e investigamos el comportamiento de las marcas en el mercado, para crear estrategias eficientes, fundamentadas en datos, que logren comunicar su mensaje y conectar con su audiencia.",
       items: [
-        "Marketing research",
-        "Competition research",
-        "Brand Strategy",
-        "Communication Strategy",
-        "Marketing Strategy",
-        "Content Strategy",
+        "De mercado",
+        "Competencia",
+        "De marca",
+        "Comunicación",
+        "Marketing",
+        "Contenido",
       ],
     },
     content: {
-      title: "Content creation",
+      title: "Creación de contenido",
       description:
-        "We develop creativity loaded content, in different formats,in order to connect through emotion, with the brand's target audience, with a clear and targeted message.",
+        "Desarrollamos contenidos cargados de creatividad, en diferentes formatos, con el fin de conectar a través de la emoción con el público objetivo de la marca con un mensaje claro y dirigido.",
       items: [
-        "Photography",
+        "Fotografía",
         "Videos",
         "Copywriting",
-        "Graphic design",
-        "Illustration",
+        "Diseño gráfico",
+        "Ilustración",
       ],
     },
     web: {
-      title: "Web development",
+      title: "Desarrollo Web",
       description:
-        "We create web sites based on outstanding technologies and trends, helping brands to achieve a solid strategy.",
-      items: ["Websites", "Apps", "Landing page"],
+        "Creamos sitios web basados ​​en tecnologías y tendencias destacadas, ayudando a las marcas a alcanzar una estrategia sólida.",
+      items: ["Sitio web", "Aplicaciones", "Landing page"],
     },
     marketing: {
-      title: "Search engine marketing",
+      title: "Marketing en buscadores",
       description:
-        "We optimize web pages for search engines, thus we can increase the traffic of potential clients towards brands.",
+        "Optimizamos sitios web para los buscadores, así logramos aumentar el tráfico de potenciales clientes hacia las marcas.",
       items: ["SEO", "SEM"],
     },
     social: {
       title: "Social marketing",
-      description: `We build brand's presence in digital media.<br>
-                            We care about the customer’s needs,
-                            that's why we create a close
-                            relationship between the brand and
-                            its audience.`,
+      description: `Construimos presencia de marca en medios digitales.<br>
+      Nos preocupamos por las necesidades del consumidor, por eso creamos una relación cercana entre la marca y su audiencia. Ser social en los medios digitales es una forma eficaz de compartir su mensaje.`,
       items: [
-        "Digital media strategy",
-        `Brand’s voice development`,
-        "Digital Advertising (Ads)",
-        "Influencer Marketing",
-        "Reports and metrics (statistics)",
+        "Estrategia para medios digitales",
+        "Desarrollo de voz de marca",
+        "Publicidad digital (Ads)",
+        "Marketing de influencers",
+        "Reportes y métricas (estadísticas)",
       ],
     },
     branding: {
-      title: "Branding and graphic design",
-      description: `An idea is born, and we make it come true. Branding is a brand\'s core, what makes them different and recognizable. We define all the elements, from the name to the advertisements, pointing your target audience.`,
+      title: "Branding y diseño gráfico",
+      description: `Nace una idea y la hacemos realidad. El branding es el núcleo de una marca, lo que la hace diferente y memorable. Definimos todos los elementos, desde el nombre hasta los anuncios, apuntando al público objetivo.      `,
       items: [
         "Naming",
         "Logo",
-        "Brand’s identity manual",
-        "Printing design",
-        "Digital Media graphic design",
+        "Manual de imagen e identidad corporativa",
+        "Diseño para impresión",
+        "Diseño para medios digitales",
       ],
     },
   },

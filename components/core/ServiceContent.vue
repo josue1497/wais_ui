@@ -41,21 +41,14 @@ export default {
   props: {
     serviceData: { type: Object, default: () => ({}) },
   },
-  mounted() {
-    if ("loading" in HTMLImageElement.prototype) {
-      console.log("El navegador soporta `lazy-loading`...");
-    } else {
-      console.log("`lazy-loading` no soportado...");
-    }
-  },
 };
 </script>
 <style scoped>
 .service-description {
-  @apply text-[14px] md:text-[18px] md:text-[22px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px] leading-[1rem] md:leading-[2rem] lg:leading-[3rem] xl:leading-[4rem] 2xl:leading-[4rem];
+  @apply text-[14px] md:text-[18px] lg:text-[28px] xl:text-[36px] 2xl:text-[48px] leading-[1rem] md:leading-[1.5rem] lg:leading-[2rem] xl:leading-[2.5rem] 2xl:leading-[3.5rem];
 }
 
 .service-item {
-  @apply text-[12px] md:text-[16px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[42px];
+  @apply text-[11px] md:text-[14px] lg:text-[24px] xl:text-[32px] 2xl:text-[42px];
 }
 </style>

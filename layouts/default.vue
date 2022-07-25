@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <NavBar></NavBar>
     <LangSwitcher></LangSwitcher>
     <Nuxt />

@@ -206,10 +206,11 @@ export default {
     },
     isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
+        console.log({'top': rect.top, innerHeight: window.innerHeight, documentclientHeight:document.documentElement.clientHeight})
         return (
             // rect.top >= 100 &&
             // rect.left >= 0 &&
-            rect.bottom <=
+            rect.bottom - 300 <=
             (window.innerHeight || document.documentElement.clientHeight) &&
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );

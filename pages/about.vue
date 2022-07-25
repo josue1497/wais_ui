@@ -8,9 +8,9 @@
         </div>
       </div>
       <div class="px-4 md:px-12 lg:px-24 py-14 flex flex-col w-full md:w-11/12 mx-auto">
-        <p class="wais-text-2 leading-[2rem] md:leading-[3rem] w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
+        <p class="about-text w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
         <div class="point about-one flat-1"></div>
-        <p class="wais-text-3 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
+        <p class="about-text-1 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
           <span class="block">{{ $t('_about.text_2_1_1') }} 
           <span class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_2') }}</span> 
           {{ $t('_about.text_2_1_3') }} 
@@ -26,7 +26,7 @@
         <div class="hero-image w-full mx-auto"></div>
         <div class="flex flex-col justify-end items-end title-content w-full h-full">
           <div class="flex justify-center flex-col items-start w-full md:w-1/2 mr-auto ml-auto md:mr-0  p-5 md:p-10">
-            <p class="text-2xl md:text-[32px] lg:text-[48px]  leading-[2rem] md:leading-[3rem] ">
+            <p class="about-text">
               <span class="block"><span class="about-customer">{{ $t('_about.text_3_1') }}</span>
               {{ $t('_about.text_3_2') }}</span>
               <span class="block my-4">{{ $t('_about.text_3_3') }}</span>
@@ -102,5 +102,13 @@
     height: 55vh;
     background: #2A00FF;
     filter: blur(20vh);
+  }
+
+  .about-text {
+    @apply text-[18px] md:text-[24px] lg:text-[28px] xl:text-[36px] 2xl:text-[48px] leading-[1.5rem] md:leading-[2rem] lg:leading-[2.5rem] xl:leading-[3rem] 2xl:leading-[3.5rem];
+  }
+
+  .about-text-1 {
+    @apply text-[14px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem];
   }
 </style>

@@ -3,11 +3,11 @@
     <section class="w-full flex mt-20" id="careers-1">
       <div class="flex flex-col justify-center items-start m-auto w-full">
         <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 xl:w-10/12">
-          <h1 class="home-title font-normal mx-auto md:mr-auto md:ml-0 flat-2">
+          <h1 class="contact-title font-normal mx-auto md:mr-auto md:ml-0 flat-2">
             {{$t('_contact.title')}}
           </h1>
           <div class="flex justify-center flex-col items-end w-10/12 md:w-3/4 lg:w-1/2  ml-auto py-3 md:py-6 lg:py-8 px-5 flat-2">
-            <p class="wais-text-2 ml-auto ">
+            <p class="contact-text-1 ml-auto ">
               {{$t('_contact.subtitle')}}
             </p>
           </div>
@@ -40,9 +40,9 @@
                 <a href="tel:+58414-3417791"><span class="block wais-text-4">+58 414-3417791</span></a>
                 <a href="tel:+58412-9507154"><span class="block wais-text-4">+58 412-9507154</span></a>
               </p>
-              <div class="flex mr-auto flex-row justify-evenly text-xl wais-text-2">
+              <div class="flex mr-auto flex-row justify-evenly text-xl wais-text-2 mt-5 contact">
                 <a href="tel:+58414-3417791"><i class="fa-solid fa-phone"></i></a>
-                <a href="https://t.me/waisdigital" target="_blank"><i class="fa-solid fa-paper-plane mx-5"></i></a>
+                <a href="https://t.me/waisdigital" target="_blank"><i class="fa-solid fa-paper-plane mx-10"></i></a>
                 <a href="https://wa.me/584143417791" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
               </div>
             </div>
@@ -69,53 +69,20 @@
 </script>
 
 <style scoped>
-  .hero-image {
-    background-image: url(../assets/img/img1.jpg);
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    width: 100%;
+
+.contact a {
+  transition: all 0.4s ease-in-out;
+  }
+  .contact a:hover {
+    transform: translateY(-10px);
   }
 
-
-  .text-title, .text-subtitle {
-    line-height: 1;
+  .contact-title {
+    @apply text-[77px] md:text-[128px] lg:text-[168px] xl:text-[208px] 2xl:text-[288px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
   }
 
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    .text-title {
-      font-size: 4.75rem;
-    }
-
-    .text-subtitle {
-      font-size: 1.25rem;
-    }
-  }
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    .text-title {
-      font-size: 4.75rem;
-    }
-
-    .text-subtitle {
-      font-size: 1.25rem;
-    }
-  }
-
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
-    .text-title {
-      font-size: 13rem; /* 128px */
-
-    }
-
-    .text-subtitle {
-      font-size: 1.5rem;
-    }
+  .contact-text-1 {
+    @apply text-[14px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem];
   }
 
   .form-control {

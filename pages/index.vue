@@ -161,7 +161,7 @@
           </div>
         </div>
         <div class="w-full overflow-x-hidden inline md:hidden">
-          <div class="p-0 md:px-5 block w-full grid grid-cols-2 gap-4">
+          <div class="p-0 md:px-5 w-full grid grid-cols-2 gap-4">
             <div
               :class="`py-4 px-8 md:p-4 justify-center align-center flat-2 w-full flex`"
               v-for="({ l, n, span }, index) of smClients"
@@ -530,12 +530,12 @@ export default {
 
 .customer-animation::before {
   content: "fans";
-  animation: fans 5.5s ease;
+  animation: fans 4s ease;
 }
 
 .cliente-animation::before {
   content: "fans";
-  animation: fans2 5.5s ease;
+  animation: fans2 4s ease;
 }
 
 @keyframes line {
@@ -597,6 +597,10 @@ export default {
     opacity: 0;
   }
   40% {
+    content: "customers";
+    opacity: 0;
+  }
+  50% {
     content: "fans";
     opacity: 0;
   }
@@ -616,6 +620,10 @@ export default {
     opacity: 0;
   }
   40% {
+    content: "clientes";
+    opacity: 0;
+  }
+  50% {
     content: "fans";
     opacity: 0;
   }
