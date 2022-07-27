@@ -1,7 +1,7 @@
 <template>
   <div class="is-dark flex flex-col ">
     <div class="py-20 px-3 relative">
-      <h1 class="wais-title text-center m-14">Projects</h1>
+      <h1 class="wais-title text-center m-14">{{$t('projects')}}</h1>
       <div class="point one flat-1"></div>
       <ProjectBar v-for="(proj, index) of projects" :name="proj.name" :tags="proj.tags" :visible="project === proj.name"
                   :key="index" @selection="setProject" :link="proj.link"></ProjectBar>

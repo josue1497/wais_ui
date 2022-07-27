@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5 border-t border-black m-3 md:m-6 cursor-default">
+  <div class="p-5 border-t border-black dark:border-white m-3 md:m-6 cursor-default">
     <div class="w-full">
       <ul class="group w-full divide-y-2 divide-gray-200 hover:cursor-pointer	">
         <li class="flex flex-col md:flex-row items-start md:items-center space-x-6 w-auto px-4 h-auto md:h-28 text-justify">
@@ -8,7 +8,7 @@
           </div>
           <div class="hidden md:grid opacity-0 group-hover:opacity-100 transition-all relative grid-cols-12 gap-4 w-1/2 mr-auto">
             <div :class=" `w-auto col-span-${index === 2 ? '12': '6'} badge-${index+1} flex justify-center items-center`" v-for="(tag, index) in tags" :key="index">
-              <a href="#" class="wais-text-3 bg-[#232531] text-[#FBFBFB] mr-2 px-6 rounded-full">{{tag}}</a>
+              <a href="#" class="wais-text-3 bg-[#232531] dark:bg-[#FBFBFB] text-[#FBFBFB] dark:text-[#232531] mr-2 px-6 rounded-full">{{tag}}</a>
             </div>
           </div>
           <div v-if="visible" class="block md:hidden">

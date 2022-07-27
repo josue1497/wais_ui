@@ -1,12 +1,12 @@
 <template>
   <div>
     <section
-      class="w-full flex main-banner relative overflow-hidden"
+      class="w-full flex main-banner bg relative overflow-hidden"
       @mousemove="updateSpotlight"
       @mouseleave="leave"
       @mouseenter="enter"
     >
-      <div
+      <!-- <div
         class="super-circle s-circle-1"
         id="cs-1"
         style="top: -50%; right: -30%"
@@ -20,7 +20,7 @@
         class="super-circle s-circle-2"
         id="cs-2"
         style="left: -70%; top: -20%"
-      ></div>
+      ></div> -->
       <div class="hidden md:block circle-out">
         <div
           class="circle circle-in-1"

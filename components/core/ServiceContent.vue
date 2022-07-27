@@ -22,8 +22,6 @@
           v-for="(item, index) of serviceData.items"
           :key="index"
           class="font-light service-item col-span-6 md:col-span-12"
-          data-aos="fade-up"
-          :data-aos-delay="(index + 1) * 100"
         >
           {{ item }}
         </li>
@@ -33,11 +31,8 @@
 </template>
 
 <script>
-import aosMixin from "../../mixins/aos.mixin";
-
 export default {
   name: "ServiceContent",
-  mixins: [aosMixin],
   props: {
     serviceData: { type: Object, default: () => ({}) },
   },
