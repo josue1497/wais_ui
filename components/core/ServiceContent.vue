@@ -8,6 +8,7 @@
         loading="lazy"
         alt="icon"
         class="mx-auto w-24 md:w-56"
+        v-if="resetImages"
       />
       <p
         class="text-[26px] md:text-[30px] lg:text-[38px] xl:text-[54px] 2xl:text-[72px] text-center py-3 md:py-5 px-3 md:px-10 font-normal leading-[2rem] md:leading-[3rem] lg:leading-[4rem]"
@@ -31,11 +32,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: "ServiceContent",
   props: {
     serviceData: { type: Object, default: () => ({}) },
   },
+  computed: {
+    ...mapState({
+      resetImages: (state) => state.resetImages,
+    }),
+  }
 };
 </script>
 <style scoped>

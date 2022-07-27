@@ -164,9 +164,9 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import Logo from "./Logo";
+import { mapActions, mapState } from "vuex";
 import BurgerButton from "./BurgerButton";
+import Logo from "./Logo";
 
 export default {
   name: "NavBar",
@@ -195,7 +195,7 @@ export default {
     visible: false,
   }),
   methods: {
-    ...mapActions(["setDarkMode"]),
+    ...mapActions(["setDarkMode", "setResetImages"]),
     isCardVisible() {
         const cards = document.querySelectorAll(".card");
         for (const card of cards) {
@@ -206,19 +206,36 @@ export default {
     },
     isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        console.log({'top': rect.top, innerHeight: window.innerHeight, documentclientHeight:document.documentElement.clientHeight})
+        const { top, bottom } = this.getParamByDevice()
         return (
-            rect.top >= 75 &&
-            rect.left >= 0 &&
-            rect.bottom - 200 <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.top >= top &&
+            rect.bottom - bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) 
         );
+    },
+    getParamByDevice() {
+      return this.mobileAndTabletCheck() ? { top: 40, bottom: 20 } : { top: 75, bottom: 200 };
+    },
+    mobileAndTabletCheck() {
+      const toMatch = [
+            /Android/i,
+            /webOS/i,
+            /iPhone/i,
+            /iPad/i,
+            /iPod/i,
+            /BlackBerry/i,
+            /Windows Phone/i
+        ];
+          console.log(navigator.userAgent)
+
+        
+        return toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem));
     }
   },
   watch: {
     disableOrEnable(nValue) {
       this.setDarkMode(nValue);
+      this.setResetImages(nValue);
       if (nValue) document.querySelector("body").classList.add("dark");
       else document.querySelector("body").classList.remove("dark");
     },

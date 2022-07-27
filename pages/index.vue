@@ -6,21 +6,6 @@
       @mouseleave="leave"
       @mouseenter="enter"
     >
-      <!-- <div
-        class="super-circle s-circle-1"
-        id="cs-1"
-        style="top: -50%; right: -30%"
-      ></div>
-      <div
-        class="super-circle s-circle-3"
-        id="cs-3"
-        style="bottom: -129%; right: -20%"
-      ></div>
-      <div
-        class="super-circle s-circle-2"
-        id="cs-2"
-        style="left: -70%; top: -20%"
-      ></div> -->
       <div class="hidden md:block circle-out">
         <div
           class="circle circle-in-1"
@@ -145,7 +130,7 @@
     >
       <div class="w-full px-0 md:px-0 text-center flat-2">
         <h3 class="wais-text text-center font-normal">{{ $t('_home.our_clients') }}</h3>
-        <div class="w-full overflow-x-hidden hidden md:flex">
+        <div class="w-full overflow-x-hidden hidden md:flex" v-if="resetImages">
           <div class="p-0 md:px-5 flex marquee-content w-full">
             <div
               class="p-2 md:p-4 flex justify-center align-center flat-2 marquee-item"
@@ -160,7 +145,7 @@
             </div>
           </div>
         </div>
-        <div class="w-full overflow-x-hidden inline md:hidden">
+        <div class="w-full overflow-x-hidden inline md:hidden" v-if="resetImages">
           <div class="p-0 md:px-5 w-full grid grid-cols-2 gap-4">
             <div
               :class="`py-4 px-8 md:p-4 justify-center align-center flat-2 w-full flex`"
@@ -179,7 +164,7 @@
 
 <script>
 import CoreSection from "../components/core/CoreSection";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import aosMixin from "../mixins/aos.mixin";
 import SocialNetworkBar from "../components/core/SocialNetworkBar.vue";
 
@@ -197,6 +182,7 @@ export default {
   computed: {
     ...mapState({
       darkMode: (state) => state.darkMode,
+      resetImages: (state) => state.resetImages,
     }),
     isEN() {
       return this.$i18n.locale === "en";
@@ -331,6 +317,7 @@ export default {
     observer2.observe(document.querySelector(".cliente"));
   },
   methods: {
+    ...mapActions(["setResetImages"]),
     enter(e) {
       this.showPointer = true;
     },
