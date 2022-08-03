@@ -21,7 +21,7 @@
         </p>
       </div>
     </HeadSection>
-    <CoreSection class="w-full h-screen flex" items="start" id="careers-2" color="#01C97B" px="0" sm-px="0">
+    <CoreSection class="w-full h-[40rem] md:h-screen flex" items="start" id="careers-2" color="#01C97B" px="0" sm-px="0">
       <div class="flex flex-col justify-center items-start w-full pb-8">
         <div class="hero-image w-full mx-auto"></div>
         <div class="flex flex-col justify-end items-end title-content w-full h-full">
@@ -105,10 +105,10 @@
   }
 
   .about-text {
-    @apply text-[18px] md:text-[24px] lg:text-[28px] xl:text-[36px] 2xl:text-[48px] leading-[1.5rem] md:leading-[2rem] lg:leading-[2.5rem] xl:leading-[3rem] 2xl:leading-[3.5rem];
+    @apply text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] 2xl:text-[48px] leading-[2rem] md:leading-[2rem] lg:leading-[2.5rem] xl:leading-[3rem] 2xl:leading-[3.5rem];
   }
 
   .about-text-1 {
-    @apply text-[14px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px]  leading-[1rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem];
+    @apply text-[18px] md:text-[20px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px]  leading-[1.5rem] md:leading-[2rem] lg:leading-[2rem] xl:leading-[3rem] 2xl:leading-[3rem];
   }
 </style>

@@ -29,20 +29,20 @@
         ></div>
       </div>
       <div
-        class="flex flex-col justify-start items-start my-44 md:my-36 w-full relative"
+        class="flex flex-col justify-start items-start my-56 md:my-36 w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title flex flex-col w-3/4 md:w-10/12 lg:w-8/12">
+          <h1 class="home-title flex flex-col w-full md:w-10/12 lg:w-8/12">
             <span class="mr-auto">Think</span
             ><span class="ml-auto">Wisely</span>
           </h1>
         </div>
       </div>
       <div
-        class="w-full md:w-3/4 absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
+        class="w-full md:w-3/4 absolute inset-x-0 bottom-20 px-0 py-10 md:px-14"
       >
-        <h1 class="home-subtitle flex flex-col w-3/4 md:w-full GFG uppercase">
+        <h1 class="home-subtitle flex flex-col w-full md:w-full GFG uppercase">
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
@@ -75,7 +75,7 @@
       sm-px="12"
       px="16"
       sm-size="72"
-      class="h-72 md:h-screen relative"
+      class="h-screen md:h-screen relative"
     >
       <div
         class="wais-text-1 text-center w-11/12 md:w-full flat-3 overflow-hidden"
@@ -393,78 +393,6 @@ export default {
   width: 100%;
 }
 
-.s-circle-1 {
-  background: #99fcce;
-  width: 180vh;
-  height: 180vh;
-  /*left: -19.64px;*/
-  /*top: -91.02px;*/
-}
-
-.s-circle-2 {
-  background: #f7633f;
-  width: 220vh;
-  height: 220vh;
-  /*left: -65px;*/
-  /*top: 62px;*/
-}
-
-.s-circle-3 {
-  background: #b749e6;
-  width: 200vh;
-  height: 200vh;
-  /*top: 58px;*/
-  /*z-index: 1;*/
-  /*animation: super-circle infinite 4s;*/
-}
-
-.super-circle {
-  position: absolute;
-  /*width: 160vh;*/
-  /*height: 160vh;*/
-  filter: blur(25vh);
-  /*-webkit-box-shadow: inset 6px 2px 44px 20px #FFFFFF;*/
-  /*box-shadow: inset 6px 2px 44vh 20px #FFFFFF;*/
-  border-radius: 100vh;
-  transition: all 5s ease-in-out;
-}
-
-@keyframes super-circle {
-  0% {
-    transform: translate3d(10vh, 10vh, 0);
-  }
-  10% {
-    transform: translate3d(20vh, 20vh, 0);
-  }
-  20% {
-    transform: translate3d(30vh, 30vh, 0);
-  }
-  30% {
-    transform: translate3d(40vh, 40vh, 0);
-  }
-  40% {
-    transform: translate3d(50vh, 50vh, 0);
-  }
-  50% {
-    transform: translate3d(60vh, 60vh, 0);
-  }
-  60% {
-    transform: translate3d(70vh, 70vh, 0);
-  }
-  70% {
-    transform: translate3d(80vh, 80vh, 0);
-  }
-  80% {
-    transform: translate3d(80vh, 80vh, 0);
-  }
-  90% {
-    transform: translate3d(90vh, 90vh, 0);
-  }
-  100% {
-    transform: translate3d(100vh, 100vh, 0);
-  }
-}
-
 @keyframes scroll-marquee {
   from {
     transform: translateX(0);
@@ -517,12 +445,12 @@ export default {
 
 .customer-animation::before {
   content: "fans";
-  animation: fans 4s ease;
+  animation: fans 6s ease;
 }
 
 .cliente-animation::before {
   content: "fans";
-  animation: fans2 4s ease;
+  animation: fans2 6s ease;
 }
 
 @keyframes line {

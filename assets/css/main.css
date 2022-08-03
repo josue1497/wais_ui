@@ -38,7 +38,8 @@ body.dark {
 
 .main-banner {
   /*background: linear-gradient(90deg, #F7633F, #99FCCE, #B749E6, #B55DE7);*/
-  height: 45rem;
+  /* height: 45rem; */
+  @apply h-screen md:h-[40rem] lg:h-[60rem];
 }
 
 @keyframes hue-animation {
@@ -48,45 +49,45 @@ body.dark {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .main-banner {
     height: 35rem;
   }
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .main-banner {
     height: 35rem;
   }
-}
+} */
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .main-banner {
     height: 40rem;
   }
-}
+} */
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
   .main-banner {
     height: 45rem;
   }
-}
+} */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
   .main-banner {
     height: 55rem;
   }
-}
+} */
 
-@media only screen and (min-width: 1536px) {
+/* @media only screen and (min-width: 1536px) {
   .main-banner {
     height: 65rem;
   }
-}
+} */
 
 .toggle-checkbox:checked {
   @apply: right-0 border-green-400;
@@ -174,7 +175,7 @@ textarea::placeholder {
 }
 
 .send-button {
-  @apply text-[24px] md:text-[32px] lg:text-[42px] font-normal border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-7 py-2 bg-transparent hover:bg-[#232531] dark:bg-[#232531] dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];
+  @apply text-[18px] md:text-[24px] lg:text-[56px] font-normal border border-[#232531] dark:border-white rounded-full px-7 py-2 bg-transparent hover:bg-[#232531] dark:bg-[#232531] dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];
 }
 
 .marquee {
@@ -338,11 +339,11 @@ textarea::placeholder {
 }
 
 .home-title {
-  @apply text-[77px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
+  @apply text-[100px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
 }
 
 .home-subtitle {
-  @apply text-[90px] md:text-[180px] lg:text-[210px] xl:text-[300px] 2xl:text-[359px] font-normal leading-[5rem] md:leading-[8rem] lg:leading-[12rem] xl:leading-[16rem] 2xl:leading-[20rem];
+  @apply text-[110px] md:text-[180px] lg:text-[210px] xl:text-[300px] 2xl:text-[359px] font-normal leading-[5.5rem] md:leading-[8rem] lg:leading-[12rem] xl:leading-[16rem] 2xl:leading-[20rem];
 }
 
 .wais-title {

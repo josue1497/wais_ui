@@ -1,13 +1,13 @@
 <template>
   <div class="is-dark pb-14">
-    <HeadSection class="w-full h-[30rem] md:h-screen flex" id="careers-1" color="#2A00FF">
+    <HeadSection class="w-full h-screen flex" id="careers-1" color="#2A00FF">
       <div class="flex flex-col justify-center items-center m-auto w-full mt-24">
         <div class="flex flex-col justify-end items-end title-content h-full w-full py-10">
           <h1 class="text-[72px] md:text-[180px] lg:text-[288px] font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
             {{$t("_careers.title")}}	
           </h1>
           <hr class="border border-t-black dark:border-t-white w-full mt-1 md:mt-2 lg:mt-5">
-          <div class="mx-auto w-3/4 flex flex-col justify-center items-center">
+          <div class="mx-auto w-full flex flex-col justify-center items-center">
             <div class="flex justify-center flex-col items-start mr-auto w-full md:w-3/4 lg:w-5/12 py-10 px-5">
               <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto ">
                 {{$t("_careers.text_1")}} 
@@ -15,7 +15,7 @@
               <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem] mr-auto bg-[#666BE4] text-white">{{$t("_careers.positive_change")}}</p>
             </div>
             <div class="point seven flat-1"></div>
-            <div class="flex justify-center flex-col items-start xs:w-3/4 md:w-5/12 md:py-10 ml-auto px-4 flat-1">
+            <div class="flex justify-center flex-col items-start w-[73%] md:w-5/12 py-24 md:py-10 ml-auto px-4 flat-1">
               <p class="text-[24px] md:text-[30px] lg:text-[42px] leading-[2rem] md:leading-[2rem] lg:leading-[3rem]  mr-auto leading-title">
                 {{$t("_careers.text_2_1")}} 
                 <span class="text-white dark:text-slate-400">{{$t("_careers.text_2_2")}}</span>
@@ -81,9 +81,16 @@
     background: url(../assets/img/ellipses.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    @apply w-44 h-44;
+    @apply w-32 h-32 md:w-44 md:h-44;
     top: -2vh;
     right: 0;
+  }
+
+  .dark .join-ellipse::after {
+    content: "";
+    background: url(../assets/img/ellipses-light.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .point.six {
@@ -105,8 +112,8 @@
     .point.six {
       left: 20vh;
       top: 70vh;
-      width: 30vh;
-      height: 30vh;
+      width: 15vh;
+      height: 15vh;
       filter: blur(20vh);
     }
 

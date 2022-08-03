@@ -37,8 +37,11 @@
         }),
         methods: {
             onClick() {
-                this.opened = !this.opened
                 this.$emit('onMenu')
+                this.opened = !this.opened
+            },
+            restore(){
+                this.opened = false
             }
         },
         computed: {

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4"
+    :class="`fixed ${visible ? 'bg-white dark:bg-[#232531]' :'bg-transparent'} border-gray-200 px-2 sm:px-4 py-2.5 w-full nav flat-4`"
     id="navbar"
   >
     <div class="flex flex-wrap justify-between items-center mx-auto w-full p-3">
@@ -59,7 +59,7 @@
             </div>
           </div>
         </label>
-        <BurgerButton class="block md:hidden" @onMenu="visible = !visible" />
+        <BurgerButton class="block md:hidden" ref="burger" @onMenu="visible = !visible" />
       </div>
 
       <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
@@ -239,10 +239,13 @@ export default {
       if (nValue) document.querySelector("body").classList.add("dark");
       else document.querySelector("body").classList.remove("dark");
     },
-  },
+    $route() {
+        this.visible = false
+        this.$refs['burger'].restore()
+    }
+  }
 };
 </script>
-
 <style scoped>
 .menu-item {
   @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-transparent hover:bg-[#232531] dark:bg-transparent dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];

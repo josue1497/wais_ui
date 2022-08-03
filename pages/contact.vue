@@ -3,7 +3,7 @@
     <section class="w-full flex mt-20" id="careers-1">
       <div class="flex flex-col justify-center items-start m-auto w-full">
         <div class="flex flex-col justify-end items-end title-content md:ml-10 h-full w-full lg:w-3/4 xl:w-10/12">
-          <h1 class="contact-title font-normal mx-auto md:mr-auto md:ml-0 flat-2">
+          <h1 class="contact-title font-normal mr-auto ml-0 md:mr-auto md:ml-0 flat-2">
             {{$t('_contact.title')}}
           </h1>
           <div class="flex justify-center flex-col items-end w-10/12 md:w-3/4 lg:w-1/2  ml-auto py-3 md:py-6 lg:py-8 px-5 flat-2">
@@ -78,7 +78,7 @@
   }
 
   .contact-title {
-    @apply text-[77px] md:text-[128px] lg:text-[168px] xl:text-[208px] 2xl:text-[288px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
+    @apply text-[52px] md:text-[128px] lg:text-[168px] xl:text-[208px] 2xl:text-[288px] leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
   }
 
   .contact-text-1 {
