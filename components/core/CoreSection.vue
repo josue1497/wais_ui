@@ -13,7 +13,6 @@
         props: {
             justify: {type: String, default: 'center'},
             items: {type: String, default: 'center'},
-            id: {type: String, required: true},
             color: {type: String, default: '#ADF1D6'},
             px: {type: [String, Number], default: 16},
             smPx: {type: [String, Number], default: 8},
@@ -37,12 +36,6 @@
             leave(e) {
                 this.showPointer = false;
             },
-            updateSpotlight(e) {
-                const spotlight = document.querySelector(`#pointer-${this.id}`)
-                if (spotlight) {
-                    spotlight.style.backgroundImage = `radial-gradient(circle at ${e.layerX}px ${e.layerY}px, ${this.color} ${SPOTLIGHT_SIZE}`;
-                }
-            }
         }
     }
 </script>

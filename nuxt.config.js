@@ -47,8 +47,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "@/assets/css/main.css",
-    // '@/assets/css/text-colorized.css',
-    // '@/assets/css/text-colorized.scss',
     "@/assets/css/scroll-effect.css",
     "@/assets/css/scroll-effect.scss",
     "@/assets/css/background-effect.css",

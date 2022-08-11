@@ -1,9 +1,9 @@
 <template>
   <div class="is-dark pb-14">
-    <HeadSection class="w-full h-screen flex" id="careers-1" color="#2A00FF">
+    <HeadSection class="w-full h-screen md:h-auto flex" id="careers-1" color="#2A00FF">
       <div class="flex flex-col justify-center items-center m-auto w-full mt-24">
         <div class="flex flex-col justify-end items-end title-content h-full w-full py-10">
-          <h1 class="text-[72px] md:text-[180px] lg:text-[288px] font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
+          <h1 class="home-title font-normal mx-auto leading-[5rem] md:leading-[12rem] lg:leading-[18rem] text-center">
             {{$t("_careers.title")}}	
           </h1>
           <hr class="border border-t-black dark:border-t-white w-full mt-1 md:mt-2 lg:mt-5">

@@ -3,9 +3,14 @@
     <HeadSection class="is-dark py-16 flex-col px-0" id="about-1" color="#2A00FF">
       <div
         class="marquee my-marquee mt-6 border-t py-5 border-b border-t-black border-b-black  dark:border-t-white dark:border-b-white w-full">
-        <div class="marquee-inner" aria-hidden="true">
+        <!-- <div class="marquee-inner" aria-hidden="true">
           <p class="marquee-content text-6xl md:text-[75px] lg:text-[97px] mx-5">{{$t('about')}}</p>
-        </div>
+        </div> -->
+        <client-only>
+          <marquee-text :repeat="30">
+            <p class="marquee-content text-6xl md:text-[75px] lg:text-[97px] mx-5">{{$t('about')}}</p>
+          </marquee-text>
+        </client-only>
       </div>
       <div class="px-4 md:px-12 lg:px-24 py-14 flex flex-col w-full md:w-11/12 mx-auto">
         <p class="about-text w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
@@ -42,18 +47,20 @@
 <script>
     import HeadSection from "../components/core/HeadSection";
     import CoreSection from "../components/core/CoreSection";
-    import InfiniteMarquee from 'infinite-marquee'
+    // import InfiniteMarquee from 'infinite-marquee'
+    // import MarqueeText from 'vue-marquee-text-component'
 
     export default {
         name: "about",
-        components: {CoreSection, HeadSection},
+        components: {CoreSection, HeadSection, MarqueeText: () => import('vue-marquee-text-component')},
         mounted() {
-            new InfiniteMarquee({
-                el: document.querySelector('.my-marquee'),
-                direction: 'right',
-                duration: 80,
-                css: false
-            })
+            // const a = new InfiniteMarquee({
+            //     el: document.querySelector('.my-marquee'),
+            //     direction: 'right',
+            //     duration: 80,
+            //     css: false
+            // })
+            // console.log(a)
         },
         head() {
           return {

@@ -40,21 +40,28 @@
         </div>
       </div>
       <div
-        class="w-full md:w-3/4 absolute inset-x-0 bottom-20 px-0 py-10 md:px-14"
+        class="w-full md:w-3/4 absolute inset-x-0 bottom-24 px-0 py-10 md:px-14"
       >
         <h1 class="home-subtitle flex flex-col w-full md:w-full GFG uppercase">
           <span class="block">Wais</span><span class="block">Digital</span>
         </h1>
       </div>
+      <div
+        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
+      >
+        <a href="#fans" class="text-[4rem]">
+          <i class="fa-solid fa-angles-down"></i>
+        </a>
+      </div>
       <SocialNetworkBar></SocialNetworkBar>
     </section>
     <CoreSection
-      justify="start"
+      justify="center"
       items="center"
-      id="1"
+      id="fans"
       sm-px="0"
       px="16"
-      class="h-72 md:h-screen"
+      class="h-screen md:h-screen md:justify-start md:items-center"
     >
       <div class="w-full py-10 px-0 md:px-16 flat-3">
         <h3
@@ -69,9 +76,16 @@
           <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
       </div>
+      <div
+        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
+      >
+        <a href="#services" class="text-[4rem]">
+          <i class="fa-solid fa-angles-down"></i>
+        </a>
+      </div>
     </CoreSection>
     <CoreSection
-      id="2"
+      id="services"
       sm-px="12"
       px="16"
       sm-size="72"
@@ -118,15 +132,22 @@
         </span>
       </div>
       <div class="point one flat-1"></div>
+      <div
+        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
+      >
+        <a href="#clients" class="text-[4rem]">
+          <i class="fa-solid fa-angles-down"></i>
+        </a>
+      </div>
     </CoreSection>
     <CoreSection
       items="start"
       justify="center"
-      id="3"
+      id="clients"
       color="#2A00FF"
       sm-px="0"
       sm-size="64"
-      class="h-auto md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative"
+      class="h-screen md:h-[20rem] lg:h-[30rem] xl:h-[50rem] relative items-center md:items-start"
     >
       <div class="w-full px-0 md:px-0 text-center flat-2">
         <h3 class="wais-text text-center font-normal">{{ $t('_home.our_clients') }}</h3>
@@ -358,6 +379,25 @@ export default {
   @apply h-2 md:h-[50px] lg:h-[75px] xl:h-[120px] 2xl:h-[150px] w-4 md:w-[100px] lg:w-[150px] xl:w-[240px] 2xl:w-[300px];
 }
 
+
+.arrow-down {
+  animation: float 6s ease-in-out infinite;
+}
+
+/*Keyframes float div */
+@keyframes float {
+ 0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+
 .circle-in-2 {
   margin-top: 3vh;
   margin-left: 2vh;
@@ -445,12 +485,12 @@ export default {
 
 .customer-animation::before {
   content: "fans";
-  animation: fans 6s ease;
+  animation: fans 4s ease;
 }
 
 .cliente-animation::before {
   content: "fans";
-  animation: fans2 6s ease;
+  animation: fans2 4s ease;
 }
 
 @keyframes line {
