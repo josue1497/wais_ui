@@ -2,10 +2,10 @@ import { en } from "./locale/en";
 import { es } from "./locale/es";
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: true,
+  ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: "server",
+  target: "static",
   dev: process.env.NODE_ENV !== "production",
   // Global page headers: https://go.nuxtjs.dev/config-head
   loading: {
