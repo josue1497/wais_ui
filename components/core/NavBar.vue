@@ -66,11 +66,11 @@
         <ul
           class="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium"
         >
-          <li class="menu-item">
+          <!-- <li class="menu-item">
             <NuxtLink to="projects" class="menu-item-link" aria-current="page"
               > {{ $t("projects") }}
             </NuxtLink>
-          </li>
+          </li> -->
           <li class="menu-item">
             <NuxtLink to="/services" class="menu-item-link">
               {{ $t("services") }}
@@ -148,9 +148,9 @@
         <div
           class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start flex-col"
         >
-          <NuxtLink to="/projects"
+          <!-- <NuxtLink to="/projects"
             ><p class="mobile-links">{{ $t("projects") }}</p></NuxtLink
-          >
+          > -->
           <NuxtLink to="/about"><p class="mobile-links">{{ $t("about") }}</p></NuxtLink>
           <NuxtLink to="/services"
             ><p class="mobile-links">{{ $t("services") }}</p></NuxtLink
