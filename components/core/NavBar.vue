@@ -87,6 +87,9 @@
           <li class="menu-item">
             <NuxtLink to="/careers" class="menu-item-link"> {{ $t("careers") }} </NuxtLink>
           </li>
+          <li class="lang-item">
+            <LangSwitcher></LangSwitcher>
+          </li>
           <li class="flex justify-center items-center">
             <label for="toggleB" class="flex items-center cursor-pointer">
               <!-- toggle -->
@@ -157,6 +160,7 @@
           >
           <NuxtLink to="/careers"><p class="mobile-links">{{ $t("careers") }}</p></NuxtLink>
           <NuxtLink to="/contact"><p class="mobile-links">{{ $t("contact") }}</p></NuxtLink>
+          <LangSwitcher class="mobile-links"></LangSwitcher>
         </div>
       </div>
     </transition>
@@ -167,12 +171,14 @@
 import { mapActions, mapState } from "vuex";
 import BurgerButton from "./BurgerButton";
 import Logo from "./Logo";
+import LangSwitcher from "./LangSwitcher";
 
 export default {
   name: "NavBar",
   components: {
     BurgerButton,
     Logo,
+    LangSwitcher,
   },
   computed: {
     ...mapState({
@@ -251,6 +257,9 @@ export default {
   @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-transparent hover:bg-[#232531] dark:bg-transparent dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];
 }
 
+.lang-item {
+  @apply px-5 py-2;
+}
 .menu-item-link {
   @apply block p-0;
 }

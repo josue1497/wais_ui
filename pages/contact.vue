@@ -78,7 +78,7 @@
   }
 
   .contact-title {
-    @apply text-[52px] md:text-[128px] lg:text-[168px] xl:text-[208px] 2xl:text-[288px] leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
+    @apply text-[62px] md:text-[128px] lg:text-[168px] xl:text-[208px] 2xl:text-[288px] leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
   }
 
   .contact-text-1 {

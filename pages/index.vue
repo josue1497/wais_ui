@@ -49,7 +49,7 @@
       <div
         class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
       >
-        <a href="#fans" class="text-[4rem]">
+        <a href="#fans" class="text-[2rem]">
           <i class="fa-solid fa-angles-down"></i>
         </a>
       </div>
@@ -63,7 +63,7 @@
       px="16"
       class="h-screen md:h-screen md:justify-start md:items-center"
     >
-      <div class="w-full py-10 px-0 md:px-16 flat-3">
+      <div class="w-full py-10 px-0 md:px-16 text-[2rem]flat-3">
         <h3
           data-aos="fade-up"
           class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative"
@@ -79,7 +79,7 @@
       <div
         class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
       >
-        <a href="#services" class="text-[4rem]">
+        <a href="#services" class="text-[2rem]">
           <i class="fa-solid fa-angles-down"></i>
         </a>
       </div>
@@ -135,7 +135,7 @@
       <div
         class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
       >
-        <a href="#clients" class="text-[4rem]">
+        <a href="#clients" class="text-[2rem]">
           <i class="fa-solid fa-angles-down"></i>
         </a>
       </div>
@@ -497,48 +497,48 @@ export default {
   0% {
     width: 100%;
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: left;
   }
   10% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: left;
   }
   20% {
     transform: scaleX(1);
-    transform-origin: center;
+    transform-origin: left;
   }
   30% {
     /* width: 100%; */
     transform: scaleX(1);
-    transform-origin: center;
+    transform-origin: left;
   }
   40% {
     width: 100%;
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
   50% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
   60% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
   70% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
   80% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
   90% {
     transform: scaleX(0);
   }
   100% {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: right;
   }
 }
 
@@ -549,7 +549,7 @@ export default {
   }
   30% {
     content: "customers";
-    opacity: 0;
+    opacity: 1;
   }
   40% {
     content: "customers";
@@ -572,7 +572,7 @@ export default {
   }
   30% {
     content: "clientes";
-    opacity: 0;
+    opacity: 1;
   }
   40% {
     content: "clientes";

@@ -1,15 +1,21 @@
 <template>
-  <ul class="fixed flat-4 lang-options p-5">
-    <li v-for="(locale, index) in availableLocales" :key="index">
-      <button
-        :key="locale"
-        @click.prevent.stop="setLocale(locale)"
-        >
-        <country-flag :country='setLocaleCode(locale)' class="rounded-lg"/>
-        </button
-      >
-    </li>
-  </ul>
+  <div>
+    <ul class="hidden md:flex px-5 border-black dark:border-white border-x-2">
+      <li v-for="(locale, index) in availableLocales" :key="index">
+        <button
+          :key="locale"
+          @click.prevent.stop="setLocale(locale)"
+          >
+          {{locale.toUpperCase()}}
+          </button>
+      </li>
+    </ul>
+    <div class="flex md:hidden justify-around items-center text-3xl">
+      <button class="px-5" @click.prevent.stop="setLocale('en')">English</button>
+      <div class="h-8 border-r-2 border-black dark:border-white"></div>
+      <button class="px-5" @click.prevent.stop="setLocale('es')">Español</button>
+    </div>
+  </div>
 </template>
 <script>
 import CountryFlag from 'vue-country-flag'
@@ -40,11 +46,4 @@ export default {
 };
 </script>
 <style scoped>
-.lang-options {
-  top: 50%;
-  -webkit-transform: translateY(-30vh);
-  -ms-transform: translateY(-30vh);
-  transform: translateY(-30vh);
-  right: 0;
-}
 </style>
