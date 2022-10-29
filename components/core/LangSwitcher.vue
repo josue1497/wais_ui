@@ -5,6 +5,7 @@
         <button
           :key="locale"
           @click.prevent.stop="setLocale(locale)"
+          class="text-black dark:text-white"
           >
           {{locale.toUpperCase()}}
           </button>

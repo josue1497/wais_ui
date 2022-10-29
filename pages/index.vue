@@ -2,58 +2,25 @@
   <div>
     <section
       class="w-full flex main-banner bg relative overflow-hidden"
-      @mousemove="updateSpotlight"
-      @mouseleave="leave"
-      @mouseenter="enter"
     >
-      <div class="hidden md:block circle-out">
-        <div
-          class="circle circle-in-1"
-          :style="{ transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)' }"
-        ></div>
-        <div
-          class="circle circle-in-2"
-          :style="{ transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)' }"
-        ></div>
-        <div
-          class="circle circle-in-3"
-          :style="{ transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)' }"
-        ></div>
-        <div
-          class="circle circle-in-4"
-          :style="{ transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)' }"
-        ></div>
-        <div
-          class="circle circle-in-5"
-          :style="{ transform: 'translate3d(40vw, 35vh, 0px) rotate(-25deg)' }"
-        ></div>
-      </div>
       <div
         class="flex flex-col justify-start items-start my-56 md:my-36 w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title flex flex-col w-full md:w-10/12 lg:w-8/12">
-            <span class="mr-auto">Think</span
-            ><span class="ml-auto">Wisely</span>
+          <h1 class="home-title text-black dark:text-white flex flex-col w-full p-5 md:p-none md:w-10/12 lg:w-8/12">
+            <span class="mr-auto">Think</span>
+            <!-- <span class="ml-auto text-[#ff5892] flipY " v-if="bigger">Bigger</span>
+            <span class="ml-auto text-[#00d6a1] flipX" v-if="positive">Positive</span>
+            <span class="ml-auto text-[#7677fd] flipY" v-if="bold">Bold</span> -->
+            <Wisely class="ml-auto text-wisely" v-if="true"></Wisely>
           </h1>
         </div>
       </div>
-      <div
-        class="w-full md:w-3/4 absolute inset-x-0 bottom-24 px-0 py-10 md:px-14"
-      >
-        <h1 class="home-subtitle flex flex-col w-full md:w-full GFG uppercase">
-          <span class="block">Wais</span><span class="block">Digital</span>
-        </h1>
-      </div>
-      <div
-        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
-      >
-        <a href="#fans" class="text-[2rem]">
-          <i class="fa-solid fa-angles-down"></i>
-        </a>
-      </div>
       <SocialNetworkBar></SocialNetworkBar>
+      <div class="point banner-one flat-1"></div>
+      <div class="point banner-two flat-1"></div>
+      <div class="point banner-three flat-1"></div>
     </section>
     <CoreSection
       justify="center"
@@ -76,13 +43,13 @@
           <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
       </div>
-      <div
+      <!-- <div
         class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
       >
         <a href="#services" class="text-[2rem]">
           <i class="fa-solid fa-angles-down"></i>
         </a>
-      </div>
+      </div> -->
     </CoreSection>
     <CoreSection
       id="services"
@@ -188,13 +155,15 @@ import CoreSection from "../components/core/CoreSection";
 import { mapState, mapActions } from "vuex";
 import aosMixin from "../mixins/aos.mixin";
 import SocialNetworkBar from "../components/core/SocialNetworkBar.vue";
+import Wisely from "../components/core/Wisely.vue";
 
 export default {
   mixins: [aosMixin],
   components: {
     CoreSection,
-    SocialNetworkBar
-  },
+    SocialNetworkBar,
+    Wisely
+},
   head() {
     return {
       title: this.$t('home'),
@@ -311,6 +280,10 @@ export default {
       },
     ],
     showPointer: false,
+    bigger: true,
+    positive: false,
+    bold: false,
+    wisely: false,
   }),
   async mounted() {
     const observer = new IntersectionObserver((entries) => {
@@ -336,9 +309,25 @@ export default {
     });
 
     observer2.observe(document.querySelector(".cliente"));
+    this.animations()
   },
   methods: {
     ...mapActions(["setResetImages"]),
+    timeout(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+    async animations(){
+      const transition = 3 * 1000
+      await this.timeout(transition)
+      this.bigger = this.bold = this.wisely = this.positive = false
+      this.positive = true
+      await this.timeout(transition)
+      this.bigger = this.bold = this.wisely = this.positive = false
+      this.bold = true
+      await this.timeout(transition)
+      this.bigger = this.bold = this.wisely = this.positive = false
+      this.wisely = true
+    },
     enter(e) {
       this.showPointer = true;
     },
@@ -349,15 +338,15 @@ export default {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
     async updateSpotlight(e) {
-      const spotlight = document.querySelectorAll(`.circle`);
-      if (spotlight) {
-        for (const el of spotlight) {
-          el.style.transform = `translate3d(${e.x - 100}px, ${
-            e.y
-          }px, 0px) rotate(-25deg)`;
-          await this.timeout(200);
-        }
-      }
+      // const spotlight = document.querySelectorAll(`.circle`);
+      // if (spotlight) {
+      //   for (const el of spotlight) {
+      //     el.style.transform = `translate3d(${e.x - 100}px, ${
+      //       e.y
+      //     }px, 0px) rotate(-25deg)`;
+      //     await this.timeout(200);
+      //   }
+      // }
     },
   },
   beforeDestroy() {
@@ -367,19 +356,6 @@ export default {
 </script>
 
 <style>
-.circle {
-  transform: rotate(-25deg);
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid #000000;
-  position: absolute;
-  transition: all 0.8ms ease-in-out;
-  will-change: transform;
-  transform-style: preserve-3d;
-  @apply h-2 md:h-[50px] lg:h-[75px] xl:h-[120px] 2xl:h-[150px] w-4 md:w-[100px] lg:w-[150px] xl:w-[240px] 2xl:w-[300px];
-}
-
-
 .arrow-down {
   animation: float 6s ease-in-out infinite;
 }
@@ -395,27 +371,6 @@ export default {
 	100% {
 		transform: translatey(0px);
 	}
-}
-
-
-.circle-in-2 {
-  margin-top: 3vh;
-  margin-left: 2vh;
-}
-
-.circle-in-3 {
-  margin-top: 6vh;
-  margin-left: 4vh;
-}
-
-.circle-in-4 {
-  margin-top: 9vh;
-  margin-left: 6vh;
-}
-
-.circle-in-5 {
-  margin-top: 12vh;
-  margin-left: 8vh;
 }
 
 .marquee-content {
@@ -595,11 +550,41 @@ export default {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+  .point.banner-one {
+    right: 5vh;
+    top: 0;
+    width: 20vh;
+    background: #7677fd;
+    /* background: red; */
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-two {
+    right: -5vh;
+    bottom: 20vh;
+    width: 20vh;
+    background: #ff89b2;
+    height: 20vh;
+    animation-delay: 3s;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-three {
+    left: -5vh;
+    bottom: 5vh;
+    width: 20vh;
+    background: #00d6a1;
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
   .point.one {
     left: 0;
     top: 0;
     width: 35vh;
-    background: #adf1d6;
+    background: #d4d4d4;
     height: 35vh;
     filter: blur(10vh);
   }
@@ -616,6 +601,35 @@ export default {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .point.banner-one {
+    right: 5vh;
+    top: 0;
+    width: 20vh;
+    background: #7677fd;
+    /* background: red; */
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-two {
+    right: -5vh;
+    bottom: 20vh;
+    width: 20vh;
+    background: #ff89b2;
+    height: 20vh;
+    animation-delay: 3s;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-three {
+    left: -5vh;
+    bottom: 5vh;
+    width: 20vh;
+    background: #00d6a1;
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
   .point.one {
     left: -5vh;
     top: 0;
@@ -637,6 +651,44 @@ export default {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .point.banner-one {
+    right: 10vh;
+    top: 10vh;
+    width: 20vh;
+    background: #7677fd;
+    /* background: red; */
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-two {
+    right: 10vh;
+    bottom: 15vh;
+    width: 20vh;
+    background: #ff89b2;
+    height: 20vh;
+    animation-delay: 3s;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-three {
+    left: 25vh;
+    bottom: 15vh;
+    width: 20vh;
+    background: #00d6a1;
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-one {
+    right: 5vh;
+    top: 0;
+    width: 20vh;
+    background: #7677fd;
+    /* background: red; */
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
   .point.one {
     left: -40vh;
     top: -41vh;
@@ -655,6 +707,35 @@ export default {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .point.banner-one {
+    right: 10vh;
+    top: 10vh;
+    width: 20vh;
+    background: #7677fd;
+    /* background: red; */
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-two {
+    right: 10vh;
+    bottom: 15vh;
+    width: 20vh;
+    background: #ff89b2;
+    height: 20vh;
+    animation-delay: 3s;
+    filter: blur(3.5vh);
+  }
+
+  .point.banner-three {
+    left: 25vh;
+    bottom: 15vh;
+    width: 20vh;
+    background: #00d6a1;
+    height: 20vh;
+    filter: blur(3.5vh);
+  }
+
   .point.one {
     left: -40vh;
     top: -41vh;
@@ -697,6 +778,47 @@ export default {
   width: 150px;
   border-radius: 50%;
   transform: rotate(15deg);
+}
+
+.text-wisely {
+  background: rgb(0,214,161);
+  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 150% auto;
+  padding-bottom: 4rem;
+  /* @apply leading-[5rem] md:leading-[10rem] lg:leading-[13rem] xl:leading-[16rem] 2xl:leading-[17rem]; */
+}
+
+.flipY {
+  animation: 1s anim-flipY ease;
+}
+@keyframes anim-flipY {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    /* animate nothing to pause animation at the end */
+    transform: rotateY(360deg);
+  }
+}
+
+.flipX {
+  animation: 1s anim-flipX ease;
+}
+@keyframes anim-flipX {
+  /* 0% {
+    transform: rotateX(90def);
+  } */
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    /* animate nothing to pause animation at the end */
+    transform: rotateX(360deg);
+  }
 }
 
 </style>

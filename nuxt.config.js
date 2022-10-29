@@ -52,6 +52,7 @@ export default {
     "@/assets/css/background-effect.css",
     "@/assets/css/background-effect.scss",
     "@fortawesome/fontawesome-svg-core/styles.css",
+    "animate.css/animate.min.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
