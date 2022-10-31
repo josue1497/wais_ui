@@ -10,10 +10,11 @@
         <div class="flex flex-col justify-center items-center w-full">
           <h1 class="home-title text-black dark:text-white flex flex-col w-full p-5 md:p-none md:w-10/12 lg:w-8/12">
             <span class="mr-auto">Think</span>
-            <!-- <span class="ml-auto text-[#ff5892] flipY " v-if="bigger">Bigger</span>
-            <span class="ml-auto text-[#00d6a1] flipX" v-if="positive">Positive</span>
-            <span class="ml-auto text-[#7677fd] flipY" v-if="bold">Bold</span> -->
-            <Wisely class="ml-auto text-wisely" v-if="true"></Wisely>
+            <span class="ml-auto text-[#ff5892] animate__animated animate__flip " v-if="bigger">Bigger</span>
+            <span class="ml-auto text-[#00d6a1] animate__animated animate__flipInX" v-if="positive">Positive</span>
+            <span class="ml-auto text-[#7677fd] animate__animated animate__flip" v-if="bold">Bold</span>
+            <!-- <span class="ml-auto text-[#7677fd] animate__animated animate__fadeInLeft" v-if="wisely">Bold</span> -->
+            <Wisely class="ml-auto" v-if="wisely"></Wisely>
           </h1>
         </div>
       </div>
@@ -36,20 +37,12 @@
           class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative"
         >
           <span class="block"
-            >{{$t('_home.customer_text_1')}} 
-            <span v-show="isEN" :class="`customer customers-animation relative`"></span>
-            <span v-show="!isEN" :class="`cliente cliente-animation relative`"></span>
+            >{{$t('_home.customer_text_1')}}
+              <span :class="`customer customers-animation customer-animation-fade relative`" :data-customer="$t('_home.customers')"></span>
           </span>
           <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
       </div>
-      <!-- <div
-        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
-      >
-        <a href="#services" class="text-[2rem]">
-          <i class="fa-solid fa-angles-down"></i>
-        </a>
-      </div> -->
     </CoreSection>
     <CoreSection
       id="services"
@@ -99,13 +92,6 @@
         </span>
       </div>
       <div class="point one flat-1"></div>
-      <div
-        class=" arrow-down block md:hidden w-full md:w-3/4 text-center absolute inset-x-0 bottom-0 px-0 py-10 md:px-14"
-      >
-        <a href="#clients" class="text-[2rem]">
-          <i class="fa-solid fa-angles-down"></i>
-        </a>
-      </div>
     </CoreSection>
     <CoreSection
       items="start"
@@ -134,13 +120,13 @@
           </div>
         </div>
         <div class="w-full overflow-x-hidden inline md:hidden" v-if="resetImages">
-          <div class="p-0 md:px-5 w-full grid grid-cols-2 gap-4">
+          <div class="p-0 md:px-5 w-full flex flex-col justify-center" style="height: 65vh;">
             <div
-              :class="`py-4 px-8 md:p-4 justify-center align-center flat-2 w-full flex`"
-              v-for="({ l, n, span }, index) of smClients"
+              :class="`justify-center align-center flat-2 w-full flex`"
+              v-for="({ l, n }, index) of smClients"
               :key="index"
             >
-              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" />
+              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" v-if="currentImage === index" class="py-4 px-8 md:p-4 animate__animated animate__fadeInLeft "/>
             </div>
           </div>
         </div>
@@ -284,6 +270,7 @@ export default {
     positive: false,
     bold: false,
     wisely: false,
+    currentImage: 0,
   }),
   async mounted() {
     const observer = new IntersectionObserver((entries) => {
@@ -297,19 +284,9 @@ export default {
     });
 
     observer.observe(document.querySelector(".customer"));
-
-    const observer2 = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("cliente-animation");
-          return;
-        }
-        entry.target.classList.remove("cliente-animation");
-      });
-    });
-
-    observer2.observe(document.querySelector(".cliente"));
     this.animations()
+    this.nextImage()
+
   },
   methods: {
     ...mapActions(["setResetImages"]),
@@ -317,7 +294,7 @@ export default {
       return new Promise((resolve) => setTimeout(resolve, ms));
     },
     async animations(){
-      const transition = 3 * 1000
+      const transition = 2 * 1000
       await this.timeout(transition)
       this.bigger = this.bold = this.wisely = this.positive = false
       this.positive = true
@@ -328,25 +305,24 @@ export default {
       this.bigger = this.bold = this.wisely = this.positive = false
       this.wisely = true
     },
+    async nextImage(){
+      let index = 0;
+      while(index <= this.smClients.length - 1) {
+        console.log(index)
+
+        await this.timeout(2000)
+        this.currentImage = index
+        if(index === this.smClients.length - 1){
+          index = 0
+        } else index++
+      }
+      
+    },
     enter(e) {
       this.showPointer = true;
     },
     leave(e) {
       this.showPointer = false;
-    },
-    timeout(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    },
-    async updateSpotlight(e) {
-      // const spotlight = document.querySelectorAll(`.circle`);
-      // if (spotlight) {
-      //   for (const el of spotlight) {
-      //     el.style.transform = `translate3d(${e.x - 100}px, ${
-      //       e.y
-      //     }px, 0px) rotate(-25deg)`;
-      //     await this.timeout(200);
-      //   }
-      // }
     },
   },
   beforeDestroy() {
@@ -403,7 +379,11 @@ export default {
   -webkit-text-stroke-color: black;
 }
 
-.customer, .cliente {
+.customer-animation-fade {
+  animation: customer-fade 2s ease-in-out;
+  animation-delay: 1.5s;
+}
+.customer {
   background: #666be4;
   padding: 0 10px 0 10px;
   color: #fff;
@@ -414,15 +394,21 @@ export default {
   padding-left: 10px;
 }
 
+@keyframes customer-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+
+  }
+}
+
 .customer::before {
-  content: "customers";
+  content: attr(data-customer);
 }
 
-.cliente::before {
-  content: "clientes";
-}
-
-.customer-animation::after, .cliente-animation::after {
+.customer-animation::after {
   content: "";
   background: #fff;
   height: 7%;
@@ -431,6 +417,7 @@ export default {
   top: 50%;
   left: 0;
   animation: line 5s ease;
+  transition: all .5s ease-in-out;
   width: 0%;
 }
 
@@ -499,15 +486,15 @@ export default {
 
 @keyframes fans {
   0% {
-    content: "customers";
+    content: attr(data-customer);
     opacity: 1;
   }
   30% {
-    content: "customers";
+    content: attr(data-customer);
     opacity: 1;
   }
   40% {
-    content: "customers";
+    content: attr(data-customer);
     opacity: 0;
   }
   50% {
@@ -672,7 +659,7 @@ export default {
   }
 
   .point.banner-three {
-    left: 25vh;
+    left: 10vh;
     bottom: 15vh;
     width: 20vh;
     background: #00d6a1;
@@ -785,40 +772,11 @@ export default {
   background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; 
+   text-fill-color: transparent;
   background-size: 150% auto;
   padding-bottom: 4rem;
-  /* @apply leading-[5rem] md:leading-[10rem] lg:leading-[13rem] xl:leading-[16rem] 2xl:leading-[17rem]; */
-}
-
-.flipY {
-  animation: 1s anim-flipY ease;
-}
-@keyframes anim-flipY {
-  from {
-    transform: rotateY(180deg);
-  }
-  to {
-    /* animate nothing to pause animation at the end */
-    transform: rotateY(360deg);
-  }
-}
-
-.flipX {
-  animation: 1s anim-flipX ease;
-}
-@keyframes anim-flipX {
-  /* 0% {
-    transform: rotateX(90def);
-  } */
-  from {
-    transform: rotateX(180deg);
-  }
-  to {
-    /* animate nothing to pause animation at the end */
-    transform: rotateX(360deg);
-  }
+  transition: all 0.5s ease-in-out;
 }
 
 </style>
