@@ -4,7 +4,7 @@
       class="w-full flex main-banner bg relative overflow-hidden"
     >
       <div
-        class="flex flex-col justify-start items-start my-56 md:my-36 w-full relative"
+        class="flex flex-col justify-start items-start my-56 md:my-36 lg:my-40 w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
@@ -13,7 +13,6 @@
             <span class="ml-auto text-[#ff5892] animate__animated animate__flip " v-if="bigger">Bigger</span>
             <span class="ml-auto text-[#00d6a1] animate__animated animate__flipInX" v-if="positive">Positive</span>
             <span class="ml-auto text-[#7677fd] animate__animated animate__flip" v-if="bold">Bold</span>
-            <!-- <span class="ml-auto text-[#7677fd] animate__animated animate__fadeInLeft" v-if="wisely">Bold</span> -->
             <Wisely class="ml-auto" v-if="wisely"></Wisely>
           </h1>
         </div>
@@ -308,8 +307,6 @@ export default {
     async nextImage(){
       let index = 0;
       while(index <= this.smClients.length - 1) {
-        console.log(index)
-
         await this.timeout(2000)
         this.currentImage = index
         if(index === this.smClients.length - 1){
@@ -317,12 +314,6 @@ export default {
         } else index++
       }
       
-    },
-    enter(e) {
-      this.showPointer = true;
-    },
-    leave(e) {
-      this.showPointer = false;
     },
   },
   beforeDestroy() {

@@ -340,7 +340,7 @@ textarea::placeholder {
 }
 
 .home-title {
-  @apply text-[100px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[5rem] md:leading-[10rem] lg:leading-[12rem] xl:leading-[12rem] 2xl:leading-[15rem];
+  @apply text-[120px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[7.5rem] md:leading-[12rem] lg:leading-[14rem] xl:leading-[14rem] 2xl:leading-[16rem];
 }
 
 .home-subtitle {
