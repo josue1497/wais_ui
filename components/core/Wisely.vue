@@ -43,11 +43,11 @@ export default {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  @apply text-black dark:text-white text-[1rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2.5rem];
+  @apply text-black dark:text-white text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2.5rem];
 }
 
 .wais-sub-margin {
-  @apply mt-[-6rem] md:mt-[-10rem] lg:mt-[-10rem] xl:mt-[-10rem] 2xl:mt-[-11rem];
+  @apply mt-[-6rem] md:mt-[-7rem] lg:mt-[-8rem] xl:mt-[-8.5rem] 2xl:mt-[-11rem];
 }
 
 .wais-sub-letter-spacing {

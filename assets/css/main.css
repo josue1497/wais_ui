@@ -28,61 +28,9 @@ body.dark {
   @apply text-black dark:text-white;
 }
 
-.bg {
-  background-size: cover;
-  animation: hue-animation 6s alternate infinite;
-}
-
 .main-banner {
   @apply h-screen md:h-[40rem] lg:h-[50rem];
 }
-
-@keyframes hue-animation {
-  100% {
-    filter: hue-rotate(25deg);
-  }
-}
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {
-  .main-banner {
-    height: 35rem;
-  }
-} */
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {
-  .main-banner {
-    height: 35rem;
-  }
-} */
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {
-  .main-banner {
-    height: 40rem;
-  }
-} */
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* @media only screen and (min-width: 992px) {
-  .main-banner {
-    height: 45rem;
-  }
-} */
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {
-  .main-banner {
-    height: 55rem;
-  }
-} */
-
-/* @media only screen and (min-width: 1536px) {
-  .main-banner {
-    height: 65rem;
-  }
-} */
 
 .toggle-checkbox:checked {
   @apply: right-0 border-green-400;
@@ -340,7 +288,11 @@ textarea::placeholder {
 }
 
 .home-title {
-  @apply text-[120px] md:text-[180px] lg:text-[200px] xl:text-[230px] 2xl:text-[277px] mx-auto md:ml-auto leading-[7.5rem] md:leading-[12rem] lg:leading-[14rem] xl:leading-[14rem] 2xl:leading-[16rem];
+  @apply text-[95px] md:text-[180px] lg:text-[200px] xl:text-[215px] 2xl:text-[277px] mx-auto;
+}
+
+.home-title-leading {
+  @apply leading-[5rem] md:leading-[9rem] lg:leading-[10rem] xl:leading-[11rem] 2xl:leading-[16rem];
 }
 
 .home-subtitle {

@@ -8,12 +8,12 @@
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title text-black dark:text-white flex flex-col w-full p-5 md:p-none md:w-10/12 lg:w-8/12">
+          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col w-full p-5 md:p-none md:w-3/4 lg:w-8/12">
             <span class="mr-auto">Think</span>
-            <span class="ml-auto text-[#ff5892] animate__animated animate__flip " v-if="bigger">Bigger</span>
-            <span class="ml-auto text-[#00d6a1] animate__animated animate__flipInX" v-if="positive">Positive</span>
-            <span class="ml-auto text-[#7677fd] animate__animated animate__flip" v-if="bold">Bold</span>
-            <Wisely class="ml-auto" v-if="wisely"></Wisely>
+            <span class="sub-text-margin text-[#E25990] animate__animated animate__flip " v-if="bigger">Bigger</span>
+            <span class="sub-positive-text-margin text-[#2AD39B] animate__animated animate__flipInX" v-if="positive">Positive</span>
+            <span class="sub-text-margin text-[#6464F9] animate__animated animate__flip" v-if="bold">Bold</span>
+            <Wisely class="sub-text-margin" v-if="wisely"></Wisely>
           </h1>
         </div>
       </div>
@@ -118,16 +118,21 @@
             </div>
           </div>
         </div>
-        <div class="w-full overflow-x-hidden inline md:hidden" v-if="resetImages">
-          <div class="p-0 md:px-5 w-full flex flex-col justify-center" style="height: 65vh;">
+        <div class="max-w-full  overflow-x-hidden flex md:hidden slider my-auto" v-if="resetImages">
+          <!-- <div class="w-[300vh]"> -->
+          <!-- marquee-content -->
+          <div class="p-0 md:px-5 slide-track ">
+            <!-- marquee-item sm-marquee-item -->
             <div
-              :class="`justify-center align-center flat-2 w-full flex`"
-              v-for="({ l, n }, index) of smClients"
+              class="justify-center align-center flat-2 w-full flex mx-5 my-auto slide"
+              v-for="({ l, n }, index) of clients"
               :key="index"
             >
-              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" v-if="currentImage === index" class="py-4 px-8 md:p-4 animate__animated animate__fadeInLeft "/>
+            <!-- v-if="currentImage === index" -->
+              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" class="mx-5" height="350" width="550"/>
             </div>
-          </div>
+          <!-- </div> -->
+        </div>
         </div>
       </div>
       <div class="point two flat-1"></div>
@@ -364,18 +369,11 @@ export default {
   }
 }
 
-.GFG {
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
 .customer-animation-fade {
   animation: customer-fade 2s ease-in-out;
   animation-delay: 1.5s;
 }
 .customer {
-  background: #666be4;
   padding: 0 10px 0 10px;
   color: #fff;
   line-height: 1px;
@@ -401,7 +399,6 @@ export default {
 
 .customer-animation::after {
   content: "";
-  background: #fff;
   height: 7%;
   border-bottom: 0;
   position: absolute;
@@ -413,7 +410,6 @@ export default {
 }
 
 .dark .customer-animation::after {
-  background: #666be4;
 }
 
 .customer-animation::before {
@@ -523,46 +519,50 @@ export default {
 
 .dark .customer {
   color: #666be4;
-  background: transparent;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
   .point.banner-one {
-    right: 5vh;
-    top: 0;
-    width: 20vh;
-    background: #7677fd;
-    /* background: red; */
     height: 20vh;
+    width: 20vh;
     filter: blur(3.5vh);
   }
 
   .point.banner-two {
-    right: -5vh;
-    bottom: 20vh;
     width: 20vh;
-    background: #ff89b2;
     height: 20vh;
     animation-delay: 3s;
     filter: blur(3.5vh);
   }
 
   .point.banner-three {
-    left: -5vh;
-    bottom: 5vh;
     width: 20vh;
-    background: #00d6a1;
     height: 20vh;
+    animation-delay: 1s;
     filter: blur(3.5vh);
+  }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .point.banner-one {
+    top: 0;
+    right: 5vh;
+  }
+
+  .point.banner-two {
+    right: -5vh;
+    bottom: 20vh;
+  }
+
+  .point.banner-three {
+    left: -5vh;
+    bottom: 15vh;
   }
 
   .point.one {
     left: 0;
     top: 0;
     width: 35vh;
-    background: #d4d4d4;
     height: 35vh;
     filter: blur(10vh);
   }
@@ -572,7 +572,6 @@ export default {
     top: 10vh;
     width: 20vh;
     height: 20vh;
-    background: #2a00ff;
     filter: blur(20vh);
   }
 }
@@ -582,30 +581,16 @@ export default {
   .point.banner-one {
     right: 5vh;
     top: 0;
-    width: 20vh;
-    background: #7677fd;
-    /* background: red; */
-    height: 20vh;
-    filter: blur(3.5vh);
   }
 
   .point.banner-two {
     right: -5vh;
     bottom: 20vh;
-    width: 20vh;
-    background: #ff89b2;
-    height: 20vh;
-    animation-delay: 3s;
-    filter: blur(3.5vh);
   }
 
   .point.banner-three {
     left: -5vh;
-    bottom: 5vh;
-    width: 20vh;
-    background: #00d6a1;
-    height: 20vh;
-    filter: blur(3.5vh);
+    bottom: 15vh;
   }
 
   .point.one {
@@ -613,7 +598,6 @@ export default {
     top: 0;
     width: 35vh;
     height: 35vh;
-    background: #adf1d6;
     filter: blur(10vh);
   }
 
@@ -622,7 +606,6 @@ export default {
     top: 10vh;
     width: 20vh;
     height: 20vh;
-    background: #2a00ff;
     filter: blur(20vh);
   }
 }
@@ -630,47 +613,26 @@ export default {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .point.banner-one {
-    right: 10vh;
-    top: 10vh;
-    width: 20vh;
-    background: #7677fd;
-    /* background: red; */
-    height: 20vh;
-    filter: blur(3.5vh);
+    right: unset;
+    top: unset;
+    left: 10vh;
+    bottom: 10vh;
   }
 
   .point.banner-two {
     right: 10vh;
     bottom: 15vh;
-    width: 20vh;
-    background: #ff89b2;
-    height: 20vh;
-    animation-delay: 3s;
-    filter: blur(3.5vh);
   }
 
   .point.banner-three {
-    left: 10vh;
+    left: unset;
     bottom: 15vh;
-    width: 20vh;
-    background: #00d6a1;
-    height: 20vh;
-    filter: blur(3.5vh);
+    right: 5vh;
   }
 
-  .point.banner-one {
-    right: 5vh;
-    top: 0;
-    width: 20vh;
-    background: #7677fd;
-    /* background: red; */
-    height: 20vh;
-    filter: blur(3.5vh);
-  }
   .point.one {
     left: -40vh;
     top: -41vh;
-    background: #adf1d6;
   }
 
   .point.two {
@@ -678,7 +640,6 @@ export default {
     top: 15vh;
     width: 40vh;
     height: 40vh;
-    background: #2a00ff;
     filter: blur(25vh);
   }
 }
@@ -686,38 +647,28 @@ export default {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .point.banner-one {
-    right: 10vh;
-    top: 10vh;
-    width: 20vh;
-    background: #7677fd;
-    /* background: red; */
-    height: 20vh;
-    filter: blur(3.5vh);
+    right: unset;
+    top: unset;
+    left: 10vh;
+    bottom: 10vh;
   }
 
   .point.banner-two {
-    right: 10vh;
-    bottom: 15vh;
-    width: 20vh;
-    background: #ff89b2;
-    height: 20vh;
-    animation-delay: 3s;
-    filter: blur(3.5vh);
+    left: 46vh;
+    top: -2vh;
+    right: unset;
+    bottom: unset;
   }
 
   .point.banner-three {
-    left: 25vh;
+    left: unset;
     bottom: 15vh;
-    width: 20vh;
-    background: #00d6a1;
-    height: 20vh;
-    filter: blur(3.5vh);
+    right: 5vh;
   }
 
   .point.one {
     left: -40vh;
     top: -41vh;
-    background: #adf1d6;
   }
 
   .point.two {
@@ -725,7 +676,6 @@ export default {
     top: 10vh;
     width: 20vh;
     height: 20vh;
-    background: #2a00ff;
     filter: blur(15vh);
   }
 }
@@ -735,7 +685,6 @@ export default {
   .point.one {
     left: -40vh;
     top: -41vh;
-    background: #adf1d6;
   }
 
   .point.two {
@@ -743,7 +692,6 @@ export default {
     top: 10vh;
     width: 30vh;
     height: 30vh;
-    background: #2a00ff;
     filter: blur(18vh);
   }
 }
@@ -759,15 +707,46 @@ export default {
 }
 
 .text-wisely {
-  background: rgb(0,214,161);
-  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent; 
-   text-fill-color: transparent;
-  background-size: 150% auto;
+  text-fill-color: transparent;
   padding-bottom: 4rem;
   transition: all 0.5s ease-in-out;
+}
+
+.sub-text-margin {
+  @apply ml-[6rem] md:ml-[12.5rem] lg:ml-[14rem] xl:ml-[15rem] 2xl:ml-[20rem];
+}
+
+.sub-positive-text-margin {
+  @apply ml-[3rem] md:ml-[12.5rem] lg:ml-[14rem] xl:ml-[15rem] 2xl:ml-[20rem];
+}
+
+.sm-marquee-item {
+  height: 100%;
+  width: 100vh
+}
+
+.slider {
+	height: 50vh;
+	overflow:hidden;
+	position: relative;
+	width: 960px;
+}
+
+.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(350px * 18);
+	}
+	
+	.slide {
+		height: 200px;
+		width: 350px;
+	}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-350px * 7))}
 }
 
 </style>
