@@ -119,19 +119,14 @@
           </div>
         </div>
         <div class="max-w-full  overflow-x-hidden flex md:hidden slider my-auto" v-if="resetImages">
-          <!-- <div class="w-[300vh]"> -->
-          <!-- marquee-content -->
           <div class="p-0 md:px-5 slide-track ">
-            <!-- marquee-item sm-marquee-item -->
             <div
               class="justify-center align-center flat-2 w-full flex mx-5 my-auto slide"
               v-for="({ l, n }, index) of clients"
               :key="index"
             >
-            <!-- v-if="currentImage === index" -->
               <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" class="mx-5" height="350" width="550"/>
             </div>
-          <!-- </div> -->
         </div>
         </div>
       </div>
