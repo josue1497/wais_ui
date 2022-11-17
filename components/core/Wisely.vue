@@ -1,13 +1,9 @@
 <template>
   <div class="animate__animated animate__fadeIn">
     <div class="flex flex-col">
-      <span class="text-wisely">
-        <!-- animate__slideInLeft -->
-        Wisely</span
+      <span class="text-wisely">Wisely</span
       >
-        <span class="wais-sub wais-sub-margin wais-sub-letter-spacing animate__animated animate__fadeInUp" v-if="showWais">
-          <!-- animate__slideInUp -->
-          Wais Digital</span
+        <span class="wais-sub wais-sub-margin wais-sub-letter-spacing animate__animated animate__fadeInUp" v-if="showWais">Wais Digital</span
         >
     </div>
   </div>

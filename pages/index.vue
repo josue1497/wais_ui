@@ -297,10 +297,10 @@ export default {
       await this.timeout(transition)
       this.bigger = this.bold = this.wisely = this.positive = false
       this.positive = true
-      await this.timeout(transition)
+      await this.timeout(1000)
       this.bigger = this.bold = this.wisely = this.positive = false
       this.bold = true
-      await this.timeout(transition)
+      await this.timeout(1500)
       this.bigger = this.bold = this.wisely = this.positive = false
       this.wisely = true
     },
@@ -702,10 +702,14 @@ export default {
 }
 
 .text-wisely {
-  -webkit-text-fill-color: transparent; 
+  background: rgb(0,214,161);
+  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
+  background-size: 150% auto;
   padding-bottom: 4rem;
-  transition: all 0.5s ease-in-out;
 }
 
 .sub-text-margin {
