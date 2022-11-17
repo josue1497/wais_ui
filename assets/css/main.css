@@ -254,6 +254,10 @@ textarea::placeholder {
 }
 
 /* keyframe for floating point*/
+/* @keyframes orbit {
+	from { 	transform: rotate(0deg) translateX(150px); }
+	to   {  transform: rotate(360deg) translateX(150px); }
+} */
 @keyframes point {
   /* to {
     transform: translate3d(0, 0, 0);
