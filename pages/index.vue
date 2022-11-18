@@ -526,6 +526,7 @@ export default {
     height: 20vh;
     width: 20vh;
     filter: blur(3.5vh);
+    background: #7677fd;
   }
 
   .point.banner-two {
@@ -533,6 +534,7 @@ export default {
     height: 20vh;
     animation-delay: 3s;
     filter: blur(3.5vh);
+    background: #ff89b2;
   }
 
   .point.banner-three {
@@ -540,6 +542,7 @@ export default {
     height: 20vh;
     animation-delay: 1s;
     filter: blur(3.5vh);
+    background: #00d6a1;
   }
 
 /* Extra small devices (phones, 600px and down) */
