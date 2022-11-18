@@ -378,6 +378,12 @@ export default {
   transition: all .5s ease-in-out;
   padding-left: 10px;
 }
+
+.dark .customer {
+  background: transparent;
+  color: #666be4;
+}
+
 @keyframes customer-fade {
   from {
     opacity: 0;
@@ -386,6 +392,7 @@ export default {
     opacity: 1;
   }
 }
+
 .customer::before {
   content: attr(data-customer);
 }
@@ -401,13 +408,16 @@ export default {
   transition: all .5s ease-in-out;
   width: 0%;
 }
+
 .dark .customer-animation::after {
   background: #666be4;
 }
+
 .customer-animation::before {
   content: "fans";
   animation: fans 4s ease;
 }
+
 .cliente-animation::before {
   content: "fans";
   animation: fans2 4s ease;
