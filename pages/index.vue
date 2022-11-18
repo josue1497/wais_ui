@@ -369,6 +369,7 @@ export default {
   animation-delay: 1.5s;
 }
 .customer {
+  background: #666be4;
   padding: 0 10px 0 10px;
   color: #fff;
   line-height: 1px;
@@ -377,23 +378,20 @@ export default {
   transition: all .5s ease-in-out;
   padding-left: 10px;
 }
-
 @keyframes customer-fade {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
-
   }
 }
-
 .customer::before {
   content: attr(data-customer);
 }
-
 .customer-animation::after {
   content: "";
+  background: #fff;
   height: 7%;
   border-bottom: 0;
   position: absolute;
@@ -403,15 +401,13 @@ export default {
   transition: all .5s ease-in-out;
   width: 0%;
 }
-
 .dark .customer-animation::after {
+  background: #666be4;
 }
-
 .customer-animation::before {
   content: "fans";
   animation: fans 4s ease;
 }
-
 .cliente-animation::before {
   content: "fans";
   animation: fans2 4s ease;
