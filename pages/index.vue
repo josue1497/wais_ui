@@ -4,23 +4,23 @@
       class="w-full flex main-banner bg relative overflow-hidden"
     >
       <div
-        class="flex flex-col justify-start items-start my-56 md:my-36 lg:my-40 w-full relative"
+        class="flex flex-col justify-center items-start w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col w-full p-5 md:p-none md:w-3/4 lg:w-8/12">
+          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col w-full py-5 px-2 md:p-none md:w-3/4 lg:w-8/12">
             <span class="mr-auto">Think</span>
-            <span class="sub-text-margin text-[#E25990] animate__animated animate__flip " v-if="bigger">Bigger</span>
-            <span class="sub-positive-text-margin text-[#2AD39B] animate__animated animate__flipInX" v-if="positive">Positive</span>
-            <span class="sub-text-margin text-[#6464F9] animate__animated animate__flip" v-if="bold">Bold</span>
-            <Wisely class="sub-text-margin" v-if="wisely"></Wisely>
+            <span class="sub-text-margin padding-aux text-[#E25990] animate__animated animate__flip " v-show="bigger">Bigger</span>
+            <span class="sub-positive-text-margin padding-aux text-[#2AD39B] animate__animated animate__flipInX" v-show="positive">Positive</span>
+            <span class="sub-text-margin padding-aux text-[#6464F9] animate__animated animate__flip" v-show="bold">Bold</span>
+            <Wisely class="sub-wisely-text-margin" v-show="wisely"></Wisely>
           </h1>
         </div>
       </div>
       <SocialNetworkBar></SocialNetworkBar>
-      <div class="point banner-one flat-1"></div>
-      <div class="point banner-two flat-1"></div>
-      <div class="point banner-three flat-1"></div>
+      <div class="point point-banner banner-one flat-1"></div>
+      <div class="point point-banner banner-two flat-1"></div>
+      <div class="point point-banner banner-three flat-1"></div>
     </section>
     <CoreSection
       justify="center"
@@ -518,35 +518,47 @@ export default {
   }
 }
 
-.dark .customer {
-  color: #666be4;
-}
+  .dark .customer {
+    color: #666be4;
+  }
+
+  .point-banner {
+    height: 20vh;
+      width: 20vh;
+  }
 
   .point.banner-one {
-    height: 20vh;
-    width: 20vh;
+   
     filter: blur(3.5vh);
     background: #7677fd;
   }
 
   .point.banner-two {
-    width: 20vh;
-    height: 20vh;
     animation-delay: 3s;
     filter: blur(3.5vh);
     background: #ff89b2;
   }
 
   .point.banner-three {
-    width: 20vh;
-    height: 20vh;
     animation-delay: 1s;
     filter: blur(3.5vh);
     background: #00d6a1;
   }
 
+  .point.one {
+    background: #00d6a1;
+  }
+  .point.two {
+    background: #2a00ff;
+  }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+  .point-banner {
+    width: 12vh;
+    height: 12vh;
+  }
 
   .point.banner-one {
     top: 0;
@@ -559,7 +571,7 @@ export default {
   }
 
   .point.banner-three {
-    left: -5vh;
+    left: -2vh;
     bottom: 15vh;
   }
 
@@ -582,6 +594,11 @@ export default {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .point-banner {
+    width: 12vh;
+    height: 12vh;
+  }
+
   .point.banner-one {
     right: 5vh;
     top: 0;
@@ -593,7 +610,7 @@ export default {
   }
 
   .point.banner-three {
-    left: -5vh;
+    left: -2vh;
     bottom: 15vh;
   }
 
@@ -616,6 +633,10 @@ export default {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .point-banner {
+    width: 15vh;
+    height: 15vh;
+  }
   .point.banner-one {
     right: unset;
     top: unset;
@@ -650,6 +671,10 @@ export default {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .point-banner {
+    width: 17vh;
+    height: 17vh;
+  }
   .point.banner-one {
     right: unset;
     top: unset;
@@ -686,9 +711,13 @@ export default {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .point-banner {
+    width: 20vh;
+    height: 20vh;
+  }
   .point.one {
-    left: -40vh;
-    top: -41vh;
+    left: -10vh;
+    top: -20vh;
   }
 
   .point.two {
@@ -710,23 +739,20 @@ export default {
   transform: rotate(15deg);
 }
 
-.text-wisely {
-  background: rgb(0,214,161);
-  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  background-size: 150% auto;
+.padding-aux {
   padding-bottom: 4rem;
 }
 
 .sub-text-margin {
-  @apply ml-[6rem] md:ml-[12.5rem] lg:ml-[14rem] xl:ml-[15rem] 2xl:ml-[20rem];
+  @apply ml-[7rem] md:ml-[12.5rem] lg:ml-[14rem] xl:ml-[15rem] 2xl:ml-[20rem];
 }
 
 .sub-positive-text-margin {
   @apply ml-[3rem] md:ml-[12.5rem] lg:ml-[14rem] xl:ml-[15rem] 2xl:ml-[20rem];
+}
+
+.sub-wisely-text-margin {
+  @apply ml-[7rem] md:ml-[12.5rem] lg:ml-[15rem] xl:ml-[15rem] 2xl:ml-[10rem];
 }
 
 .sm-marquee-item {

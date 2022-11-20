@@ -29,7 +29,7 @@ body.dark {
 }
 
 .main-banner {
-  @apply h-screen md:h-[40rem] lg:h-[50rem];
+  @apply h-screen;
 }
 
 .toggle-checkbox:checked {
@@ -253,36 +253,9 @@ textarea::placeholder {
   animation: point 5s steps(100) infinite;
 }
 
-/* keyframe for floating point*/
-/* @keyframes orbit {
-	from { 	transform: rotate(0deg) translateX(150px); }
-	to   {  transform: rotate(360deg) translateX(150px); }
-} */
 @keyframes point {
-  /* to {
-    transform: translate3d(0, 0, 0);
-  }
-  from {
-    transform: translate3d(4rem, 4rem, 0);
-  } */
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  20% {
-    transform: translate3d(4rem, 4rem, 0);
-  }
-  40% {
-    transform: translate3d(0, 4rem, 0);
-  }
-  60% {
-    transform: translate3d(-4rem, 0rem, 0);
-  }
-  80% {
-    transform: translate3d(-4rem, -4rem, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+  from { 	transform: rotate(0deg) translateX(3rem); }
+	to   {  transform: rotate(360deg) translateX(3rem); }
 }
 
 .text-outline {

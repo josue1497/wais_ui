@@ -13,7 +13,6 @@ export default {
   name: "Wisely",
   data: () => ({
     showWais: false,
-    wisely: ["W", "i", "s", "e", "l", "y", ""],
     showGradient: false,
   }),
   mounted() {
@@ -33,9 +32,20 @@ export default {
 };
 </script>
 <style>
+
+.text-wisely {
+  background: rgb(0,214,161);
+  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 150% auto;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
 .wais-sub {
-  /* font-size: 2rem; */
-  /* margin-top: -8rem; */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
@@ -43,10 +53,10 @@ export default {
 }
 
 .wais-sub-margin {
-  @apply mt-[-6rem] md:mt-[-7rem] lg:mt-[-8rem] xl:mt-[-8.5rem] 2xl:mt-[-11rem];
+  @apply mt-[-5.5rem] md:mt-[-7rem] lg:mt-[-7rem] xl:mt-[-7.5rem] 2xl:mt-[-10rem];
 }
 
 .wais-sub-letter-spacing {
-  @apply tracking-[.3rem] md:tracking-[.4rem] lg:tracking-[.5rem] xl:tracking-[.6rem] 2xl:tracking-[.7rem];
+  @apply tracking-[.25rem] md:tracking-[.4rem] lg:tracking-[.5rem] xl:tracking-[.6rem] 2xl:tracking-[.7rem];
 }
 </style>
