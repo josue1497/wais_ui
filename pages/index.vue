@@ -4,7 +4,7 @@
       class="w-full flex main-banner bg relative overflow-hidden"
     >
       <div
-        class="flex flex-col justify-center items-start w-full relative"
+        class="flex flex-col justify-center lg:justify-end items-center w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
@@ -37,7 +37,7 @@
         >
           <span class="block"
             >{{$t('_home.customer_text_1')}}
-              <span :class="`customer customers-animation customer-animation-fade relative`" :data-customer="$t('_home.customers')"></span>
+              <div :class="`customer customers-animation customer-animation-fade relative`" :data-customer="$t('_home.customers')"></div>
           </span>
           <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
@@ -364,10 +364,6 @@ export default {
   }
 }
 
-.customer-animation-fade {
-  animation: customer-fade 2s ease-in-out;
-  animation-delay: 1.5s;
-}
 .customer {
   background: #666be4;
   padding: 0 10px 0 10px;
@@ -377,20 +373,28 @@ export default {
   box-sizing: content-box;
   transition: all .5s ease-in-out;
   padding-left: 10px;
+  /* width: auto; */
+  height: 15vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  animation: customer-fade .5s ease-in 1;
+  animation-delay: 1.5s;
+}
+
+/* Keyframe for reduce customer div width size*/
+@keyframes customer-fade {
+  from {
+    width: 60vh;
+  }
+  to {
+    width: 30vh;
+  }
 }
 
 .dark .customer {
   background: transparent;
   color: #666be4;
-}
-
-@keyframes customer-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .customer::before {

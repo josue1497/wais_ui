@@ -254,7 +254,7 @@ export default {
 </script>
 <style scoped>
 .menu-item {
-  @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-transparent hover:bg-[#232531] dark:bg-transparent dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];
+  @apply border border-[#232531] dark:border-white dark:text-white dark:hover:text-gray-200 rounded-full px-5 py-2 bg-[#E5E5E5] hover:bg-[#232531] dark:bg-[#232531] dark:hover:bg-[#E5E5E5] text-[#232531] hover:text-[#E5E5E5] dark:text-[#E5E5E5] dark:hover:text-[#232531];
 }
 
 .lang-item {

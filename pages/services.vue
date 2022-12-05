@@ -1,6 +1,6 @@
 <template>
   <div class="is-dark flex flex-col">
-    <div class="w-full h-48 flex mt-28">
+    <div class="w-full h-48 flex mt-36">
       <h1
         class="text-[72px] md:text-[104px] lg:text-[144px] text-center m-auto"
       >

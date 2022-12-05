@@ -47,6 +47,7 @@ export default {
 <style scoped>
 
 .icon-bar {
+  font-size: 2rem;
   position: fixed;
   top: 50%;
   -webkit-transform: translateY(-30vh);
