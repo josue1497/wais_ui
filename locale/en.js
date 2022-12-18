@@ -41,6 +41,7 @@ export const en = {
     email: "Email",
     message: "Message",
     send: "Send",
+    sending: "Enviando...",
     text_1: "If you want to communicate directly.",
   },
   _about: {
@@ -124,4 +125,9 @@ export const en = {
       ],
     },
   },
+  message: {
+    success: "Thank you for contacting us! We will reply to you in 48h or sooner.",
+    email_send_fail: "Oops! Something went wrong, please try again.",
+    empty_fields: "Oops! Please fill in all fields.",
+  }
 };

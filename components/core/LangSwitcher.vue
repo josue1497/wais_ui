@@ -40,7 +40,6 @@ export default {
       }
     },
     setLocale(locale) {
-        console.log('hola')
       this.$i18n.setLocale(locale);
     }
   }

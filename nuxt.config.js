@@ -68,8 +68,7 @@ export default {
   buildModules: ["@nuxt/postcss8", "@nuxtjs/i18n"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@neneos/nuxt-animate.css"],
-
+  modules: ['@nuxtjs/axios', "@neneos/nuxt-animate.css", '@nuxtjs/toast'],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
@@ -100,4 +99,18 @@ export default {
     },
     seo: true,
   },
+  env: {
+    I18N_LOCALE: process.env.I18N_LOCALE,
+    I18N_FALLBACK_LOCALE: process.env.I18N_FALLBACK_LOCALE,
+    WAIS_API_URL: process.env.WAIS_API_URL,
+  },
+  axios: {
+    baseURL: process.env.WAIS_API_URL,
+    // proxy: true
+  },
+  toast: {
+    position: 'top-right',
+    duration: 3000,
+    keepOnHover: true
+  }
 };
