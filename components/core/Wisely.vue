@@ -1,10 +1,8 @@
 <template>
   <div class="animate__animated animate__fadeIn">
-    <div class="flex flex-col">
-      <span class="text-wisely">Wisely</span
-      >
-        <span class="wais-sub wais-sub-margin wais-sub-letter-spacing animate__animated animate__fadeInUp" v-if="showWais">Wais Digital</span
-        >
+    <div class="flex flex-col relative items-center">
+      <span class="text-wisely mb-auto">Wisely</span>
+      <span class="wais-sub wais-sub-position wais-sub-letter-spacing animate__animated animate__fadeInUp" v-if="showWais">Wais Digital</span>
     </div>
   </div>
 </template>
@@ -49,6 +47,7 @@ export default {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
+  position: absolute; 
   @apply text-black dark:text-white text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2.5rem];
 }
 
@@ -58,5 +57,9 @@ export default {
 
 .wais-sub-letter-spacing {
   @apply tracking-[.25rem] md:tracking-[.4rem] lg:tracking-[.5rem] xl:tracking-[.6rem] 2xl:tracking-[.7rem];
+}
+
+.wais-sub-position {
+  @apply bottom-[1vh] md:bottom-[-5vh] lg:bottom-[-7vh] xl:bottom-[-7vh] 2xl:bottom-[-9vh]; 
 }
 </style>

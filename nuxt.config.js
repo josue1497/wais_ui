@@ -59,6 +59,7 @@ export default {
   plugins: [
     "~/plugins/fontawesome.js",
     { src: "~/plugins/vuex-persist.js", mode: "client" },
+    { src: "~/plugins/animated.js", mode: "client" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

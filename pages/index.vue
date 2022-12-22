@@ -4,24 +4,30 @@
       class="w-full flex main-banner bg relative overflow-hidden"
     >
       <div
-        class="flex flex-col justify-center lg:justify-end items-center w-full relative"
+        class="flex flex-col justify-center lg:justify-center items-center w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col w-full py-5 px-2 md:p-none md:w-3/4 lg:w-8/12">
-            <span class="mr-auto">Think</span>
-            <span class="sub-text-margin padding-aux text-[#E25990] animate__animated animate__flip " v-show="bigger">Bigger</span>
-            <span class="sub-positive-text-margin padding-aux text-[#2AD39B] animate__animated animate__flipInX" v-show="positive">Positive</span>
-            <span class="sub-text-margin padding-aux text-[#6464F9] animate__animated animate__flip" v-show="bold">Bold</span>
-            <Wisely class="sub-wisely-text-margin" v-show="wisely"></Wisely>
+          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col w-full py-5 px-2 md:p-none md:w-3/4 lg:w-8/12 min-h-[32vh] md:min-h-[62vh] lg:min-h-[65vh] xl:min-h-[62vh] 2xl:min-h-[64vh]">
+            <span class="mr-auto mb-auto">Think</span>
+            <Animated enter="fadeIn" leave="fadeOut" :duration="{ enter: 1000, leave: 1000 }">
+              <span class="sub-text-margin padding-aux mb-auto text-[#E25990] animate__animated animate__fadeIn " v-if="bigger">Bigger</span>
+            </Animated>
+            <Animated enter="fadeIn" leave="fadeOut" :duration="{ enter: 1000, leave: 1000 }">
+              <span class="sub-positive-text-margin mb-auto padding-aux text-[#2AD39B] animate__animated animate__flipInX" v-if="positive">Positive</span>
+            </Animated>
+            <Animated enter="fadeIn" leave="fadeOut" :duration="{ enter: 1000, leave: 1000 }">
+              <span class="sub-text-margin mb-auto padding-aux text-[#6464F9] animate__animated animate__fadeIn" v-if="bold">Bold</span>
+            </Animated>
+            <Wisely class="sub-wisely-text-margin mb-auto" v-if="wisely"></Wisely>
           </h1>
         </div>
       </div>
       <SocialNetworkBar></SocialNetworkBar>
-      <div class="point point-banner banner-one flat-1"></div>
-      <div class="point point-banner banner-two flat-1"></div>
-      <div class="point point-banner banner-three flat-1"></div>
+      <div class="point point-banner banner-one flat-1 banner-color-1"></div>
     </section>
+    <div class="point point-banner banner-two flat-1 banner-color-2"></div>
+    <div class="point point-banner banner-three flat-1 banner-color-3"></div>
     <CoreSection
       justify="center"
       items="center"
@@ -147,7 +153,7 @@ export default {
   components: {
     CoreSection,
     SocialNetworkBar,
-    Wisely
+    Wisely,
 },
   head() {
     return {
@@ -294,14 +300,18 @@ export default {
     },
     async animations(){
       const transition = 2 * 1000
+      const leave = 1.2 * 1000
       await this.timeout(transition)
       this.bigger = this.bold = this.wisely = this.positive = false
+      await this.timeout(leave)
       this.positive = true
-      await this.timeout(1000)
+      await this.timeout(transition)
       this.bigger = this.bold = this.wisely = this.positive = false
+      await this.timeout(leave)
       this.bold = true
-      await this.timeout(1500)
+      await this.timeout(transition)
       this.bigger = this.bold = this.wisely = this.positive = false
+      await this.timeout(leave)
       this.wisely = true
     },
     async nextImage(){
@@ -374,12 +384,13 @@ export default {
   transition: all .5s ease-in-out;
   padding-left: 10px;
   /* width: auto; */
-  height: 15vh;
+  /* height: 15vh; */
   display: inline-flex;
   justify-content: center;
   align-items: center;
   animation: customer-fade .5s ease-in 1;
   animation-delay: 1.5s;
+  @apply h-[5vh] md:h-[10vh] lg:h-[11vh] xl:h-[14vh] 2xl:h-[14vh] 
 }
 
 /* Keyframe for reduce customer div width size*/
@@ -527,26 +538,35 @@ export default {
   }
 
   .point-banner {
-    height: 20vh;
-      width: 20vh;
+    @apply w-[15vh] h-[15vh] md:w-[20vh] md:h-[20vh] lg:w-[25vh] lg:h-[25vh] xl:w-[30vh] xl:h-[30vh] 2xl:w-[35vh] 2xl:h-[35vh] ;
+  }
+
+  .point.banner-color-1 {
+    @apply bg-[#7677fd] md:bg-[#ff89b2] ;
+  }
+  .point.banner-color-2 {
+    @apply bg-[#ff89b2] md:bg-[#00d6a1];
+  }
+  .point.banner-color-3 {
+    @apply bg-[#00d6a1] md:bg-[#7677fd];
   }
 
   .point.banner-one {
-   
     filter: blur(3.5vh);
-    background: #7677fd;
+    @apply top-0 right-[5vh] md:right-[unset] md:top-[-10vh] md:left-[30vh] lg:left-[25vh] lg:top-[-25vh] xl:left-[35vh] xl:bottom-[-20vh] ;
   }
 
   .point.banner-two {
     animation-delay: 3s;
     filter: blur(3.5vh);
-    background: #ff89b2;
+    @apply bottom-[20vh] right-[0vh] md:right-[10vh] md:bottom-[-10vh] lg:right-[13vh] lg:bottom-[-12vh] xl:right-[12vh] xl:bottom-[-15vh] ;
   }
 
   .point.banner-three {
     animation-delay: 1s;
     filter: blur(3.5vh);
-    background: #00d6a1;
+    right: 5vh;
+    @apply left-[-2vh] bottom-[10vh] md:left-[-12vh] md:bottom-[-12vh] lg:bottom-[-20vh] lg:left-[-20vh] xl:bottom-[-20vh] xl:left-[-20vh] ;
   }
 
   .point.one {
@@ -559,25 +579,10 @@ export default {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
-  .point-banner {
-    width: 12vh;
-    height: 12vh;
-  }
-
-  .point.banner-one {
-    top: 0;
-    right: 5vh;
-  }
-
-  .point.banner-two {
-    right: -5vh;
-    bottom: 20vh;
-  }
-
-  .point.banner-three {
-    left: -2vh;
-    bottom: 15vh;
-  }
+  /* .point-banner {
+    width: 15vh;
+    height: 15vh;
+  } */
 
   .point.one {
     left: 0;
@@ -598,25 +603,10 @@ export default {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .point-banner {
-    width: 12vh;
-    height: 12vh;
-  }
-
-  .point.banner-one {
-    right: 5vh;
-    top: 0;
-  }
-
-  .point.banner-two {
-    right: -5vh;
-    bottom: 20vh;
-  }
-
-  .point.banner-three {
-    left: -2vh;
-    bottom: 15vh;
-  }
+  /* .point-banner {
+    width: 15vh;
+    height: 15vh;
+  } */
 
   .point.one {
     left: -5vh;
@@ -637,27 +627,10 @@ export default {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .point-banner {
-    width: 15vh;
-    height: 15vh;
-  }
-  .point.banner-one {
-    right: unset;
-    top: unset;
-    left: 10vh;
-    bottom: 10vh;
-  }
-
-  .point.banner-two {
-    right: 10vh;
-    bottom: 15vh;
-  }
-
-  .point.banner-three {
-    left: unset;
-    bottom: 15vh;
-    right: 5vh;
-  }
+  /* .point-banner {
+    width: 20vh;
+    height: 20vh;
+  } */
 
   .point.one {
     left: -40vh;
@@ -675,30 +648,10 @@ export default {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .point-banner {
-    width: 17vh;
-    height: 17vh;
-  }
-  .point.banner-one {
-    right: unset;
-    top: unset;
-    left: 10vh;
-    bottom: 10vh;
-  }
-
-  .point.banner-two {
-    left: 46vh;
-    top: -2vh;
-    right: unset;
-    bottom: unset;
-  }
-
-  .point.banner-three {
-    left: unset;
-    bottom: 15vh;
-    right: 5vh;
-  }
-
+  /* .point-banner {
+    width: 25vh;
+    height: 25vh;
+  } */
   .point.one {
     left: -40vh;
     top: -41vh;
@@ -715,22 +668,10 @@ export default {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .point-banner {
-    width: 20vh;
-    height: 20vh;
-  }
-  .point.one {
-    left: -10vh;
-    top: -20vh;
-  }
-
-  .point.two {
-    right: 20vh;
-    top: 10vh;
+  /* .point-banner {
     width: 30vh;
     height: 30vh;
-    filter: blur(18vh);
-  }
+  } */
 }
 
 .ellipse {
