@@ -59,6 +59,7 @@
     cursor: pointer;
     display: flex;
     padding: 0;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   .line {

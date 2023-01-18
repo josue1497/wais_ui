@@ -71,6 +71,7 @@
     height: 30vh;
     background: #2A00FF;
     filter: blur(20vh);
+    -webkit-filter: blur(20vh);
   }
 
   .badge-1 {

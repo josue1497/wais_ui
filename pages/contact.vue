@@ -88,9 +88,9 @@
           </button>
         </div>
         <div class="flex w-full p-5 flex-col">
-          <div class="flex flex-col w-full md:w-3/4 ml-auto">
-            <p class="ml-auto wais-text-2">{{ $t("_contact.text_1") }}</p>
-            <div class="flex flex-col ml-auto justify-evenly text-2xl py-2">
+          <div class="flex flex-col w-[75vw] md:w-[50vw] lg:w-[45vw] xl:w-[40vw] ml-auto">
+            <p class="ml-auto md:mr-auto md:ml-0 wais-text-2">{{ $t("_contact.text_1") }}</p>
+            <div class="flex flex-col mr-auto justify-evenly text-2xl py-2">
               <p class="ml-auto">
                 <a href="tel:+58414-3417791"
                   ><span class="block wais-text-4">+58 414-3417791</span></a
@@ -100,11 +100,11 @@
                 >
               </p>
               <div
-                class="flex mr-auto flex-row justify-evenly text-xl wais-text-2 mt-5 contact"
+                class="flex mr-auto flex-row justify-start wais-text-2 mt-4 contact"
               >
                 <a href="tel:+58414-3417791"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://t.me/waisdigital" target="_blank"
-                  ><i class="fa-solid fa-paper-plane mx-10"></i
+                  ><i class="fa-solid fa-paper-plane"></i
                 ></a>
                 <a href="https://wa.me/584143417791" target="_blank"
                   ><i class="fa-brands fa-whatsapp"></i
@@ -182,6 +182,7 @@ export default {
 <style scoped>
 .contact a {
   transition: all 0.4s ease-in-out;
+  @apply mr-7 xl:mr-9 2xl:mr-10
 }
 .contact a:hover {
   transform: translateY(-10px);
@@ -210,6 +211,7 @@ export default {
   width: 75vh;
   height: 75vh; */
   filter: blur(10vh);
+  -webkit-filter: blur(10vh);
   @apply right-[10vh] top-[10vh] w-[40vh] h-[40vh] md:right-[35vh] md:top-[20vh] md:w-[60vh] md:h-[60vh] lg:right-[35vh] lg:top-[20vh] lg:w-[60vh] lg:h-[60vh];
 }
 

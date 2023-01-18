@@ -8,8 +8,8 @@
           </a>
         </div>
         <div class="col-span-12 md:col-span-3 flex items-center md:items-start flex-col">
-          <p class="text-[14px] md:text-[20px] lg:text-[24px]">{{ $t("start_project") }}</p>
-          <a href="mailto:hello@waisdigital.com"><p class="font-bold gradient-text text-2xl">hello@waisdigital.com</p></a>
+          <p class="font-normal text-[24px] md:text-[20px] lg:text-[24px]">{{ $t("start_project") }}</p>
+          <a href="mailto:hello@waisdigital.com"><p class="font-bold text-wisely">hello@waisdigital.com</p></a>
         </div>
         <div class="col-span-12 md:col-span-2 hidden md:flex items-center md:items-start  flex-col">
           <a href="/about"><p class="footer-links">{{ $t("about") }}</p></a>
@@ -35,7 +35,7 @@
     <hr class="border border-t-black dark:border-t-white w-full mt-2 mx-auto">
     <div class="grid gap-4 grid-cols-12 py-5">
       <div class="col-span-12 md:col-span-3">
-        <div class="flex justify-around md:justify-start items-center md:items-center">
+        <div class="flex justify-around md:justify-start items-center md:items-center text-[28px] md:text-[22px] lg:text-[24px] xl:text-[24px]">
           <div class="mr-0 md:mr-7">
             <a href="https://www.instagram.com/waisdigital/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
           </div>
@@ -76,14 +76,14 @@
 <style scoped>
 
   .footer-links {
-    @apply text-[14px] md:text-[18px] lg:text-[22px] uppercase
+    @apply text-[22px] md:text-[18px] lg:text-[22px] uppercase font-light md:font-normal;
     /*font-size: 18px;*/
     /*line-height: 35px;*/
     /*text-transform: uppercase;*/
   }
 
   .gradient-text {
-    @apply text-[14px] md:text-[20px] lg:text-[24px];
+    @apply text-[22px] md:text-[20px] lg:text-[24px] font-normal;
     background: -webkit-linear-gradient(45deg,#b6462b, #66d0a3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

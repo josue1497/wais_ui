@@ -21,7 +21,7 @@
         <span class="block">Quality</span><span class="block">Work</span>
       </h1>
     </div>
-    <div class="point three flat-1"></div>
+    <div class="point three point-blur flat-1"></div>
   </div>
 </template>
 
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     getImage(image) {
-      return require(`../assets/img/services/gif${image}---${this.getTheme}.gif`);
+      return `/img/services/gif${image}---${this.getTheme}.gif`;
     },
   },
   watch: {
@@ -96,9 +96,13 @@ export default {
   background: #ff3200;
   right: 20vh;
   bottom: 10vh;
-  width: 35vh;
-  height: 35vh;
-  filter: blur(15vh);
+  /* width: 35vh;
+  height: 35vh; */
+  @apply w-[20vh] h-[20vh] md:w-[22vh] md:h-[22vh] lg:w-[28vh] lg:h-[28vh] xl:w-[32vh] xl:h-[32vh];
+}
+
+.point-blur {
+  @apply blur-[8vh] md:blur-[10vh] lg:blur-[12vh] xl:blur-[14vh];
 }
 
 .GFG {

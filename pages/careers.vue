@@ -96,6 +96,7 @@
   .point.six {
     background: #01C97B;
     filter: blur(20vh);
+    -webkit-filter: blur(20vh);
   }
 
   .point.seven {
@@ -105,6 +106,7 @@
     height: 55vh;
     background: #2A00FF;
     filter: blur(15vh);
+    -webkit-filter: blur(15vh);
   }
 
   /* Extra small devices (phones, 600px and down) */
@@ -115,6 +117,7 @@
       width: 15vh;
       height: 15vh;
       filter: blur(20vh);
+      -webkit-filter: blur(20vh);
     }
 
     .point.seven {

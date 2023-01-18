@@ -11,7 +11,7 @@
         v-if="resetImages"
       />
       <p
-        class="text-[26px] md:text-[30px] lg:text-[38px] xl:text-[54px] 2xl:text-[72px] text-center py-3 md:py-5 px-3 md:px-10 font-normal leading-[2rem] md:leading-[3rem] lg:leading-[4rem]"
+        class="text-[32px] md:text-[38px] lg:text-[48px] xl:text-[54px] 2xl:text-[72px] text-center py-4 md:py-5 px-3 md:px-10 font-normal leading-[2rem] md:leading-[3rem] lg:leading-[4rem]"
       >
         {{ serviceData.title }}
       </p>
@@ -48,10 +48,10 @@ export default {
 </script>
 <style scoped>
 .service-description {
-  @apply text-[14px] md:text-[18px] lg:text-[28px] xl:text-[36px] 2xl:text-[48px] leading-[1rem] md:leading-[1.5rem] lg:leading-[2rem] xl:leading-[2.5rem] 2xl:leading-[3.5rem];
+  @apply text-[22px] md:text-[28px] lg:text-[36px] xl:text-[36px] 2xl:text-[48px] leading-[1.8rem] md:leading-[2.25rem] lg:leading-[2.8rem] xl:leading-[3rem] 2xl:leading-[3.5rem];
 }
 
 .service-item {
-  @apply text-[11px] md:text-[14px] lg:text-[24px] xl:text-[32px] 2xl:text-[42px];
+  @apply text-[18px] md:text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[42px];
 }
 </style>

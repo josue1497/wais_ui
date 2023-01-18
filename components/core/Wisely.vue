@@ -1,8 +1,8 @@
 <template>
   <div class="animate__animated animate__fadeIn">
     <div class="flex flex-col relative items-center">
-      <span class="text-wisely mb-auto">Wisely</span>
-      <span class="wais-sub wais-sub-position wais-sub-letter-spacing animate__animated animate__fadeInUp" v-if="showWais">Wais Digital</span>
+      <span class="text-wisely waisly-padding mb-auto">Wisely</span>
+      <span class="wais-sub wais-sub-position wais-sub-letter-spacing animate__animated animate__fadeIn" v-if="showWais">Wais Digital</span>
     </div>
   </div>
 </template>
@@ -33,16 +33,27 @@ export default {
 
 .text-wisely {
   background: rgb(0,214,161);
-  background: linear-gradient(90deg, rgba(0,214,161,1) 0%, rgba(255,88,146,1) 35%, rgba(118,119,253,1) 100%);
+  --bg-size: 400%;
+  --color-one: rgba(0,214,161,1) ;
+  --color-two: rgba(255,88,146,1);
+  --color-three: rgba(118,119,253,1);
+  background: linear-gradient(
+                90deg,
+                var(--color-one) 25%,
+                var(--color-two) 50%,
+                var(--color-three) 75%,
+                var(--color-one) 100%
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  background-size: 150% auto;
-  padding-bottom: 4rem;
+  animation: move-bg 15s infinite linear;
   text-align: center;
 }
 
+.waisly-padding {
+  padding-bottom: 4rem;
+}
 .wais-sub {
   text-align: center;
   text-transform: uppercase;
@@ -61,5 +72,22 @@ export default {
 
 .wais-sub-position {
   @apply bottom-[1vh] md:bottom-[-5vh] lg:bottom-[-7vh] xl:bottom-[-7vh] 2xl:bottom-[-9vh]; 
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .boujee-text {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
 }
 </style>

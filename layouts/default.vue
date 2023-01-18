@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full overflow-x-hidden">
     <NavBar></NavBar>
     <Nuxt />
     <CoreFooter></CoreFooter>
@@ -9,7 +9,7 @@
 <style>
   html {
     font-family:
-      'Source Sans Pro',
+      "Urbanist",
       -apple-system,
       BlinkMacSystemFont,
       'Segoe UI',

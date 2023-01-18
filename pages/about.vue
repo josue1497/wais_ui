@@ -100,6 +100,7 @@
     width: 75vh;
     height: 75vh;
     filter: blur(20vh);
+    -webkit-filter: blur(20vh);
   }
 
   .point.about-one {
@@ -109,6 +110,7 @@
     height: 55vh;
     background: #2A00FF;
     filter: blur(20vh);
+    -webkit-filter: blur(20vh);
   }
 
   .about-text {
