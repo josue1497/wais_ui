@@ -3,8 +3,17 @@
     <NavBar></NavBar>
     <Nuxt />
     <CoreFooter></CoreFooter>
+    <CookieBanner></CookieBanner>
   </div>
 </template>
+<script>
+import CookieBanner from '../components/core/CookieBanner.vue';
+export default {
+  components: {
+    CookieBanner,
+  },
+};
+</script>
 
 <style>
   html {
@@ -65,7 +74,8 @@
 <script>
     import NavBar from "../components/core/NavBar";
     import CoreFooter from "../components/core/CoreFooter";
+import CookieBanner from "../components/core/CookieBanner.vue";
     export default {
-        components: {CoreFooter, NavBar}
+        components: { CoreFooter, NavBar, CookieBanner }
     }
 </script>

@@ -36,12 +36,12 @@
                     tags: ['Gastronomy', 'Social Marketing','Strategy', 'Branding'],
                     link: './gym'
                 },
-                {
-                    id: 3,
-                    name: 'Clinica Hebe',
-                    tags: ['Health', 'Web design', 'Social marketing', 'Branding', 'Content creation'],
-                    link: './gym'
-                },
+                // {
+                //     id: 3,
+                //     name: 'Clinica Hebe',
+                //     tags: ['Health', 'Web design', 'Social marketing', 'Branding', 'Content creation'],
+                //     link: './gym'
+                // },
                 {
                     id: 4,
                     name: 'Hamsa',

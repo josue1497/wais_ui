@@ -1,14 +1,14 @@
 <template>
   <div>
     <section
-      class="w-full flex main-banner bg relative overflow-hidden"
+      class="w-full flex main-banner bg relative"
     >
       <div
         class="flex flex-col justify-center lg:justify-center items-center w-full relative"
         style="z-index: 10"
       >
         <div class="flex flex-col justify-center items-center w-full">
-          <h1 class="home-title home-title-leading text-black dark:text-white flex flex-col justify-start w-full px-2 md:p-none md:w-3/4 lg:w-8/12 min-h-[35vh] md:min-h-[62vh] lg:min-h-[65vh] xl:min-h-[62vh] 2xl:min-h-[64vh]">
+          <h1 class="home-title home-title-leading font-normal text-black dark:text-white flex flex-col justify-start w-full px-2 md:p-none md:w-3/4 lg:w-8/12 min-h-[35vh] md:min-h-[62vh] lg:min-h-[65vh] xl:min-h-[62vh] 2xl:min-h-[64vh]">
             <span class="mr-auto">Think</span>
             <Animated enter="fadeIn" leave="fadeOut" :duration="{ enter: 500, leave: 500 }">
               <span class="sub-text-margin padding-aux text-[#E25990] animate__animated animate__fadeIn " v-if="bigger">Bigger</span>
@@ -27,10 +27,17 @@
         </div>
       </div>
       <SocialNetworkBar></SocialNetworkBar>
-      <div class="point point-banner banner-one flat-1 banner-color-1"></div>
+      <div class="animate__animated animate__fadeIn" v-if="showBannerOne">
+        <div class="point point-banner banner-one flat-1 banner-color-1"></div>
+      </div>
+      <div class="animate__animated animate__fadeIn" v-if="showBannerTwo">
+        <div class="point point-banner banner-two flat-1 banner-color-2"></div>
+      </div>
+      <div class="animate__animated animate__fadeIn" v-if="showBannerThree">
+        <div class="point point-banner banner-three flat-1 banner-color-3"></div>
+      </div>
     </section>
-    <div class="point point-banner banner-two flat-1 banner-color-2"></div>
-    <div class="point point-banner banner-three flat-1 banner-color-3"></div>
+    <!-- <img src="img/zona_segura_wais.png" alt="jp;a"/>    -->
     <CoreSection
       justify="center"
       items="center"
@@ -44,14 +51,9 @@
           data-aos="fade-up"
           class="wais-text text-left text-black dark:text-white w-full 2xl:w-3/4 px-8 relative"
         >
-          <span class="customer-container inline-flex	justify-center items-center"
+          <span class="block"
             >{{$t('_home.customer_text_1')}}
-              <Animated enter="fadeIn" leave="fadeOut" :duration="{ enter: 0, leave: 0 }">
-                <span :class="`customer customers-animation relative ml-3 animate__animated animate__fadeIn`" :data-customer="$t('_home.customers')" v-if="!showFans"></span>
-              </Animated>
-              <!-- <Animated enter="fadeIn" leave="fadeOut" :duration="{ leave: 0 }"> -->
-                <span :class="`fans animate__animated animate__fadeIn ml-3`" v-if="showFans">fans</span>
-              <!-- </Animated> -->
+                <span :class="`customer customers-animation relative`" :data-customer="$t('_home.customers')"></span>
           </span>
           <span class="block">{{$t('_home.customer_text_2')}}</span>
         </h3>
@@ -117,10 +119,10 @@
     >
       <div class="w-full px-0 md:px-0 text-center flat-2">
         <h3 class="wais-text text-center font-normal">{{ $t('_home.our_clients') }}</h3>
-        <div class="w-full overflow-x-hidden hidden md:flex" v-if="resetImages">
-          <div class="p-0 md:px-5 flex marquee-content w-full">
+        <div class="w-full overflow-x-hidden hidden md:flex slider" v-if="resetImages">
+          <div class="p-0 md:px-5 flex slide-track w-full">
             <div
-              class="p-2 md:p-4 flex justify-center align-center flat-2 marquee-item"
+              class="p-2 md:p-4 flex justify-center align-center flat-2 slide"
               v-for="({ l, n }, index) of clients"
               :key="index"
             >
@@ -128,20 +130,21 @@
                 :src="!darkMode ? n : l"
                 :alt="!darkMode ? n : l"
                 class="mx-auto"
+                loading="lazy"
               />
             </div>
           </div>
         </div>
-        <div class="max-w-full  overflow-x-hidden flex md:hidden slider my-auto" v-if="resetImages">
+        <div class="overflow-x-hidden slider-sm my-auto" v-if="resetImages">
           <div class="p-0 md:px-5 slide-track ">
             <div
               class="justify-center align-center flat-2 w-full flex mx-5 my-auto slide"
               v-for="({ l, n }, index) of clients"
               :key="index"
             >
-              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" class="mx-5" height="350" width="550"/>
+              <img :src="!darkMode ? n : l" :alt="!darkMode ? n : l" class="mx-5" loading="lazy"/>
             </div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="point two flat-1"></div>
@@ -180,107 +183,108 @@ export default {
   data: () => ({
     smClients: [
       {
-        l: require(`../assets/img/clients/century-l.svg`),
-        n: require(`../assets/img/clients/century-n.svg`),
+        l: `/img/clients/century-l.svg`,
+        n: `/img/clients/century-n.svg`,
       },
       {
-        l: require(`assets/img/clients/check-l.svg`),
-        n: require(`assets/img/clients/check-n.svg`),
+        l: `/img/clients/check-l.svg`,
+        n: `/img/clients/check-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/pastora-l.svg`),
-        n: require(`../assets/img/clients/pastora-n.svg`),
+        l: `/img/clients/pastora-l.svg`,
+        n: `/img/clients/pastora-n.svg`,
+      },
+      // {
+      //   l: `/img/clients/hebe-l.svg`,
+      //   n: `/img/clients/hebe-n.svg`,
+      // },
+      {
+        l: `/img/clients/nikk-l.svg`,
+        n: `/img/clients/nikk-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/hebe-l.svg`),
-        n: require(`../assets/img/clients/hebe-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/nikk-l.svg`),
-        n: require(`../assets/img/clients/nikk-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/resinca-l.svg`),
-        n: require(`../assets/img/clients/resinca-n.svg`),
+        l: `/img/clients/resinca-l.svg`,
+        n: `/img/clients/resinca-n.svg`,
       },
     ],
     clients: [
       {
-        l: require(`../assets/img/clients/century-l.svg`),
-        n: require(`../assets/img/clients/century-n.svg`),
+        l: `/img/clients/century-l.svg`,
+        n: `/img/clients/century-n.svg`,
       },
       {
-        l: require(`assets/img/clients/check-l.svg`),
-        n: require(`assets/img/clients/check-n.svg`),
+        l: `/img/clients/check-l.svg`,
+        n: `/img/clients/check-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/pastora-l.svg`),
-        n: require(`../assets/img/clients/pastora-n.svg`),
+        l: `/img/clients/pastora-l.svg`,
+        n: `/img/clients/pastora-n.svg`,
+      },
+      // {
+      //   l: `/img/clients/hebe-l.svg`,
+      //   n: `/img/clients/hebe-n.svg`,
+      // },
+      {
+        l: `/img/clients/nikk-l.svg`,
+        n: `/img/clients/nikk-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/hebe-l.svg`),
-        n: require(`../assets/img/clients/hebe-n.svg`),
+        l: `/img/clients/resinca-l.svg`,
+        n: `/img/clients/resinca-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/nikk-l.svg`),
-        n: require(`../assets/img/clients/nikk-n.svg`),
+        l: `/img/clients/century-l.svg`,
+        n: `/img/clients/century-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/resinca-l.svg`),
-        n: require(`../assets/img/clients/resinca-n.svg`),
+        l: `/img/clients/check-l.svg`,
+        n: `/img/clients/check-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/century-l.svg`),
-        n: require(`../assets/img/clients/century-n.svg`),
+        l: `/img/clients/pastora-l.svg`,
+        n: `/img/clients/pastora-n.svg`,
+      },
+      // {
+      //   l: `/img/clients/hebe-l.svg`,
+      //   n: `/img/clients/hebe-n.svg`,
+      // },
+      {
+        l: `/img/clients/nikk-l.svg`,
+        n: `/img/clients/nikk-n.svg`,
       },
       {
-        l: require(`assets/img/clients/check-l.svg`),
-        n: require(`assets/img/clients/check-n.svg`),
+        l: `/img/clients/resinca-l.svg`,
+        n: `/img/clients/resinca-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/pastora-l.svg`),
-        n: require(`../assets/img/clients/pastora-n.svg`),
+        l: `/img/clients/century-l.svg`,
+        n: `/img/clients/century-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/hebe-l.svg`),
-        n: require(`../assets/img/clients/hebe-n.svg`),
+        l: `/img/clients/check-l.svg`,
+        n: `/img/clients/check-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/nikk-l.svg`),
-        n: require(`../assets/img/clients/nikk-n.svg`),
+        l: `/img/clients/pastora-l.svg`,
+        n: `/img/clients/pastora-n.svg`,
+      },
+      // {
+      //   l: `/img/clients/hebe-l.svg`,
+      //   n: `/img/clients/hebe-n.svg`,
+      // },
+      {
+        l: `/img/clients/nikk-l.svg`,
+        n: `/img/clients/nikk-n.svg`,
       },
       {
-        l: require(`../assets/img/clients/resinca-l.svg`),
-        n: require(`../assets/img/clients/resinca-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/century-l.svg`),
-        n: require(`../assets/img/clients/century-n.svg`),
-      },
-      {
-        l: require(`assets/img/clients/check-l.svg`),
-        n: require(`assets/img/clients/check-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/pastora-l.svg`),
-        n: require(`../assets/img/clients/pastora-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/hebe-l.svg`),
-        n: require(`../assets/img/clients/hebe-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/nikk-l.svg`),
-        n: require(`../assets/img/clients/nikk-n.svg`),
-      },
-      {
-        l: require(`../assets/img/clients/resinca-l.svg`),
-        n: require(`../assets/img/clients/resinca-n.svg`),
+        l: `/img/clients/resinca-l.svg`,
+        n: `/img/clients/resinca-n.svg`,
       },
     ],
     showPointer: false,
-    showFans: false,
-    showCustomer: true,
+    showBannerOne: false,
+    showBannerTwo: false,
+    showBannerThree: false,
     bigger: true,
     positive: false,
     bold: false,
@@ -289,26 +293,18 @@ export default {
   }),
   async mounted() {
     const vm = this;
-    const el = document.querySelector(".customer-container")
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(async (entry) => {
-        vm.showFans = false;
-        vm.showCustomer = true;
         if (entry.isIntersecting) {
-          console.log("intersecting");
-          document.querySelector(".customer").classList.add("customer-animation");
-          await vm.timeout(1 * 1000);
-          vm.showFans = vm.showCustomer = false;
-          await vm.timeout(10);
-          vm.showFans = true;
+          entry.target.classList.add("customer-animation");
           return;
         }
-        elCustomer.classList.remove("customer-animation");
-        console.log("not intersecting");
+        entry.target.classList.remove("customer-animation");
       });
     });
 
-    observer.observe(el);
+    observer.observe(document.querySelector(".customer"));
+    this.animationsPoints()
     this.animations()
     this.nextImage()
 
@@ -335,6 +331,19 @@ export default {
       await this.timeout(leave)
       this.wisely = true
     },
+    async animationsPoints(){
+      const transition = 1 * 1000
+      // 1.01 porque si es 1 directamente parpadea la animacion
+      // const leave = 1.01 * 1000
+      await this.timeout(transition)
+      this.showBannerOne = true
+      await this.timeout(transition)
+      this.showBannerTwo = true
+      await this.timeout(transition)
+      this.showBannerThree = true
+
+
+    },
     async nextImage(){
       let index = 0;
       while(index <= this.smClients.length - 1) {
@@ -344,7 +353,7 @@ export default {
           index = 0
         } else index++
       }
-      
+
     },
   },
   beforeDestroy() {
@@ -396,21 +405,12 @@ export default {
 }
 
 .customer, .fans {
-  background: #666be4;
-  padding: 0 10px 0 10px;
-  color: #fff;
-  line-height: 1px;
+  background: transparent;
+  color: #666be4;
   position: relative;
   box-sizing: content-box;
   transition: all .5s ease-in-out;
-  padding-left: 10px;
-  /* width: auto; */
-  /* height: 15vh; */
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  animation-delay: 1.5s;
-  @apply h-[5vh] md:h-[10vh] lg:h-[11vh] xl:h-[14vh] 2xl:h-[14vh] 
 }
 
 .dark .customer, .dark .fans {
@@ -421,69 +421,90 @@ export default {
 .customer::before {
   content: attr(data-customer);
 }
-.customer-animation::after {
+/* .customer-animation::after {
   content: "";
-  background: #fff;
-  height: 7%;
+  background: #666be4;
+  height: 100%;
   border-bottom: 0;
   position: absolute;
-  top: 50%;
-  left: 0;
-  animation: line .5s linear;
-  transition: all .2s linear;
+  animation: line 4.5s linear;
+  animation-delay: 1.5s;
+  transition: all .8s linear ;
   width: 100%;
-}
-
+} */
+/*
 .dark .customer-animation::after {
   background: #666be4;
+} */
+
+.customer-animation::before {
+  content: "fans";
+  animation: fans 4s ease;
+}
+.cliente-animation::before {
+  content: "fans";
+  animation: fans2 4s ease;
+
 }
 
 @keyframes line {
-  from {
+  0% {
     transform: scaleX(0);
     transform-origin: left;
+    justify-content: end;
   }
-  to {
+  10% {
     width: 100%;
     transform: scaleX(1);
     transform-origin: left;
+    justify-content: start;
   }
-  /* 20% {
+  20% {
     transform: scaleX(1);
     transform-origin: left;
+    justify-content: start;
   }
   30% {
     transform: scaleX(1);
     transform-origin: left;
+    justify-content: start;
   }
   40% {
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
+    transform: scaleX(1);
+    transform-origin: left;
+    justify-content: start;
   }
   50% {
-    transform: scaleX(0);
-    transform-origin: right;
+    transform: scaleX(1);
+    transform-origin: left;
+    justify-content: start;
   }
   60% {
+    width: 0%;
     transform: scaleX(0);
     transform-origin: right;
+    justify-content: end;
   }
   70% {
     transform: scaleX(0);
     transform-origin: right;
+    justify-content: end;
   }
   80% {
     transform: scaleX(0);
     transform-origin: right;
+    justify-content: end;
   }
   90% {
+    transform-origin: right;
     transform: scaleX(0);
+    justify-content: end;
   }
   100% {
     transform: scaleX(0);
     transform-origin: right;
-  } */
+    justify-content: end;
+  }
 }
 
 @keyframes fans {
@@ -556,12 +577,12 @@ export default {
   }
 
   .point.banner-two {
-    animation-delay: 3s;
+    /* animation-delay: 3s; */
     @apply bottom-[20vh] right-[8vh] md:right-[10vh] md:bottom-[-10vh] lg:right-[13vh] lg:bottom-[-12vh] xl:right-[12vh] xl:bottom-[-15vh] ;
   }
 
   .point.banner-three {
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
     @apply left-[-2vh] bottom-[10vh] md:left-[-12vh] md:bottom-[-12vh] lg:bottom-[-20vh] lg:left-[-20vh] xl:bottom-[-20vh] xl:left-[-20vh] ;
   }
 
@@ -677,27 +698,81 @@ export default {
   width: 100vh
 }
 
-.slider {
+.slider-sm {
 	height: 50vh;
 	overflow:hidden;
 	position: relative;
 	width: 960px;
 }
 
-.slide-track {
-		animation: scroll 40s linear infinite;
+.slider-sm .slide-track {
+		animation: scroll-sm 40s linear infinite;
 		display: flex;
 		width: calc(350px * 18);
 	}
-	
-	.slide {
+
+	.slider-sm .slide-track .slide {
 		height: 200px;
 		width: 350px;
 	}
 
-@keyframes scroll {
+@keyframes scroll-sm {
 	0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-350px * 7))}
+}
+
+
+/**
+ new infinite banner
+*/
+
+/* .slider-sm {
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  align-items: center;
+  @apply flex md:hidden;
+
+} */
+
+.slider {
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  align-items: center;
+  width: calc(350px * 18);
+  @apply hidden md:flex;
+
+}
+
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+}
+
+.slider .slide {
+  display: flex;
+}
+
+.slider .slide img {
+    width: auto;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    padding: 10px;
+    margin: 20px;
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(calc(-240px * 5));
+  }
 }
 
 </style>

@@ -279,7 +279,7 @@ a, button, label, textarea, select, input {
 }
 
 .home-title {
-  @apply text-[95px] md:text-[180px] lg:text-[200px] xl:text-[215px] 2xl:text-[277px] mx-auto font-light;
+  @apply text-[95px] md:text-[180px] lg:text-[200px] xl:text-[215px] 2xl:text-[277px] mx-auto font-normal;
 }
 
 .home-title-leading {

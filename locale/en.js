@@ -6,7 +6,125 @@ export const en = {
   careers: "Careers",
   home: "Home",
   start_project: "Start a project",
-  copyright: "Copyright © 2022 Wais. All rights reserved.",
+  copyright: "Copyright © 2023 Wais. All rights reserved.",
+  terms: "Terms of Service",
+  privacy: "Privacy Policy",
+  close: "Close",
+  accept: "Accept",
+  reject: "Reject",
+  cookie_message: "This website uses cookies. By continuing to browse, you accept our use of cookies.",
+  terms_text: `
+  <div class="terms text-justify p-4">
+  <h1 class="font-bold text-2xl mb-4">Terms and Conditions of Use</h1>
+
+  <h2 class="font-bold text-xl my-2">1. General</h2>
+  <p class="mb-2">
+    By accessing and using waisdigital.com, you agree to comply with the terms and
+    conditions presented in this document. If you do not agree with any of the
+    points set forth herein, we recommend not using this website.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">2. Intellectual property</h2>
+  <p class="mb-2">
+    All content present on waisdigital.com, including but not limited to,
+    text, graphics, logos, images, and code, are property of Wais and are
+    protected by international copyright laws. Its use without express
+    written consent from us is prohibited.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">3. Use of the website</h2>
+  <p class="mb-2">
+    By using waisdigital.com, you agree not to use it for illegal purposes or
+    those prohibited by these terms and conditions, nor in a way that could
+    damage the integrity of the website and its users.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">4. Limitation of liability</h2>
+  <p class="mb-2">
+    Wais is not responsible for damages resulting from the use or the
+    inability to use this website. This website and all its content are
+    presented without warranties of any kind.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">5. Data protection</h2>
+  <p class="mb-2">
+    We adhere to the current data protection laws. For detailed information
+    on how we collect and use our users' data, see our Privacy Policy.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">6. Changes to the terms and conditions</h2>
+  <p class="mb-2">
+    Wais reserves the right to modify these terms and conditions at any time
+    and without prior notice. We recommend that you review this page regularly
+    to be aware of any changes.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">7. Legislation and jurisdiction</h2>
+  <p class="mb-2">
+    These terms and conditions are governed by the laws of Venezuela.
+    Any dispute arising from their interpretation or application will be submitted
+    to the competent courts in Venezuela.
+  </p>
+</div>
+  `,
+  privacy_text: `<div class="privacy text-justify p-4">
+  <h1 class="font-bold text-2xl mb-4">Privacy Policy</h1>
+
+  <p class="mb-2">Last update: 18/05/2023</p>
+
+  <p class="mb-2">
+    This Privacy Policy describes how [name of your company] collects, uses,
+    processes, and shares your personal information in connection with your use
+    of [name of your website].
+  </p>
+
+  <h2 class="font-bold text-xl my-2">1. Information we collect</h2>
+  <p class="mb-2">
+    We may collect information about you directly from you and third parties,
+    as well as automatically through your use of our website.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">2. Use of information</h2>
+  <p class="mb-2">
+    We use the collected information for specific purposes such as providing
+    our services, communicating with you, customizing your experience on our
+    website, responding to your questions or comments, data analysis, complying
+    with our legal obligations, resolving disputes, and enforcing our agreements.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">3. Sharing and disclosing information</h2>
+  <p class="mb-2">
+    We do not sell or rent your personal information to third parties for
+    marketing purposes without your explicit consent. We may share your personal
+    information with third parties for the purposes specified in this policy.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">4. Your rights and choices</h2>
+  <p class="mb-2">
+    We respect your privacy rights and provide you with choices about how we
+    collect, use, and share your personal information.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">5. Information security</h2>
+  <p class="mb-2">
+    We are committed to protecting the security of your personal information.
+    We use a variety of security measures to protect your personal information
+    from unauthorized access, use, or disclosure.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">6. Changes to this privacy policy</h2>
+  <p class="mb-2">
+    We may update our Privacy Policy periodically. We will notify you of any
+    changes by posting the new Privacy Policy on this page.
+  </p>
+
+  <h2 class="font-bold text-xl my-2">7. Contact</h2>
+  <p class="mb-2">
+    If you have questions or comments about this privacy policy, you can
+    contact us at: [your company's email address].
+  </p>
+</div>
+`,
   _home: {
     customer_text_1: "Attract",
     customers: "customers",
