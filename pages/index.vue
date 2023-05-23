@@ -712,8 +712,12 @@ export default {
 	}
 
 	.slider-sm .slide-track .slide {
-		height: 200px;
+		height: 350px;
 		width: 350px;
+	}
+
+  .slider-sm .slide-track .slide img{
+    aspect-ratio: 3/2;
 	}
 
 @keyframes scroll-sm {
