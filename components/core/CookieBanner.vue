@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!accepted"
-    class="fixed bottom-0 w-full bg-gray-900 px-4 py-2 flex items-center justify-between h-[15vh] z-50"
+    class="fixed bottom-0 w-full bg-gray-900 px-4 py-2 flex items-center justify-between h-[9vh] z-50"
   >
     <p class="text-white">
       {{ $t("cookie_message") }}

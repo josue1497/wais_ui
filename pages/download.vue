@@ -1,6 +1,9 @@
 <template>
-  <div class="flex w-full h-[100vh]">
+  <div class="flex flex-col w-full h-[100vh]">
     <h1 class="text-[12vh] text-center font-bold m-auto">{{ message }}</h1>
+    <h4 class="text-[5vh] text-center m-auto">
+      Si la descarga no inicia automáticamente hacer click <a class="underline text-[#6464F9]" :href="link" target="_blank">aquí</a>
+    </h4>
   </div>
 </template>
 <script>
@@ -10,11 +13,13 @@ export default {
   layout: "dowload",
   data: () => ({
     message: "¡Gracias por visitarnos!",
+    link: process.env.WAIS_CDN,
   }),
   async mounted() {
     console.log("mounted");
 
     const param = this.$route.query.file;
+    this.link = `${process.env.WAIS_CDN}${param}`;
 
     console.log(param);
     if (!!param && !PERMITED_FILES.includes(param)) {
@@ -22,7 +27,7 @@ export default {
       return;
     }
     const response = await this.$axios({
-      url: `${process.env.WAIS_CDN}${param}`,
+      url: this.link,
       method: "GET",
       Headers: {
         "Content-Type": "application/octet-stream",

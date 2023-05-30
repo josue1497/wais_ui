@@ -703,6 +703,7 @@ export default {
 	overflow:hidden;
 	position: relative;
 	width: 960px;
+  @apply flex md:hidden;
 }
 
 .slider-sm .slide-track {
