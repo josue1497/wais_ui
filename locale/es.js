@@ -61,9 +61,9 @@ export const es = {
 
   <h2 class="font-bold text-xl my-2">7. Legislación y jurisdicción</h2>
   <p class="mb-2">
-    Estos términos y condiciones se rigen por las leyes de [País de la empresa].
+    Estos términos y condiciones se rigen por las leyes de Venezuela.
     Cualquier disputa que surja de su interpretación o aplicación se someterá a los
-    tribunales competentes en [País de la empresa].
+    tribunales competentes en Venezuela.
   </p>
 </div>`,
   privacy_text: `<div class="text-justify p-4">
@@ -72,9 +72,8 @@ export const es = {
   <p class="mb-2">Última actualización: 18/05/2023</p>
 
   <p class="mb-2">
-    Esta Política de Privacidad describe cómo [nombre de tu empresa] recopila, utiliza,
-    procesa y comparte tu información personal, en relación con tu uso de [nombre de tu
-    sitio web].
+    Esta Política de Privacidad describe cómo Wais Digital recopila, utiliza,
+    procesa y comparte tu información personal, en relación con tu uso de waisdigital.com.
   </p>
 
   <h2 class="font-bold text-xl my-2">1. Información que recopilamos</h2>
@@ -121,7 +120,7 @@ export const es = {
   <h2 class="font-bold text-xl my-2">7. Contacto</h2>
   <p class="mb-2">
     Si tienes preguntas o comentarios sobre esta política de privacidad, puedes
-    contactarnos en: [dirección de correo electrónico de tu empresa].
+    contactarnos en: hello@waisdigital.com.
   </p>
 </div>`,
   _home: {

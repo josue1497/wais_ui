@@ -16,9 +16,9 @@
         <p class="about-text w-full md:w-1/2 h-56 md:h-80">{{ $t('_about.text_1') }}</p>
         <div class="point about-one flat-1"></div>
         <p class="about-text-1 ml-auto w-4/6 mt-8 md:mt-6 flat-1">
-          <span class="block">{{ $t('_about.text_2_1_1') }} 
-          <span class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_2') }}</span> 
-          {{ $t('_about.text_2_1_3') }} 
+          <span class="block">{{ $t('_about.text_2_1_1') }}
+          <span class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_2') }}</span>
+          {{ $t('_about.text_2_1_3') }}
           <span
             class="text-white dark:text-gray-400 ">{{ $t('_about.text_2_1_4') }}</span></span>
           <span class="block my-4">{{ $t('_about.text_2_2_1') }}</span>
@@ -72,7 +72,7 @@
 
 <style scoped>
   .hero-image {
-    background-image: url(../assets/img/img8.jpg);
+    background-image: url(/img/img8.jpg);
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;

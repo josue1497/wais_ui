@@ -1,3 +1,9 @@
-/.git
+.git/*
 
-/.git/FETCH_HEAD
+.git/FETCH_HEAD
+
+.git\FETCH_HEAD
+
+node_modules/.cache/*
+
+

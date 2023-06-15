@@ -22,16 +22,30 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Agencia digital" },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'análisis de mercado, estrategias de marketing digital, creación de contenido, desarrollo web, SEO, SEM, social marketing, diseño gráfico, branding',
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+        crossorigin: true,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
       },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
       },
     ],
   },
@@ -41,15 +55,13 @@ export default {
     "@/assets/css/main.css",
     "@/assets/css/scroll-effect.css",
     "@/assets/css/scroll-effect.scss",
-    "@/assets/css/background-effect.css",
-    "@/assets/css/background-effect.scss",
     "@fortawesome/fontawesome-svg-core/styles.css",
     "animate.css/animate.min.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "~/plugins/fontawesome.js",
+    // { src: "~/plugins/fontawesome.js", mode: "client" },
     { src: "~/plugins/vuex-persist.js", mode: "client" },
     { src: "~/plugins/animated.js", mode: "client" },
   ],
@@ -58,11 +70,24 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8", "@nuxtjs/i18n"],
+  buildModules: ["@nuxt/postcss8", "@nuxtjs/i18n",
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      suffix: true,
+      icons: {
+        brands: [
+          'faInstagram',
+          'faLinkedinIn',
+          'faFacebookF',
+          'faBehance'
+        ]
+      }
+    }]
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', "@neneos/nuxt-animate.css", '@nuxtjs/toast', 'cookie-universal-nuxt'],
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  modules: ['@nuxtjs/axios', "@neneos/nuxt-animate.css", '@nuxtjs/toast', 'cookie-universal-nuxt', '@nuxtjs/amp'],
+  // modules: ['@nuxtjs/axios', "@neneos/nuxt-animate.css", '@nuxtjs/toast', 'cookie-universal-nuxt', '@nuxtjs/sitemap'],
   build: {
     postcss: {
       plugins: {
@@ -106,5 +131,23 @@ export default {
     position: 'top-right',
     duration: 3000,
     keepOnHover: true
+  },
+  purgecss: {
+    enabled: true, // Always enable purgecss
   }
+  // sitemap: {
+  //   hostname: 'https://waisdigital.com',
+  //   lastmod: '2023-06-03',
+  //   sitemaps: [
+  //     {
+  //       path: '/sitemap-foo.xml',
+  //       routes: ['foo/1', 'foo/2'],
+  //       gzip: true
+  //     }, {
+  //       path: '/folder/sitemap-bar.xml',
+  //       routes: ['bar/1', 'bar/2'],
+  //       exclude: ['/**']
+  //     }
+  //   ]
+  // },
 };

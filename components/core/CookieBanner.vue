@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="!accepted"
-    class="fixed bottom-0 w-full bg-gray-900 px-4 py-2 flex items-center justify-between h-[9vh] z-50"
+    class="fixed bottom-0 w-full bg-gray-900 px-4 py-2 flex flex-col md:flex-row  items-center justify-between  h-[12vh] md:h-[9vh] z-50"
   >
-    <p class="text-white">
+    <p class="text-white text-center md:text-left py-2 md:pa-3">
       {{ $t("cookie_message") }}
     </p>
     <div>

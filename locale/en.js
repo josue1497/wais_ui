@@ -73,9 +73,9 @@ export const en = {
   <p class="mb-2">Last update: 18/05/2023</p>
 
   <p class="mb-2">
-    This Privacy Policy describes how [name of your company] collects, uses,
+    This Privacy Policy describes how Wais Digital collects, uses,
     processes, and shares your personal information in connection with your use
-    of [name of your website].
+    of <b>waisdigital.com</b>.
   </p>
 
   <h2 class="font-bold text-xl my-2">1. Information we collect</h2>
@@ -121,7 +121,7 @@ export const en = {
   <h2 class="font-bold text-xl my-2">7. Contact</h2>
   <p class="mb-2">
     If you have questions or comments about this privacy policy, you can
-    contact us at: [your company's email address].
+    contact us at: hello@waisdigital.com.
   </p>
 </div>
 `,

@@ -66,11 +66,11 @@
         <ul
           class="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium"
         >
-          <!-- <li class="menu-item">
-            <NuxtLink to="projects" class="menu-item-link" aria-current="page"
+          <li class="menu-item">
+            <a href="https://www.behance.net/waisdigita46b7/projects"  target="_blank" class="menu-item-link" aria-current="page"
               > {{ $t("projects") }}
-            </NuxtLink>
-          </li> -->
+            </a>
+          </li>
           <li class="menu-item">
             <NuxtLink to="/services" class="menu-item-link">
               {{ $t("services") }}
@@ -151,9 +151,9 @@
         <div
           class="col-span-12 md:col-span-2 flex md:hidden items-center md:items-start flex-col"
         >
-          <!-- <NuxtLink to="/projects"
-            ><p class="mobile-links">{{ $t("projects") }}</p></NuxtLink
-          > -->
+          <a href="https://www.behance.net/waisdigita46b7/projects" target="_blank"
+            ><p class="mobile-links">{{ $t("projects") }}</p></a
+          >
           <NuxtLink to="/about"><p class="mobile-links">{{ $t("about") }}</p></NuxtLink>
           <NuxtLink to="/services"
             ><p class="mobile-links">{{ $t("services") }}</p></NuxtLink
@@ -216,7 +216,7 @@ export default {
         return (
             rect.top >= top &&
             rect.bottom - bottom <=
-            (window.innerHeight || document.documentElement.clientHeight) 
+            (window.innerHeight || document.documentElement.clientHeight)
         );
     },
     getParamByDevice() {
@@ -234,7 +234,7 @@ export default {
         ];
           console.log(navigator.userAgent)
 
-        
+
         return toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem));
     }
   },

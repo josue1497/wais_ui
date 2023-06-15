@@ -3,12 +3,12 @@
         class="icon-bar hidden text-[16px] md:text-[20px] lg:text-[24px] xl:text-[26px] 2xl:text-[28px] md:block"
       >
         <a
-        v-for="(link, index) in icons"
+          v-for="(link, index) in icons"
           :href="link.url"
           target="_blank"
           class="text-black bg-transparent dark:text-white"
           :key="index"
-          ><i :class="`fa-brands ${link.class}`"></i
+          ><fa-icon :icon="`fa-brands ${link.class}`"></fa-icon
         ></a>
       </div>
 </template>
