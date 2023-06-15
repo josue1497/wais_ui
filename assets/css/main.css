@@ -13,11 +13,11 @@ body {
 }
 
 body:not(.dark) {
-  background: url("../img/background.png"), #e5e5e5;
+  background: url("/img/background.png"), #e5e5e5;
 }
 
 body.dark {
-  background: url("../img/background.png"), #232531 !important;
+  background: url("/img/background.png"), #232531 !important;
 }
 
 .is-dark {

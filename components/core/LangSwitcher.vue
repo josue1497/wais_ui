@@ -19,13 +19,8 @@
   </div>
 </template>
 <script>
-import CountryFlag from 'vue-country-flag'
-
 export default {
   name: "LanguageSwitcher",
-  components: {
-    CountryFlag
-  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i !== this.$i18n.locale);
@@ -45,5 +40,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-</style>

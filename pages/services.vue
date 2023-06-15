@@ -14,9 +14,14 @@
         :service-data="service"
         :class="`my-7 card ${ index === 0 ? 'isVisible' : ''}`"/>
     </div>
+    <div class="flex flex-col mx-auto w-full wrapper flat-2">
+      <NuxtLink class="get-started-button flex flex-row align-center justify-center animate__animated animate__pulse animate__delay-2s animate__infinite" to="/contact">
+          <span>{{ $t("start_project") }}</span>
+      </NuxtLink>
+    </div>
     <div class="w-3/4 p-5">
       <h1
-        class="text-[90px] md:text-[180px] lg:text-[300px] font-normal leading-[5rem] md:leading-[10rem] lg:leading-[20rem] flex flex-col w-3/4 md:w-full GFG uppercase"
+        class="text-[90px] md:text-[180px] lg:text-[220px] xl:text-[270px] font-normal leading-[5rem] md:leading-[10rem] lg:leading-[20rem] flex flex-col w-3/4 md:w-full GFG uppercase"
       >
         <span class="block">Quality</span><span class="block">Work</span>
       </h1>
@@ -108,7 +113,7 @@ export default {
 .GFG {
   color: transparent;
   /*font-size: 50px;*/
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
 
