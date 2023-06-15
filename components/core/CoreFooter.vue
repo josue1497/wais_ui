@@ -72,25 +72,25 @@
         >
           <div class="mr-0 md:mr-7">
             <a href="https://www.instagram.com/waisdigital/" target="_blank"
-              ><fa-icon icon="fa-brands fa-instagram"></fa-icon
+              ><i class="fa-brands fa-instagram"></i
             ></a>
+            <!-- <font-awesome-icon :icon="['fas', 'adjust']"  />
+            <font-awesome-icon icon="dollar-sign"  style="font-size: 30px"/>
+            <font-awesome-icon icon="cog"/> -->
           </div>
           <div class="mr-0 md:mr-7">
             <a
               href="https://www.linkedin.com/company/wais-digital/?viewAsMember=true"
               target="_blank"
-              ><fa-icon icon="fa-brands fa-linkedin-in"></fa-icon
-            ></a>
+              ><i class="fa-brands fa-linkedin"></i></a>
           </div>
           <div class="mr-0 md:mr-7">
             <a href="https://www.facebook.com/waisdigital" target="_blank"
-              ><fa-icon icon="fa-brands fa-facebook-f"></fa-icon
-            ></a>
+              ><i class="fa-brands fa-facebook"></i></a>
           </div>
           <div class="mr-0 md:mr-7">
             <a href="https://www.behance.net/waisdigita46b7/projects" target="_blank">
-              <fa-icon icon="fa-brands fa-behance"></fa-icon
-            ></a>
+              <i class="fa-brands fa-behance"></i></a>
           </div>
         </div>
       </div>

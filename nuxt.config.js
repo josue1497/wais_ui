@@ -47,6 +47,14 @@ export default {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
       },
+      {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+        integrity: "sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==",
+        crossorigin: "anonymous",
+        referrerpolicy: "no-referrer"
+
+      },
     ],
   },
 
@@ -55,7 +63,6 @@ export default {
     "@/assets/css/main.css",
     "@/assets/css/scroll-effect.css",
     "@/assets/css/scroll-effect.scss",
-    "@fortawesome/fontawesome-svg-core/styles.css",
     "animate.css/animate.min.css",
   ],
 
@@ -70,20 +77,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8", "@nuxtjs/i18n",
-    ['@nuxtjs/fontawesome', {
-      component: 'fa',
-      suffix: true,
-      icons: {
-        brands: [
-          'faInstagram',
-          'faLinkedinIn',
-          'faFacebookF',
-          'faBehance'
-        ]
-      }
-    }]
-  ],
+  buildModules: ["@nuxt/postcss8", "@nuxtjs/i18n"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios', "@neneos/nuxt-animate.css", '@nuxtjs/toast', 'cookie-universal-nuxt', '@nuxtjs/amp'],

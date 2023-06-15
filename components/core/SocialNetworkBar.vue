@@ -8,7 +8,7 @@
           target="_blank"
           class="text-black bg-transparent dark:text-white"
           :key="index"
-          ><fa-icon :icon="`fa-brands ${link.class}`"></fa-icon
+          ><i :class="`fa-brands ${link.class}`"></i
         ></a>
       </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       {
         name: "linkedin",
         url: "https://www.linkedin.com/company/wais-digital/?viewAsMember=true",
-        class: 'fa-linkedin-in',
+        class: 'fa-linkedin',
 
       },
       {
